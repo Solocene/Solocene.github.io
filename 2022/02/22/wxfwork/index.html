@@ -24,7 +24,7 @@
 <meta property="og:description" content="这是今年寒假在家完成的微积分往年作业，做作业的过程同时也在复习（预习？）现保存于博客，每周定时更新。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-02-22T11:35:45.000Z">
-<meta property="article:modified_time" content="2022-02-22T13:58:26.592Z">
+<meta property="article:modified_time" content="2022-02-22T14:38:24.614Z">
 <meta property="article:author" content="Solocene">
 <meta property="article:tag" content="math">
 <meta name="twitter:card" content="summary_large_image">
@@ -221,7 +221,7 @@
         
         
         
-          125 分钟
+          126 分钟
         
       </span>
     
@@ -381,6 +381,7 @@ H(1,1)=\begin{bmatrix}\frac{y(y-1)}{x^2}x^y &amp; \frac{1+y\ln x}{x}x^y
 \\ \frac{1+y\ln x}{x}x^y &amp; x^y \ln^2
 x\end{bmatrix}|_{(1,1)}=\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix}
 \]</span> 又有 <span class="math display">\[
+\begin{gathered}
 \frac{\partial^3 z}{\partial
 x^3}|_{(1,1)}=\frac{2y(y-1)^2}{x^3}x^y|_{(1,1)}=0
 ,\\ \frac{\partial^3 z}{\partial x^2 \partial
@@ -388,6 +389,7 @@ y}|_{(1,1)}=\frac{2y-1+(y^2-y) \ln x}{x^2}x^y|_{(1,1)}=1\\
 \frac{\partial^3 z}{\partial x \partial y^2}|_{(1,1)}=\frac{y \ln
 x+2}{x}x^y\ln x|_{(1,1)}=0,\\ \frac{\partial^3 z}{\partial
 y^3}|_{(1,1)}=x^y\ln^3x|_{(1,1)}=0
+\end{gathered}
 \]</span> 故 <span class="math inline">\(z=x^y\)</span> 在<span
 class="math inline">\((1,1)\)</span>的三阶Taylor多项式为： <span
 class="math display">\[
@@ -538,8 +540,10 @@ class="math inline">\(S=0.2x^2-0.2x+4\)</span> 。预测12月份营业额为
 <p><strong>16.</strong> 解：由Lagrange乘子法可知，问题等价于求函数 <span
 class="math inline">\(g(x,y,\lambda)=\dfrac{1}{p}x^p+\dfrac{1}{q}y^q-\lambda(xy-1)\)</span>
 的最小值。先求其临界点： <span class="math display">\[
+\begin{gathered}
 \frac{\partial g}{\partial x}=x^{p-1}-\lambda y=0\\
 \frac{\partial g}{\partial y}=y^{q-1}-\lambda x=0
+\end{gathered}
 \]</span> 解得 <span class="math inline">\(x^p=y^q\)</span> ，即 <span
 class="math inline">\(x=y=1\)</span> 。此时 <span
 class="math inline">\(\dfrac{1}{p}x^p+\dfrac{1}{q}y^q\)</span> 有最小值
@@ -548,8 +552,10 @@ class="math inline">\(\dfrac{1}{p}x^p+\dfrac{1}{q}y^q\)</span> 有最小值
 <p>对于Young不等式的情况，只需变为求函数 <span
 class="math inline">\(g^{&#39;}(x,y)=\dfrac{1}{p}x^p+\dfrac{1}{q}y^q-xy\)</span>
 的最小值。先求临界值： <span class="math display">\[
+\begin{gathered}
 \frac{\partial g^{&#39;} }{\partial x}=x^{p-1}-y=0\\
 \frac{\partial g^{&#39;} }{\partial y}=y^{q-1}-x=0
+\end{gathered}
 \]</span> 同可解得 <span class="math inline">\(x^p=y^q=xy\)</span>
 ，易知此为最小值点。代入原式得 <span
 class="math inline">\(g^{&#39;}(x,y)\)</span> 的最小值为 <span
@@ -640,8 +646,10 @@ F&#39;(0)&amp;=\lim
 \]</span> 若是 <span class="math inline">\(y=-b\)</span> 或 <span
 class="math inline">\(y=-a\)</span> 的情况，同样可以由求极限的方法得到：
 <span class="math display">\[
+\begin{gathered}
 F&#39;(-b)=-b+(\frac{1}{b}+\frac{1}{b-a})\sin(b(b-a))\\
 F&#39;(-a)=a-(\frac{1}{a}+\frac{1}{a-b})\sin(a(a-b))
+\end{gathered}
 \]</span> (3) 对 <span class="math inline">\(\displaystyle
 F(t)=\int_0^t{\frac{\ln(1+tx)}{x}{\rm d}x}\)</span> ，有：<span
 class="math inline">\((t\neq0)\)</span> <span class="math display">\[
@@ -670,16 +678,20 @@ f}{\partial(x-t)}{\rm d}x}+f(2t,0)
 class="math inline">\(p=x+at,q=x-at\)</span> ，由链锁法则有 <span
 class="math display">\[
 \frac{\partial \varphi}{\partial t}=a(\frac{\partial \varphi}{\partial
-p}-\frac{\partial \varphi}{\partial q})\\
+p}-\frac{\partial \varphi}{\partial q})
+\]</span> <span class="math display">\[
 \frac{\partial \varphi}{\partial x}=\frac{\partial \varphi}{\partial
 p}+\frac{\partial \varphi}{\partial q}
-\]</span> 又因 <span class="math inline">\(\varphi\in C^2,\psi\in
-C^1\)</span> ，有： <span class="math display">\[
+\]</span></p>
+<p>又因 <span class="math inline">\(\varphi\in C^2,\psi\in C^1\)</span>
+，有： <span class="math display">\[
 \frac{\partial u}{\partial t}=\frac{1}{2}a(\frac{\partial
 \varphi(p)}{\partial p}-\frac{\partial \varphi(p)}{\partial
 q}+\frac{\partial \varphi(q)}{\partial p}-\frac{\partial
 \varphi(q)}{\partial q})+\frac{1}{2}\int_q^p{\frac{\partial
-\psi}{\partial p}-\frac{\partial \psi}{\partial q}{\rm d}s}\\
+\psi}{\partial p}-\frac{\partial \psi}{\partial q}{\rm d}s}
+\]</span></p>
+<p><span class="math display">\[
 \begin{aligned}
 \frac{\partial^2 u}{\partial t^2}=&amp; \
 \frac{1}{2}a^2(\frac{\partial^2 \varphi(p)}{\partial
@@ -687,26 +699,30 @@ p^2}+\frac{\partial^2 \varphi(p)}{\partial q^2}+\frac{\partial^2
 \varphi(q)}{\partial p^2}+\frac{\partial^2 \varphi(q)}{\partial
 q^2})\\&amp;+\frac{a}{2}\int_q^p{\frac{\partial^2 \psi}{\partial
 p^2}+\frac{\partial^2 \psi}{\partial q^2}{\rm d}s}
-\end{aligned}\\
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
 \frac{\partial u}{\partial x}=\frac{1}{2}(\frac{\partial
 \varphi(p)}{\partial p}+\frac{\partial \varphi(p)}{\partial
 q}+\frac{\partial \varphi(q)}{\partial p}+\frac{\partial
 \varphi(q)}{\partial q})+\frac{1}{2a}\int_q^p{\frac{\partial
-\psi}{\partial p}+\frac{\partial \psi}{\partial q}{\rm d}s}\\
-\begin{aligned}
+\psi}{\partial p}+\frac{\partial \psi}{\partial q}{\rm d}s}
+\]</span></p>
+<p>$$</p>
+<span class="math display">\[\begin{aligned}
 \frac{\partial^2 u}{\partial x^2}=&amp; \ \frac{1}{2}(\frac{\partial^2
 \varphi(p)}{\partial p^2}+\frac{\partial^2 \varphi(p)}{\partial
 q^2}+\frac{\partial^2 \varphi(q)}{\partial p^2}+\frac{\partial^2
 \varphi(q)}{\partial q^2})\\&amp;+\frac{1}{2a}\int_q^p{\frac{\partial^2
 \psi}{\partial p^2}+\frac{\partial^2 \psi}{\partial q^2}{\rm d}s}
-\end{aligned}
-\]</span> 对比可以得到 <span class="math display">\[
-\frac{\partial^2 u}{\partial t^2}=a^2\frac{\partial^2 u}{\partial x^2}
-\]</span> <strong>5.</strong> 解：(1) 因 <span
-class="math inline">\(\dfrac{\arctan x}{x},\dfrac{1}{\sqrt{1-x^2}
-}\)</span> 均为 <span class="math inline">\(C^1\)</span>
-上的函数，因此有 <span class="math display">\[
-\begin{aligned}
+\end{aligned}\]</span>
+<span class="math display">\[
+对比可以得到
+\]</span> =a^2 <span class="math display">\[
+**5.** 解：(1) 因 $\dfrac{\arctan x}{x},\dfrac{1}{\sqrt{1-x^2} }$ 均为
+$C^1$ 上的函数，因此有
+\]</span>
+<span class="math display">\[\begin{aligned}
 \int_0^1{\dfrac{\arctan x}{x}\dfrac{1}{\sqrt{1-x^2} }{\rm d}x}&amp;=
 \int_0^{\frac{\pi}{2} }{\rm
 d}\theta{\int_0^1{\frac{1}{1+y^2\sin^2\theta}{\rm d}y} } \qquad
@@ -716,20 +732,19 @@ d}\theta{\int_0^1{\frac{1}{1+y^2\sin^2\theta}{\rm d}y} } \qquad
 &amp;=\int_0^1{\frac{\pi}{2\sqrt{y^2+1} }{\rm d}y}\\
 &amp;=\frac{\pi}{2}{\rm arsinh \ }y|^1_0\\
 &amp;=\frac{\pi}{2}{\ln(1+\sqrt{2})}
-\end{aligned}
-\]</span> (2) 因 <span class="math inline">\(\displaystyle
-\frac{x^b-x^a}{\ln x}=\int_a^b{x^y{\rm d}y}\)</span> ，而 <span
-class="math inline">\(x^y,\sin\ln x\)</span> 都是 <span
-class="math inline">\(C^1\)</span> 上的函数，因此有 <span
-class="math display">\[
-\begin{aligned}
+\end{aligned}\]</span>
+<span class="math display">\[
+(2) 因 $\displaystyle \frac{x^b-x^a}{\ln x}=\int_a^b{x^y{\rm d}y}$ ，而
+$x^y,\sin\ln x$ 都是 $C^1$ 上的函数，因此有
+\]</span>
+<span class="math display">\[\begin{aligned}
 \int_0^1{\frac{x^b-x^a}{\ln x}\sin(\ln{\frac{1}{x} }){\rm d}x}
 &amp;=\int_0^1{\rm d}x{\int_a^b{-x^y\sin\ln x}{\rm d}y}\\
 &amp;=-\int_a^b{ {\rm d}y{\int_0^1{x^y\sin\ln x{\rm d}x} }}\\
 &amp;=\int_a^b{\frac{1}{(y+1)^2+1}{\rm d}y}\\
 &amp;=\arctan(b+1)-\arctan(a+1)
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span>
+<p>$$</p>
 <h4 id="讲义习题4.1">讲义习题4.1</h4>
 <p><strong>1.</strong> 解： <span
 class="math inline">\(\forall{\varepsilon&gt;0},\exists N&gt;0,\forall
@@ -748,10 +763,12 @@ class="math inline">\(f_i(x),i\in \mathbb{Z^+}\)</span> 是可积函数。</p>
 class="math inline">\(\forall \varepsilon&gt;0,\exists N&gt;0,\forall
 {M&gt;N}\)</span> ， <span class="math display">\[
 |\int_a^b{f_M(x){\rm d}x}-\lim\limits_{n\to +\infty}{\int_a^b{f_n(x){\rm
-d}x} }|\leq\frac{\varepsilon}{2}\\
+d}x} }|\leq\frac{\varepsilon}{2}
+\]</span> <span class="math display">\[
 |\int_a^b{f_M(x){\rm d}x}-{\int_a^b{\lim\limits_{n\to +\infty}f_n(x){\rm
 d}x} }|\leq\frac{\varepsilon}{2}
-\]</span> 故 <span class="math inline">\(\displaystyle|\lim\limits_{n\to
+\]</span></p>
+<p>故 <span class="math inline">\(\displaystyle|\lim\limits_{n\to
 +\infty}{\int_a^b{f_n(x){\rm d}x} }-{\int_a^b{\lim\limits_{n\to
 +\infty}f_n(x){\rm d}x} }|\le\varepsilon\)</span> ，令 <span
 class="math inline">\(\varepsilon\to 0\)</span> ，题式得证。</p>
