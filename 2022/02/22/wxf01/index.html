@@ -24,7 +24,7 @@
 <meta property="og:description" content="这是王晓峰老师的微积分A2课堂笔记。大多以课件为蓝本，做了一些归纳和整理。每次课后更新。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-02-22T11:18:02.000Z">
-<meta property="article:modified_time" content="2022-02-22T13:58:13.357Z">
+<meta property="article:modified_time" content="2022-02-23T02:50:29.296Z">
 <meta property="article:author" content="Solocene">
 <meta property="article:tag" content="math">
 <meta name="twitter:card" content="summary_large_image">
@@ -210,7 +210,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.9k 字
+          4.9k 字
         
       </span>
     
@@ -221,7 +221,7 @@
         
         
         
-          33 分钟
+          41 分钟
         
       </span>
     
@@ -266,7 +266,7 @@
               <h3 id="第一章-多元函数的连续性"><strong>第一章
 多元函数的连续性</strong></h3>
 <p><strong>连续性</strong>（局部可用常值逼近），<strong>可微性</strong>（局部可用线性逼近）</p>
-<p>多元函数：依赖于多个自变量。</p>
+<p>多元函数：依赖于多个自变量<a href="######prove-1">prove 1</a></p>
 <p>函数值（映射的像）：可以是数、点、向量等等。</p>
 <p>多元函数例子：欧氏空间 <span class="math inline">\(\mathbb
 R^n\)</span> 下三角形的三个顶点分别是 <span
@@ -331,6 +331,16 @@ x||\)</span> 。</p>
 <p>由范数可以得到一个平移不变的距离：<span
 class="math inline">\(d(\mathbf{x},
 \mathbf{y})=\|\mathbf{x}-\mathbf{y}\|\)</span> 。</p>
+<p>验证一个函数是不是范数：先验证正定和正齐次性。重点是三角形不等式：先验证
+<span class="math inline">\(x=0\)</span> 时是否满足，再验证 <span
+class="math inline">\(x=1\)</span> 时是否满足（均有 <span
+class="math inline">\(\forall y\)</span>
+)。由于正齐次性，三角形不等式必成立。</p>
+<p>p-范数：<span
+class="math inline">\(\displaystyle\|\mathbf{x}\|_{p}=\left(\sum_{i=1}^{m}\left|x^{i}\right|^{p}\right)^{\frac{1}{p}}\)</span>
+( <span class="math inline">\(p\geq1\)</span> )
+可验证是一个范数（注意，当 <span class="math inline">\(p&lt;1\)</span>
+时不满足三角形不等式，不是范数！可画此时的“单位圆”来验证。）</p>
 <h6 id="内积">4.内积</h6>
 <p><span class="math inline">\(\mathbb R^m\)</span> 上的内积：<span
 class="math inline">\(\langle\cdot,\cdot\rangle:\mathbb R^m \times
@@ -390,6 +400,38 @@ y,&lt;A\mathbf x,\mathbf y&gt;=&lt;\mathbf x,A\mathbf y&gt;\)</span></p>
 <p>定理：对称线性映射 <span class="math inline">\(A\)</span> 存在 <span
 class="math inline">\(m\)</span> 个特征值。</p>
 <p>证明：（PPT 41,42页）</p>
+<p><strong>应用：等周三角形</strong></p>
+<p>给定周长的三角形怎样面积最大？由椭圆和对称性仅能证明<strong>有最大面积的三角形</strong>的话等边三角形是面积最大的三角形，（PPT
+46页）</p>
+<h6
+id="压缩映射定理验证连续性的重要工具">8.压缩映射定理（验证连续性的重要工具！）</h6>
+<p>（PPT 48,49,50页）</p>
+<h6
+id="矩阵的算子范数难与误差扰动下线性方程的解">9.矩阵的算子范数（难）与误差扰动下线性方程的解</h6>
+<p>主要讨论求逆和解方程的操作是否连续和可微（PPT 51-55页）</p>
+<h6 id="连通性与连续性">10.连通性与连续性</h6>
+<p>（区间的推广）称 <span class="math inline">\(E \subseteq
+\mathbb{R}^{m}\)</span> 是一个<strong>道路连通集</strong>，如果对任意
+<span class="math inline">\(\mathbf{x}, \mathbf{y} \in E\)</span>
+,存在连续映射 <span class="math inline">\(f:[0,1] \rightarrow
+\mathbb{R}^{m}\)</span> 使得 <span
+class="math inline">\(f(0)=\mathbf{x}, f(1)=\mathbf{y}\)</span>
+，且对任意 <span class="math inline">\(0 \leq t \leq 1, f(t) \in
+E\)</span> 。</p>
+<p>定理：设 <span class="math inline">\(E \subseteq
+\mathbb{R}^{m}\)</span> 是一个道路连通集, <span class="math inline">\(f:
+E \rightarrow \mathbb{R}^{p}\)</span> 连续。则 <span
+class="math inline">\(f(E)\)</span> 是 <span
+class="math inline">\(\mathbb{R}^{p}\)</span> 中的一个道路连通集。</p>
+<p>由上可推知，m阶可逆矩阵全体<strong>不是</strong>一个道路连通集（因为
+<span class="math inline">\(\det\)</span> 是连续函数，而可逆矩阵的 <span
+class="math inline">\(\det\)</span> 不包含 <span
+class="math inline">\(0\)</span> ）而 $ ^{+}(m)={A (m) (A)&gt;0} $ <span
+class="math inline">\(\mathcal{G L}^{-}(m)=\{A \in \mathcal{G L}(m) \mid
+\operatorname{det}(A)&lt;0\}\)</span> 都是道路连通的。</p>
+<p>老师的思考题：在二维或更高维数的线性空间中, 是否存在一个全序,
+使得它与空间中由范数给出的拓扑相容？（现在看不懂，答案是否定的）</p>
+<h6 id="prove-1">prove 1</h6>
 
               
             </div>
