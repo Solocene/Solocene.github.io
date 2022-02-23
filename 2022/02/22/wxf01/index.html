@@ -24,7 +24,7 @@
 <meta property="og:description" content="这是王晓峰老师的微积分A2课堂笔记。大多以课件为蓝本，兼有一些个人的理解。每次课后更新。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-02-22T11:18:02.000Z">
-<meta property="article:modified_time" content="2022-02-23T12:41:49.104Z">
+<meta property="article:modified_time" content="2022-02-23T15:05:31.642Z">
 <meta property="article:author" content="Solocene">
 <meta property="article:tag" content="math">
 <meta property="article:tag" content="calculus">
@@ -212,7 +212,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          13k 字
+          17k 字
         
       </span>
     
@@ -223,7 +223,7 @@
         
         
         
-          107 分钟
+          139 分钟
         
       </span>
     
@@ -288,7 +288,7 @@ x_{2}^{j}-x_{1}^{i} &amp; x_{3}^{j}-x_{1}^{j}
 \end{array}\right|^{2} }\\&amp;=\frac{1}{2}\sqrt{\sum\limits_{1\leq
 i\leq j\leq n}{\begin{vmatrix}1
 &amp;1&amp;1\\x_1^i&amp;x_2^i&amp;x_3^i\\x_1^j&amp;x_2^j&amp;x_3^j\\\end{vmatrix}
-}}
+} }
 \end{aligned}
 \]</span> <strong>多元函数的定义</strong></p>
 <p><span class="math inline">\(A \subseteq \mathbb{R}^{m}, \quad
@@ -390,9 +390,42 @@ class="math inline">\(||\mathbf x||\cdot||\mathbf y||\geq \,
 class="math inline">\(\mathbf{x}\)</span>,<span
 class="math inline">\(\mathbf{y}\)</span> 线性相关。</p>
 <h5 id="点列的极限">5.点列的极限</h5>
-<p>点列关于范数<strong>有界，收敛，的极限，是Cauchy点列</strong>的定义与数列相似。</p>
-<p>（PPT 25,26,27页）</p>
-<p><strong>结论</strong>：点列关于范数<strong>有界，收敛，极限</strong>这些概念，与范数的选取无关</p>
+<p>点列关于范数<strong>有界，收敛，的极限，是Cauchy点列</strong>的定义与数列几乎相同，只要把数列中的数（与数的差值）换成点（指向点的向量）的范数就行了。那么根据基于
+<span class="math inline">\(\varepsilon-N\)</span>
+语言的这种极限定义，可以得到以下结论：</p>
+<p>由 <span class="math inline">\(\|x\|\leq m\|x\|_{\infty}\)</span>
+知</p>
+<p>A: <span class="math inline">\(\left\{\mathbf{x}_{n}\right\}_{n \geq
+1}\)</span> 在范数 <span
+class="math inline">\(\|\cdot\|_{\infty}\)</span> 下有界/收敛（于 <span
+class="math inline">\(\mathbf{a}\)</span> ）/是 Cauchy 点列</p>
+<p><span class="math inline">\(\Rightarrow\)</span> B: <span
+class="math inline">\(\left\{\mathbf{x}_{n}\right\}_{n \geq 1}\)</span>
+在任何范数 <span class="math inline">\(\|\cdot\|\)</span>
+下有界/收敛（于 <span class="math inline">\(\mathbf{a}\)</span> ）/是
+Cauchy 点列。</p>
+<p>由不等式 <span class="math inline">\(\left|x^{k}\right|
+\leq\|\mathbf{x}\|_{\infty}
+\leq\left|x^{1}\right|+\cdots+\left|x^{m}\right|\)</span> 知</p>
+<p>A: <span class="math inline">\(\left\{\mathbf{x}_{n}\right\}_{n \geq
+1}\)</span> 在范数 <span
+class="math inline">\(\|\cdot\|_{\infty}\)</span> 下有界/收敛（于 <span
+class="math inline">\(\mathbf{a}\)</span> ）/是 Cauchy 点列</p>
+<p><span class="math inline">\(\Leftrightarrow\)</span> C: 对每个 <span
+class="math inline">\(k\)</span>，<span
+class="math inline">\(\left\{x_{n}^{k}\right\}_{n \geq 1}\)</span>
+是有界/收敛 (于 <span class="math inline">\(a^{k}\)</span> )/Cauchy
+数列。</p>
+<p>又因为可以<a href="#p7">证明</a>引理：</p>
+<blockquote>
+<p>对 <span class="math inline">\(\mathbb{R}^{m}\)</span> 的任何范数
+<span class="math inline">\(\|\cdot\|\)</span>, 存在常数 <span
+class="math inline">\(M&gt;0\)</span> 使得对任意 <span
+class="math inline">\(x \in \mathbb{R}^{m}\)</span>, <span
+class="math inline">\(\|\mathbf{x}\|_{\infty} \leq
+M\|\mathbf{x}\|\)</span> 。</p>
+</blockquote>
+<p>因此，A,B,C彼此是完全等价的。这意味着，<strong>无论使用哪一种范数做标准，点列的有界/收敛/是Cauchy列等性质不会改变</strong>。</p>
 <h5 id="连续函数">6.连续函数</h5>
 <p>多元函数的连续函数定义与一元函数大致相同，使用了范数（同样与范数选取无关）。多元复合函数的连续性也与一元函数的情形一样。</p>
 <p>例：范数是连续函数。</p>
@@ -401,12 +434,11 @@ class="math inline">\(\mathbf{y}\)</span> 线性相关。</p>
 <p>证：<span class="math inline">\(\displaystyle||L\mathbf x-L\mathbf
 x_0||=||L(\mathbf x-\mathbf x_0)||\leq||\mathbf x-\mathbf
 x_0||_{\infty}\sum\limits_{k=1}^n{L\mathbf e_k}\)</span></p>
-<p>推论：数乘和内积（都是双线性映射，把两个自变量合并成一个向量后就是线性映射）都是连续函数。严格证明：（PPT
-33,34页）</p>
+<p>推论：数乘和内积（都是双线性映射，把两个自变量合并成一个向量后就是线性映射）都是连续函数。<a
+href="#p8">严格证明</a></p>
 <p>类似可证任意k-重线性映射 <span class="math inline">\(f(\mathbf
 v_1,\cdot\cdot\cdot,\mathbf v_k)\)</span>
-都是连续的。因此，所以行列式函数都是连续函数。又因为（数和矩阵的）四则运算都是线性的，连续多元函数经过加减乘除后仍是连续函数。更复杂的情况需要具体分析（PPT
-37页）</p>
+都是连续的。因此，所以行列式函数都是连续函数。又因为（数和矩阵的）四则运算都是线性的，连续多元函数经过加减乘除后仍是连续函数。更复杂的情况需要具体分析。</p>
 <h5 id="有界闭集上的连续映射">7.有界闭集上的连续映射</h5>
 <p>若集合 <span class="math inline">\(E\in\mathbb R^m\)</span>
 对极限封闭，则称 <span class="math inline">\(E\)</span>
@@ -588,14 +620,97 @@ class="math inline">\(\det\)</span> 不包含 <span
 class="math inline">\(0\)</span> ）而 $ ^{+}(m)={A (m) (A)&gt;0} $ <span
 class="math inline">\(\mathcal{G L}^{-}(m)=\{A \in \mathcal{G L}(m) \mid
 \operatorname{det}(A)&lt;0\}\)</span> 都是道路连通的。</p>
-<p>老师的思考题：在二维或更高维数的线性空间中, 是否存在一个全序,
-使得它与空间中由范数给出的拓扑相容？（现在看不懂，答案是否定的）</p>
+<p><em>老师的思考题</em>：在二维或更高维数的线性空间中,
+是否存在一个全序,
+使得它与空间中由范数给出的拓扑相容？（不大懂，大概是说只有一维数轴上的数才能比大小，也就是说答案是否定的）</p>
 <h4 id="证明区">证明区</h4>
+<h6 id="p7">
+证明1.5
+</h6>
+<p>假设结论不对。则存在点列 <span
+class="math inline">\(\left\{\mathbf{x}_{n}\right\}\)</span> 使得 <span
+class="math inline">\(\left\|\mathbf{x}_{n}\right\|_{\infty}&gt;n\left\|\mathbf{x}_{n}\right\|\)</span>
+。于是 <span class="math inline">\(\mathbf{x}_{n} \neq
+\mathbf{0}\)</span>, 取 <span
+class="math inline">\(\mathbf{y}_{n}=\frac{\mathbf{x}_{n}
+}{\left\|\mathbf{x}_{n}\right\|_{\infty} }\)</span> ，则 <span
+class="math inline">\(\left\|\mathbf{y}_{n}\right\|_{\infty}=1,\left\|\mathbf{y}_{n}\right\|&lt;\frac{1}{n}\)</span>
+。由 <span class="math inline">\(\left|y_{n}^{k}\right|
+\leq\left\|\mathbf{y}_{n}\right\|_{\infty}=1\)</span> 知 <span
+class="math inline">\(\left\{y_{n}^{k}\right\}_{n \geq 1}\)</span>
+是有界数列，从而有收敛子列。</p>
+<p>因此不妨设对每个 <span class="math inline">\(k \in\{1,2, \ldots,
+m\},\left\{y_{n}^{k}\right\}_{n \geq 1}\)</span> 都收敛。 从而 <span
+class="math inline">\(\left\{\mathbf{y}_{n}\right\}\)</span> 在范数
+<span class="math inline">\(\|\cdot\|_{\infty}\)</span> 下收敛。记 <span
+class="math inline">\(\mathbf{y}_{0}\)</span> 为相应极限。则 <span
+class="math inline">\(\lim\limits_{n
+\rightarrow+\infty}\left\|\mathbf{y}_{n}-\mathbf{y}_{0}\right\|_{\infty}=0\)</span>
+。因此 <span class="math inline">\(\lim\limits_{n
+\rightarrow+\infty}\left\|\mathbf{y}_{n}-\mathbf{y}_{0}\right\|=0\)</span>
+（因为 <span class="math inline">\(\|x\|\leq m\|x\|_{\infty}\)</span>
+）。所以： <span class="math display">\[
+\left\|\mathbf{y}_{0}\right\|
+\leq\left\|\mathbf{y}_{n}-\mathbf{y}_{0}\right\|+\left\|\mathbf{y}_{n}\right\|&lt;\left\|\mathbf{y}_{n}-\mathbf{y}_{0}\right\|+\frac{1}{n}
+\rightarrow 0, \quad n \rightarrow+\infty
+\]</span> 于是 <span
+class="math inline">\(\mathbf{y}_{0}=\mathbf{0}\)</span>
+。而这导致如下矛盾 <span class="math display">\[
+1=\left\|\mathbf{y}_{n}\right\|_{\infty}=\left\|\mathbf{y}_{n}-\mathbf{y}_{0}\right\|_{\infty}
+\rightarrow 0, \quad n \rightarrow+\infty
+\]</span> 所以原结论成立。实话说，这是一个有点让人摸不着头脑的证明。<a
+href="#1.5">返回</a></p>
+<h6 id="p8">
+证明1.6
+</h6>
+<p>对双线性映射 <span class="math inline">\(B: \mathbb{R}^{m} \times
+\mathbb{R}^{n} \rightarrow \mathbb{R}^{p}\)</span> ，设 <span
+class="math inline">\(\mathbf{e}_{1}, \ldots, \mathbf{e}_{m}\)</span> 和
+<span class="math inline">\(\mathbf{f}_{1}, \ldots,
+\mathbf{f}_{n}\)</span> 分别是 <span
+class="math inline">\(\mathbb{R}^{m}\)</span> 和 <span
+class="math inline">\(\mathbb{R}^{n}\)</span> 的基底。记 <span
+class="math inline">\(M=\sum\limits_{i, j}\left\|B\left(\mathbf{e}_{i},
+\mathbf{f}_{j}\right)\right\|\)</span> 。则对 <span
+class="math inline">\(\mathbf{x}=\sum\limits_{i} x^{i} \mathbf{e}_{i},
+\mathbf{y}=\sum\limits_{j} y^{j} \mathbf{f}_{i}\)</span> <span
+class="math display">\[
+\begin{aligned}
+\|B(\mathbf{x}, \mathbf{y})\| &amp;=\left\|\sum_{i, j} x^{i} y^{j}
+B\left(\mathbf{e}_{i}, \mathbf{f}_{j}\right)\right\| \leq \sum_{i, j}
+\mid x^{i}\mid\mid y^{j}\mid \|B\left(\mathbf{e}_{i},
+\mathbf{f}_{j}\right) \| \\
+&amp; \leq\|\mathbf{x}\|_{\infty}\|\mathbf{y}\|_{\infty} \sum_{i,
+j}\left\|B\left(\mathbf{e}_{i},
+\mathbf{f}_{j}\right)\right\|=M\|\mathbf{x}\|_{\infty}\|\mathbf{y}\|_{\infty}
+.
+\end{aligned}
+\]</span> 从而 <span class="math display">\[
+\begin{aligned}
+&amp;\left\|B(\mathbf{x}, \mathbf{y})-B\left(\mathbf{x}_{0},
+\mathbf{y}_{0}\right)\right\| \\
+\leq &amp;\left\|B\left(\mathbf{x}-\mathbf{x}_{0},
+\mathbf{y}-\mathbf{y}_{0}\right)\right\|+\left\|B\left(\mathbf{x}-\mathbf{x}_{0},
+\mathbf{y}_{0}\right)\right\|+\left\|B\left(\mathbf{x}_{0},
+\mathbf{y}-\mathbf{y}_{0}\right)\right\| \\
+\leq &amp;
+M\left(\left\|\mathbf{x}-\mathbf{x}_{0}\right\|_{\infty}\left\|\mathbf{y}-\mathbf{y}_{0}\right\|_{\infty}+\left\|\mathbf{x}-\mathbf{x}_{0}\right\|_{\infty}\left\|\mathbf{y}_{0}\right\|_{\infty}+\left\|\mathbf{x}_{0}\right\|_{\infty}\left\|\mathbf{y}-\mathbf{y}_{0}\right\|_{\infty}\right)
+\end{aligned}
+\]</span> 对任意 <span class="math inline">\(\varepsilon&gt;0\)</span>,
+当 <span class="math display">\[
+\max
+\left\{\left\|\mathbf{x}-\mathbf{x}_{0}\right\|_{\infty},\left\|\mathbf{y}-\mathbf{y}_{0}\right\|_{\infty}\right\}&lt;\frac{\varepsilon}{\varepsilon+3
+M\left(1+\left\|\mathbf{y}_{0}\right\|_{\infty}+\left\|\mathbf{x}_{0}\right\|_{\infty}\right)}
+\]</span> 时, <span class="math inline">\(\left\|B(\mathbf{x},
+\mathbf{y})-B\left(\mathbf{x}_{0},
+\mathbf{y}_{0}\right)\right\|&lt;\varepsilon_{\circ}\)</span> 所以 <span
+class="math inline">\(B\)</span> 是连续映射。</p>
+<p>这里的构造很奇妙。而且感觉放缩得有点多了。<a href="#1.6">返回</a></p>
 <h6 id="p1">
 证明1.7.1
 </h6>
 <p>当固定三角形的周长和一条边时，其第三个点将落在以其余两点为焦点的椭圆上。为使面积最大，此点应落在使三角形等腰的位置。由于对称性，对三边都有此要求，因此三角形应为等边才能面积最大。<a
-href="#1.7.3">返回</a></p>
+href="##1.7.3">返回</a></p>
 <h6 id="p2">
 证明1.8
 </h6>
