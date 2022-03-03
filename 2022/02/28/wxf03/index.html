@@ -24,7 +24,7 @@
 <meta property="og:description" content="这一篇还没有完成……">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-02-28T03:58:07.000Z">
-<meta property="article:modified_time" content="2022-02-28T15:51:37.579Z">
+<meta property="article:modified_time" content="2022-03-02T01:30:31.840Z">
 <meta property="article:author" content="Solocene">
 <meta property="article:tag" content="math">
 <meta property="article:tag" content="calculus">
@@ -212,7 +212,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          8.6k 字
         
       </span>
     
@@ -223,7 +223,7 @@
         
         
         
-          16 分钟
+          72 分钟
         
       </span>
     
@@ -328,7 +328,226 @@ class="math inline">\(t\)</span> 的一元函数,
 \mathbf{v}} f\left(\mathbf{x}^{*}\right)=\lambda \partial_{\mathbf{v}}
 f\left(\mathbf{x}^{*}\right)\)</span> 。</li>
 </ol>
-<p>由此可以定义方向导数：PPT 7，8，9页</p>
+<p>由此可以定义<strong>方向导数</strong>：映射 <span
+class="math inline">\(f: E \rightarrow \mathbb{R}^{p}\)</span> 在 <span
+class="math inline">\(\mathbf{x}^{*}\)</span> 处沿向量 <span
+class="math inline">\(\mathbf{v}\)</span> 的导数，且 <span
+class="math inline">\(\mathbf v\)</span> 为单位向量。</p>
+<p>在一元函数中，某点沿x轴正向的方向导数为该点函数的右导数；该点沿x轴负向的方向导数为该点左导数的<font color="red">相反数</font>。但更多地，方向导数更强调函数在某一方向、某一固定点的性质，与一般导数不太相同。</p>
+<p>PPT 10页</p>
+<h5 id="偏导数">2.偏导数</h5>
+<p>设 <span class="math inline">\(E \subseteq \mathbb{R}^{m},
+\mathbf{x}^{*}\)</span> 是 <span class="math inline">\(E\)</span>
+的一个内点。 设 <span class="math inline">\(\mathbf{v}_{1}, \ldots,
+\mathbf{v}_{m} \in \mathbf{R}^{m}\)</span> 是一组基底向量, <span
+class="math inline">\(\left(x^{1}, \ldots, x^{m}\right)\)</span>
+是相应的坐标, 即 <span class="math display">\[
+\mathbf{x}-\mathbf{x}^{*}=x^{1} \mathbf{v}_{1}+\cdots+x^{m}
+\mathbf{v}_{m}
+\]</span> 此时记 <span class="math display">\[
+\partial_{k} f\left(\mathbf{x}^{*}\right)=\frac{\partial f}{\partial
+x^{k}}\left(\mathbf{x}^{*}\right)=\partial_{\mathbf{v}_{k}}
+f\left(\mathbf{x}^{*}\right)=\lim _{t \rightarrow 0}
+\frac{f\left(\mathbf{x}^{*}+t
+\mathbf{v}_{k}\right)-f\left(\mathbf{x}^{*}\right)}{t}
+\]</span> 称为映射 <span class="math inline">\(f: E \rightarrow
+\mathbb{R}^{p}\)</span> 在 <span
+class="math inline">\(\mathrm{x}^{*}\)</span> 处对坐标 <span
+class="math inline">\(x^{k}\)</span> 的偏导数。</p>
+<h5 id="映射的可微性和微分">3.映射的可微性和微分</h5>
+<p>设 <span class="math inline">\(E \subseteq \mathbb{R}^{m},
+\mathbf{x}^{*}\)</span> 是 <span class="math inline">\(E\)</span>
+的一个内点。 称 <span class="math inline">\(f: E \rightarrow
+\mathbb{R}^{p}\)</span> 在 <span
+class="math inline">\(\mathrm{x}^{*}\)</span> 处可微,
+如果存在<font color="red">线性映射</font> <span class="math inline">\(L:
+\mathbb{R}^{m} \rightarrow \mathbb{R}^{p}\)</span> (称为 <span
+class="math inline">\(f: E \rightarrow \mathbb{R}^{p}\)</span> 在 <span
+class="math inline">\(\mathbf{x}^{*}\)</span> 处的导数或微分, 记为 <span
+class="math inline">\(\mathrm{D} f\left(\mathbf{x}^{*}\right)\)</span> )
+使得 <span class="math display">\[
+f\left(\mathbf{x}^{*}+\mathbf{v}\right)=f\left(\mathbf{x}^{*}\right)+L(\mathbf{v})+o(\|\mathbf{v}\|),
+\quad \mathbf{v} \rightarrow \mathbf{0} .
+\]</span> （ <span class="math inline">\(p=1\)</span> 时更常称为微分,
+记为 <span class="math inline">\(\mathrm{d}
+f\left(\mathbf{x}^{*}\right)\)</span> ）</p>
+<p>例：对仿射映射 <span class="math inline">\(f(\mathbf{x})=\mathbf{a}+A
+\mathbf{x}\)</span>, 它在任何点处都可微, 且 <span
+class="math display">\[
+\operatorname{Df}(\mathbf{x})=A
+\]</span> 例 (<strong>乘法</strong>的可微性和<strong>Leibniz
+公式</strong>)： 求 <span
+class="math inline">\(h(\mathbf{x})=L_{2}(f(\mathbf{x}),
+g(\mathbf{x}))\)</span> 的微分, 其中 <span
+class="math inline">\(L_{2}\)</span> 是双线性型, <span
+class="math inline">\(f, g\)</span> 可微。</p>
+<p>解： <span class="math display">\[
+\begin{aligned}
+h(\mathbf{x}+\mathbf{v}) &amp;=L_{2}(f(\mathbf{x}+\mathbf{v}),
+g(\mathbf{x}+\mathbf{v})) \\
+&amp;=L_{2}(f(\mathbf{x})+\operatorname{D} f(\mathbf{x})
+\mathbf{v}+o(\mathbf{v}), g(\mathbf{x})+\operatorname{Dg}(\mathbf{x})
+\mathbf{v}+o(\mathbf{v})) \\
+&amp;=h(\mathbf{x})+L_{2}(\operatorname{D} f(\mathbf{x}) \mathbf{v},
+g(\mathbf{x}))+L_{2}(f(\mathbf{x}), \operatorname{Dg}(\mathbf{x})
+\mathbf{v})+o(\mathbf{v}), \quad \mathbf{v} \rightarrow 0
+\end{aligned}
+\]</span> 所以 <span class="math inline">\(h\)</span> 可微, 且 <span
+class="math display">\[
+\mathrm{D} h(\mathbf{x}) \mathbf{v}=L_{2}(\mathrm{D} f(\mathbf{x})
+\mathbf{v}, g(\mathbf{x}))+L_{2}(f(\mathbf{x}), \mathrm{D} g(\mathbf{x})
+\mathbf{v})
+\]</span> 例 <span class="math inline">\(F, G\)</span> 是可微向量场,
+<span class="math inline">\(\langle,\rangle\)</span>
+是<strong>内积</strong>, 求 <span
+class="math inline">\(h(\mathbf{x})=\langle F(\mathbf{x}),
+G(\mathbf{x})\rangle\)</span> 的微分。</p>
+<p>解：由上例知 <span class="math inline">\(h\)</span> 可微, 且 <span
+class="math display">\[
+\begin{aligned}
+\mathrm{d} h(\mathbf{x}) \mathbf{v} &amp;=\langle\mathrm{D}
+F(\mathbf{x}) \mathbf{v}, G(\mathbf{x})\rangle+\langle F(\mathbf{x}),
+\mathrm{D} G(\mathbf{x}) \mathbf{v}\rangle \\
+&amp;=\left\langle\mathbf{v},(\mathrm{D} F(\mathbf{x}))^{T}
+G(\mathbf{x})\right\rangle+\left\langle(\mathrm{D} G(\mathbf{x}))^{T}
+F(\mathbf{x}), \mathbf{v}\right\rangle \\
+&amp;=\left\langle\mathbf{v},(\mathrm{D} F(\mathbf{x}))^{T}
+G(\mathbf{x})+(\mathrm{D} G(\mathbf{x}))^{T} F(\mathbf{x})\right\rangle
+\end{aligned}
+\]</span> （线性代数知识）设 <span class="math inline">\(A:
+\mathbb{R}^{m} \rightarrow \mathbb{R}^{n}\)</span> 是一个线性映射, <span
+class="math inline">\(\langle,\rangle_{m}\)</span> 和 <span
+class="math inline">\(\langle,\rangle_{n}\)</span> 分别是 <span
+class="math inline">\(\mathbb{R}^{m}\)</span> 和 <span
+class="math inline">\(\mathbb{R}^{n}\)</span> 上的内积。定义 <span
+class="math inline">\(A^{T}: \mathbb{R}^{n} \rightarrow
+\mathbb{R}^{m}\)</span> 是线性映射, 满足对任意 <span
+class="math inline">\(\mathbf{x} \in \mathbb{R}^{m}, \mathbf{y} \in
+\mathbb{R}^{n}\)</span> 都有 <span class="math inline">\(\langle A
+\mathbf{x}, \mathbf{y}\rangle_{n}=\left\langle\mathbf{x}, A^{T}
+\mathbf{y}\right\rangle_{n}\)</span> 。</p>
+<p>例 <strong><span class="math inline">\(k\)</span>-重线性型</strong>
+<span class="math inline">\(L_{k}\left(\mathbf{v}_{1}, \ldots,
+\mathbf{v}_{\mathbf{k}}\right)\)</span> 关于 <span
+class="math inline">\(\left(\mathbf{v}_{1}, \ldots,
+\mathbf{v}_{k}\right)\)</span> 是可微函数, 求 <span
+class="math inline">\(L_{k}\)</span> 的微分。 解： <span
+class="math display">\[
+\begin{aligned}
+&amp; L_{k}\left(\mathbf{v}_{1}+\mathbf{w}_{1}, \ldots,
+\mathbf{v}_{k}+\mathbf{w}_{k}\right) \\
+=&amp; L_{k}\left(\mathbf{v}_{1}, \mathbf{v}_{2}, \ldots,
+\mathbf{v}_{k}\right) \\
+&amp;+L_{k}\left(\mathbf{w}_{1}, \mathbf{v}_{2}, \ldots,
+\mathbf{v}_{k}\right)+L_{k}\left(\mathbf{v}_{1}, \mathbf{w}_{2}, \ldots,
+\mathbf{v}_{k}\right)+\cdots+L_{k}\left(\mathbf{v}_{1}, \mathbf{v}_{2},
+\ldots, \mathbf{w}_{k}\right) \\
+&amp;+o(\|\mathbf{w}\|), \quad\|\mathbf{w}\| \rightarrow 0 .
+\end{aligned}
+\]</span> 所以 <span class="math display">\[
+\begin{aligned}
+&amp; \mathrm{D} L_{k}\left(\mathbf{v}_{1}, \ldots,
+\mathbf{v}_{k}\right)\left(\mathbf{w}_{1}, \ldots, \mathbf{w}_{k}\right)
+\\
+=&amp; L_{k}\left(\mathbf{w}_{1}, \mathbf{v}_{2}, \ldots,
+\mathbf{v}_{k}\right)+L_{k}\left(\mathbf{v}_{1}, \mathbf{w}_{2}, \ldots,
+\mathbf{v}_{k}\right)+\cdots+L_{k}\left(\mathbf{v}_{1}, \mathbf{v}_{2},
+\ldots, \mathbf{w}_{k}\right)
+\end{aligned}
+\]</span> 例：<strong>除法（逆）</strong>的可微性。考虑 <span
+class="math inline">\(\operatorname{inv}\)</span> : <span
+class="math inline">\(\mathcal{G L}(m) \rightarrow \mathcal{G L}(m),
+\operatorname{inv}(A)=A^{-1}\)</span> 。证明 <span
+class="math inline">\(\operatorname{inv}\)</span> 是可微映射,
+并求它的微分。</p>
+<p>解：我们已经知道当 <span class="math inline">\(\|B\|&lt;1\)</span>
+时, <span class="math inline">\(I-B\)</span> 可逆, <span
+class="math inline">\((I-B)^{-1}=I+C\)</span>, 且 <span
+class="math inline">\(\|C\| \leq \frac{\|B\|}{1-\|B\|}\)</span> 。由
+<span class="math inline">\((I+C)(I-B)=I\)</span> 得 <span
+class="math inline">\(C=B+C B\)</span> 。于是 <span
+class="math display">\[
+\operatorname{inv}(I-B)=I+C=I+B+C B,
+\]</span> 其中 <span class="math inline">\(\|C B\| \leq\|C\|\|B\| \leq
+\frac{\|B\|^{2}}{1-\|B\|}\)</span>, 所以 <span class="math inline">\(C
+B=o(B) \quad(B \rightarrow 0)\)</span> 。对 <span
+class="math inline">\(A_{0} \in \mathcal{G} \mathcal{L}(m)\)</span>,
+以及 <span class="math inline">\(B \in \mathcal{L}(m)\)</span>, 当 <span
+class="math inline">\(\|B\|&lt;\frac{1}{\left\|A_{0}^{-1}\right\|}\)</span>
+时, <span class="math display">\[
+\begin{aligned}
+\operatorname{inv}\left(A_{0}+B\right)
+&amp;=\left(A_{0}\left(I+A_{0}^{-1}
+B\right)\right)^{-1}=\left(I-A_{0}^{-1} B+o(B)\right) A_{0}^{-1} \\
+&amp;=\operatorname{inv}\left(A_{0}\right)-A_{0}^{-1} B A_{0}^{-1}+o(B)
+.
+\end{aligned}
+\]</span> 因此 <span class="math inline">\(\operatorname{inv}\)</span>
+可微, 且 <span
+class="math inline">\(\operatorname{Dinv}\left(A_{0}\right)(B)=-A_{0}^{-1}
+B A_{0}^{-1}\)</span> 。</p>
+<h5 id="链索法则">4.链索法则</h5>
+<p>定理内容：设 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(\mathbf{x}\)</span> 处可微, <span
+class="math inline">\(g\)</span> 在 <span
+class="math inline">\(\mathbf{y}=f(\mathbf{x})\)</span> 处可微, 则 <span
+class="math inline">\(g \circ f\)</span> 在 <span
+class="math inline">\(\mathbf{x}\)</span> 处可微, 且 <span
+class="math display">\[
+\mathrm{D}(g \circ f)(\mathbf{x})=(\mathrm{Dg})(f(\mathbf{x})) \circ
+\mathrm{D} f(\mathbf{x}) .
+\]</span> 证明. <span class="math display">\[
+\begin{aligned}
+g(\mathbf{y}+\mathbf{w})
+&amp;=g(\mathbf{y})+\operatorname{Dg}(\mathbf{y})
+\mathbf{w}+o(\mathbf{w}) \\
+f(\mathbf{x}+\mathbf{v}) &amp;=f(\mathbf{x})+\operatorname{D}
+f(\mathbf{x}) \mathbf{v}+o(\mathbf{v})
+\end{aligned}
+\]</span> 因此 <span class="math display">\[
+\begin{aligned}
+g(f(\mathbf{x}+\mathbf{v}))
+&amp;=g(\mathbf{y})+\mathrm{Dg}(\mathbf{y})(f(\mathbf{x}+\mathbf{v})-f(\mathbf{x}))+o(f(\mathbf{x}+\mathbf{v})-f(\mathbf{x}))
+\\
+&amp;=g(\mathbf{y})+\mathrm{Dg}(\mathbf{y})(\mathrm{D} f(\mathbf{x})
+\mathbf{v}+o(\mathbf{v}))+o(\mathrm{D} f(\mathbf{x})
+\mathbf{v}+o(\mathbf{v})) \\
+&amp;=g(\mathbf{y})+\mathrm{Dg}(\mathbf{y}) \mathrm{D} f(\mathbf{x})
+\mathbf{v}+o(\mathbf{v})
+\end{aligned}
+\]</span> 例：证明<strong>行列式函数</strong> <span
+class="math inline">\(\operatorname{det}(A)\)</span> 是关于 <span
+class="math inline">\(A\)</span> 的可微函数, 并求它的微分。</p>
+<p>证明：记 <span
+class="math inline">\(\operatorname{col}_{j}(A)\)</span> 为矩阵 <span
+class="math inline">\(A\)</span> 的第 <span
+class="math inline">\(j\)</span> 列, 则 <span
+class="math inline">\(\operatorname{col}_{j}: \mathcal{L}(m) \rightarrow
+\mathbb{R}\)</span> 是线性映射, 从而可微。 <span
+class="math inline">\(\operatorname{det}(A)\)</span> 是关于 <span
+class="math inline">\(\left(\operatorname{col}_{1}(A), \ldots,
+\operatorname{col}_{m}(A)\right)\)</span> 的 <span
+class="math inline">\(m\)</span> 重线性型, 所以 det : <span
+class="math inline">\(\mathcal{L}(m) \rightarrow \mathbb{R}\)</span>
+是可微函数。由链索法则, <span class="math display">\[
+\begin{aligned}
+\operatorname{Ddet}(A) B=&amp;
+\operatorname{det}\left(\operatorname{col}_{1}(B),
+\operatorname{col}_{2}(A), \ldots, \operatorname{col}_{m}(A)\right) \\
+&amp;+\operatorname{det}\left(\operatorname{col}_{1}(A),
+\operatorname{col}_{2}(B), \ldots, \operatorname{col}_{m}(A)\right) \\
+&amp;+\cdots+\operatorname{det}\left(\operatorname{col}_{1}(A),
+\operatorname{col}_{2}(A), \ldots, \operatorname{col}_{m}(B)\right) \\
+=&amp; \sum_{i=1}^{m} \sum_{j=1}^{m}
+B_{i}^{j}\left(A^{*}\right)_{i}^{j}=\sum_{i=1}^{m}
+\sum_{j=1}^{m}\left(A^{* T}\right)_{j}^{i}
+B_{i}^{j}=\sum_{i=1}^{m}\left(A^{* T} B\right)_{i}^{i} \\
+=&amp; \operatorname{tr}\left(A^{* T} B\right)
+\end{aligned}
+\]</span></p>
+<h5 id="微分与方向导数和偏导数">5.微分与方向导数和偏导数</h5>
+<p>PPT 25,26页</p>
+<p>PPT 27,28,29页</p>
 
               
             </div>
