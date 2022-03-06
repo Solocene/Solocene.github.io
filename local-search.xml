@@ -182,7 +182,7 @@
     <link href="/2022/02/22/the-zeroth/"/>
     <url>/2022/02/22/the-zeroth/</url>
     
-    <content type="html"><![CDATA[<p><span class="math display">\[E=mc^2\]</span></p>]]></content>
+    <content type="html"><![CDATA[<p><span class="math display">\[\begin{gathered}\nabla \cdot \mathbf{D}=\rho_{f} \\\nabla \cdot \mathbf{B}=0 \\\nabla \times \mathbf{E}=-\frac{\partial \mathbf{B}}{\partial t} \\\nabla \times \mathbf{H}=\mathbf{J}_{f}+\frac{\partial\mathbf{D}}{\partial t}\end{gathered}\]</span></p>]]></content>
     
     
     
