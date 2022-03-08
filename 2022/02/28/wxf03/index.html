@@ -16,16 +16,16 @@
   <meta name="author" content="Solocene">
   <meta name="keywords" content="">
   
-    <meta name="description" content="这一篇还没有完成……">
+    <meta name="description" content="这一节开始需要熟练地理解和运用线性代数语言，但难度还尚可接受。王老师用了很多严谨但可能比较晦涩的公式写法，为了方便看进行了一些修改。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多元微积分笔记（三）多元函数的导数与微分">
 <meta property="og:url" content="https://solocene.github.io/2022/02/28/wxf03/index.html">
 <meta property="og:site_name" content="意义之树">
-<meta property="og:description" content="这一篇还没有完成……">
+<meta property="og:description" content="这一节开始需要熟练地理解和运用线性代数语言，但难度还尚可接受。王老师用了很多严谨但可能比较晦涩的公式写法，为了方便看进行了一些修改。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://solocene.github.io/img/wp(21).jpg">
 <meta property="article:published_time" content="2022-02-28T03:58:07.000Z">
-<meta property="article:modified_time" content="2022-03-07T14:23:51.422Z">
+<meta property="article:modified_time" content="2022-03-08T14:34:12.996Z">
 <meta property="article:author" content="Solocene">
 <meta property="article:tag" content="math">
 <meta property="article:tag" content="calculus">
@@ -214,7 +214,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          17k 字
+          21k 字
         
       </span>
     
@@ -225,7 +225,7 @@
         
         
         
-          138 分钟
+          179 分钟
         
       </span>
     
@@ -477,10 +477,11 @@ class="math inline">\(\mathrm{x}^{*}\)</span> 处可微,
 如果存在<font color="red">线性映射</font> <span class="math inline">\(L:
 \mathbb{R}^{m} \rightarrow \mathbb{R}^{p}\)</span> (称为 <span
 class="math inline">\(f: E \rightarrow \mathbb{R}^{p}\)</span> 在 <span
-class="math inline">\(\mathbf{x}^{*}\)</span> 处的导数或微分, 记为 <span
-class="math inline">\(\mathrm{D} f\left(\mathbf{x}^{*}\right)\)</span> )
-使得 <span class="math display">\[
-f\left(\mathbf{x}^{*}+\mathbf{v}\right)=f\left(\mathbf{x}^{*}\right)+L(\mathbf{v})+o(\|\mathbf{v}\|),
+class="math inline">\(\mathbf{x}^{*}\)</span> 处的导数或微分,
+记为<font color="red"> <span class="math inline">\(\mathrm{D}
+f\left(\mathbf{x}^{*}\right)\)</span> </font>) 使得 <span
+class="math display">\[
+f\left(\mathbf{x}^{*}+\mathbf{v}\right)=f\left(\mathbf{x}^{*}\right)+L\mathbf{v}+o(\|\mathbf{v}\|),
 \quad \mathbf{v} \rightarrow \mathbf{0} .
 \]</span> （ <span class="math inline">\(p=1\)</span> 时更常称为微分,
 记为 <span class="math inline">\(\mathrm{d}
@@ -736,7 +737,7 @@ f\left(\mathbf{x}^{*}\right) \mathrm{d} x^{k}=\left(\begin{array}{lll}
 \vdots \\
 \mathrm{d} x^{m}
 \end{array}\right)
-\]</span> <strong><span class="math inline">\(\det\)</span>
+\]</span> <strong>例：<span class="math inline">\(\det\)</span>
 函数的导数</strong></p>
 <p>我们已经知道 <span class="math inline">\(\displaystyle D
 \operatorname{det}(A) E_{i, j}=\lim _{t \rightarrow 0}
@@ -754,26 +755,30 @@ class="math inline">\(\det(A+B)\approx\det(A)+\tr(A^{*T}B),B\to0\)</span>
 \]</span></p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;\det(e^{tA})=\det(I+tA+o(t))=1+t\tr(A)-o(t)\\
-&amp;\frac{\rm{d}\det(\it e^{tA})}{\rm d \it t} \\
-=&amp; \ \lim _{s \rightarrow 0} \frac{\operatorname{det}\left(e^{t
+\det(e^{tA})&amp;=\det(I+tA+o(t))=1+t\tr(A)-o(t),t\to 0\\
+\frac{\rm{d}\det(\it e^{tA})}{\rm d \it t} &amp;=
+\lim_{s\to 0}\frac{\det{e^{(t+s)A}}-\det{e^{tA}}}{s}\\
+&amp;= \ \lim _{s \rightarrow 0} \frac{\operatorname{det}\left(e^{t
 A}\right) \operatorname{det}\left(e^{s
 A}\right)-\operatorname{det}\left(e^{t A}\right)}{s}\\
-=&amp; \ \left.\operatorname{det}\left(e^{t A}\right) \frac{d
+&amp;= \ \left.\operatorname{det}\left(e^{t A}\right) \frac{d
 \operatorname{det}\left(e^{s A}\right)}{d
 s}\right|_{s=0}=\operatorname{tr}(A) \operatorname{det}\left(e^{t
-A}\right),
+A}\right)
 \end{aligned}
 \]</span></p>
-<p><span class="math inline">\(\det(\rm{e}^{\it tA})=\rm{e}^{\it
-t\tr(A)}\)</span> （手机相册）</p>
+<p>这是一个一元微分方程，解之得 <span
+class="math inline">\(\det(\rm{e}^{\it tA})=\rm{e}^{\it
+t\tr(A)}\)</span> 。因此 <font color="red"><span
+class="math inline">\(\det(\rm{e}^{\it A})=\rm{e}^{\it
+\tr(A)}\)</span></font> 。</p>
 <h5 id="链锁法则的坐标形式">7.链锁法则的坐标形式</h5>
 <p>由上一小节的结论可以推出，对可微映射 <span class="math display">\[
 \begin{gathered}
 f\left(x^{1}, \ldots, x^{m}\right)=\left(f^{1}\left(x^{1}, \ldots,
 x^{m}\right), \ldots, f^{n}\left(x^{1}, \ldots, x^{m}\right)\right)^{T}
 \\
-D f\left(x^{*}\right)=\left(\begin{array}{ccc}
+D f\left(\mathbf x^{*}\right)\rm{d}\mathbf x=\left(\begin{array}{ccc}
 \partial_{1} f^{1}\left(x^{*}\right) &amp; \cdots &amp; \partial_{m}
 f^{1}\left(x^{*}\right) \\
 \vdots &amp; \ddots &amp; \vdots \\
@@ -824,59 +829,89 @@ y
 \]</span> 所以极坐标变换是可微映射。对此映射求导： <span
 class="math display">\[
 \left(\begin{array}{l}
-\mathrm{d} x(\rho, \theta)(r, \varphi) \\
-\mathrm{d} y(\rho, \theta)(r, \varphi)
+\mathrm{d} x(\rho, \theta)\\
+\mathrm{d} y(\rho, \theta)
 \end{array}\right)=\left(\begin{array}{cc}
 \cos \theta &amp; -\rho \sin \theta \\
 \sin \theta &amp; \rho \cos \theta
 \end{array}\right)\left(\begin{array}{l}
-r \\
-\varphi
+d\rho \\
+d\theta
 \end{array}\right)
-\]</span> 其中 <span class="math inline">\((r,
+\]</span> 其中若 <span class="math inline">\((r,
 \varphi)^{T}=(1,0)^{T}\)</span> 是 <span class="math inline">\((\rho,
 \theta)\)</span> 平面中的沿 <span class="math inline">\(\rho\)</span>
-方向的单位向量,它对应于 <span class="math inline">\((x, y)\)</span>
+方向的单位向量，它对应于 <span class="math inline">\((x, y)\)</span>
 坐标平面中点 <span class="math inline">\((x, y)\)</span>
 处沿<strong>径向</strong>的单位向量 <span class="math inline">\((\cos
 \theta, \sin \theta)^{T}=(\dfrac{x}{\sqrt{x^{2}+y^{2}}},
-\dfrac{y}{\sqrt{x^{2}+y^{2}}})^{T}\)</span>；<span
+\dfrac{y}{\sqrt{x^{2}+y^{2}}})^{T}\)</span>；若 <span
 class="math inline">\((r, \varphi)^{T}=(0,1)^{T}\)</span> 是 <span
 class="math inline">\((\rho, \theta)\)</span> 平面中的沿 <span
-class="math inline">\(\theta\)</span> 方向的单位向量, 它对应于 <span
+class="math inline">\(\theta\)</span> 方向的单位向量，则它对应于 <span
 class="math inline">\((x, y)\)</span> 坐标平面中点 <span
 class="math inline">\((x, y)\)</span> 处沿<strong>切向</strong>的向量
 <span class="math inline">\(\rho(-\sin \theta, \cos \theta)^{T}=(-y,
 x)^{T}\)</span> 。</p>
 <p><strong>从直角坐标到极坐标</strong></p>
-<p>（39）</p>
-<p><strong>微分在不同坐标系下的形式</strong></p>
+<p>类似的， 在半平面 <span class="math inline">\(\left\{(x, y) \mid
+x_{0} x+y_{0} y&gt;0\right\}\)</span> 中可以定义 <span
+class="math inline">\(r(x, y)=\sqrt{x^{2}+y^{2}}, \quad \theta(x,
+y)=\theta_{0}+\arccos \dfrac{x_{0} x+y_{0} y}{\sqrt{x_{0}^{2}+y_{0}^{2}}
+\sqrt{x^{2}+y^{2}}}\)</span> ，显然两者都是可微的。有 <span
+class="math display">\[
+\left(\begin{array}{l}
+\mathrm{d} r(x, y) \\
+\mathrm{d} \theta(x, y)
+\end{array}\right)=\left(\begin{array}{cc}
+\dfrac{x}{\sqrt{x^{2}+y^{2}}}&amp; \dfrac{y}{\sqrt{x^{2}+y^{2}}} \\
+-\dfrac{y}{y^2-x^2} &amp; \dfrac{x}{y^2-x^2}
+\end{array}\right)\left(\begin{array}{l}
+\mathrm{d}x \\
+\mathrm{d}y
+\end{array}\right)\\
+\]</span> <strong>微分在不同坐标系下的形式</strong></p>
 <p>如果 <span class="math inline">\(f(x, y)\)</span>
 是直角坐标系下的可微函数, 则 <span class="math inline">\(g(\rho,
 \varphi)=f(\rho \cos \theta, \rho \sin \theta)\)</span>
 是极坐标系下的可微函数, 则 <span class="math display">\[
 \begin{gathered}
-\mathrm{d} g(\rho, \theta)(r, \varphi)=\mathrm{d} f(\rho \cos \theta,
-\rho \sin \theta)\left(\begin{array}{l}
+\mathrm{d} g(\rho, \theta)\left(\begin{array}{l}
+d\rho \\
+d\theta
+\end{array}\right)=\mathrm{d} f(\rho \cos \theta, \rho \sin
+\theta)\left(\begin{array}{l}
 \mathrm{d} x \\
-\mathrm{~d} y
+\mathrm{d} y
 \end{array}\right) \\
 \left(\begin{array}{ll}
 \partial_{\rho} g &amp; \partial_{\theta} g
-\end{array}\right)\left(\begin{array}{c}
-r \\
-\varphi
 \end{array}\right)=\left(\begin{array}{ll}
 \partial_{x} f &amp; \partial_{y} f
 \end{array}\right)\left(\begin{array}{cc}
 \cos \theta &amp; -\rho \sin \theta \\
 \sin \theta &amp; \rho \cos \theta
-\end{array}\right)\left(\begin{array}{l}
-r \\
-\varphi
 \end{array}\right)
 \end{gathered}
-\]</span> （42，43，44）</p>
+\]</span> <strong>微分的形式不变性</strong></p>
+<p>设 <span class="math inline">\(g\left(y^{1}, \ldots, y^{n}\right),
+f^{i}\left(x^{1}, \ldots, x^{m}\right) \quad(1 \leq i \leq n)\)</span>
+是可微函数。记 <span class="math inline">\(h\left(x^{1}, \ldots,
+x^{m}\right)=g\left(f^{1}\left(x^{1}, \ldots, x^{m}\right), \ldots,
+f^{n}\left(x^{1}, \ldots, x^{m}\right)\right)\)</span> 一方面，<span
+class="math inline">\(\mathrm{d} h=\sum\limits_{j=1}^{n} \partial_{j} h
+\mathrm{~d} x^{j}\)</span>；另一方面，由链索法则，<span
+class="math inline">\(\mathrm{d}(g \circ f)=\sum\limits_{i=1}^{n}
+\sum\limits_{j=1}^{m} \partial_{y^{i}} g \partial_{x^{j}} f^{i}
+\mathrm{d} x^{j}\)</span></p>
+<p>如果用变量表示函数，比如 <span class="math inline">\(u=g(y),
+y=f(x)\)</span> ，显然有 <span
+class="math inline">\(\mathrm{d}y^i=\partial_{x^{j}} f^{i} \mathrm{d}
+x^{j}\)</span> ，于是： <span class="math display">\[
+\mathrm{d} u=\sum_{j=1}^{m} \partial_{x^{j}} u \mathrm{d}
+x^{j}=\sum_{k=1}^{n} \partial_{y^{k}} u \mathrm{d} y^{k}
+\]</span>
+这叫做可微函数的“<strong>一阶微分的形式不变性</strong>”。（感觉比较显然？）</p>
 <h5 id="微分与梯度">9.微分与梯度</h5>
 <p>设 <span class="math inline">\(L: \mathbb{R}^{m} \rightarrow
 \mathbb{R}\)</span> 是线性函数, $,$ 是 <span
@@ -917,21 +952,74 @@ class="math display">\[
 \partial_{\mathbf{v}}
 f\left(\mathbf{x}^{*}\right)=\left\langle\mathbf{v}, \nabla
 f\left(\mathbf{x}^{*}\right)\right\rangle
-\]</span> 不用正交基的坐标系下的梯度（48，49）</p>
-<p>对于单位正交基 <span class="math inline">\(\mathbf{v}_{1}, \ldots,
-\mathbf{v}_{m}\)</span>, 度量矩阵 <span
-class="math inline">\(\left(\left\langle\mathbf{v}_{i},
-\mathbf{v}_{j}\right\rangle\right)_{m \times m}\)</span> 是单位矩阵,
-在此坐标下, 梯度向量为 <span class="math display">\[
+\]</span> 对以 <span class="math inline">\(\mathbf{v}_{1}, \ldots,
+\mathbf{v}_{m}\)</span> 为基的内积空间，要想求 <span
+class="math inline">\(\nabla f\left(\mathbf{x}^{*}\right)\)</span>
+在这组基底下的坐标。</p>
+<p>设 <span class="math display">\[
+\nabla f\left(\mathbf{x}^{*}\right)=c^{1} \mathbf{v}_{1}+\cdots+c^{m}
+\mathbf{v}_{m}, \quad \mathbf{v}=\xi^{1} \mathbf{v}_{1}+\cdots+\xi^{m}
+\mathbf{v}_{m}
+\]</span> 这里 <span class="math inline">\(\mathbf v\)</span>
+是任意向量。则有 <span class="math inline">\(\left\langle\mathbf{v},
+\nabla f\left(\mathbf{x}^{*}\right)\right\rangle=\sum_{1 \leq i, j \leq
+m} \xi^{i}\left\langle\mathbf{v}_{i}, \mathbf{v}_{j}\right\rangle
+c^{j}=\left(\xi^{1}, \ldots,
+\xi^{m}\right)\left(\left\langle\mathbf{v}_{i},
+\mathbf{v}_{j}\right\rangle\right)_{m \times
+m}\left(\begin{array}{c}c^{1} \\ \vdots \\
+c^{m}\end{array}\right)\)</span> <span class="math inline">\(\mathrm{d}
+f\left(\mathbf{x}^{*}\right) \mathbf{v}=\partial_{1}
+f\left(\mathbf{x}^{*}\right) \xi^{1}+\cdots+\partial_{m}
+f\left(\mathbf{x}^{*}\right) \xi^{m}=\left(\xi^{1}, \ldots,
+\xi^{m}\right)\left(\begin{array}{c}\partial_{1}
+f\left(\mathbf{x}^{*}\right) \\ \vdots \\ \partial_{m}
+f\left(\mathbf{x}^{*}\right)\end{array}\right)\)</span></p>
+<p>由梯度定义知以上两式应对任意 <span class="math inline">\(\xi^{1},
+\ldots, \xi^{m}\)</span> 恒等, 所以 <span class="math display">\[
+\left(\left\langle\mathbf{v}_{i}, \mathbf{v}_{j}\right\rangle\right)_{m
+\times m}\left(\begin{array}{c}
+c^{1} \\
+\vdots \\
+c^{m}
+\end{array}\right)=\left(\begin{array}{c}
+\partial_{1} f\left(\mathbf{x}^{*}\right) \\
+\vdots \\
+\partial_{m} f\left(\mathbf{x}^{*}\right)
+\end{array}\right)
+\]</span> 因此梯度的表达式： <span class="math display">\[
+\begin{aligned}
+\nabla f\left(\mathbf{x}^{*}\right) &amp;=\left(\mathbf{v}_{1}, \ldots,
+\mathbf{v}_{m}\right)\left(\begin{array}{c}
+c^{1} \\
+\vdots \\
+c^{m}
+\end{array}\right)=\left(\mathbf{v}_{1}, \ldots,
+\mathbf{v}_{m}\right)\left(\left\langle\mathbf{v}_{i},
+\mathbf{v}_{j}\right\rangle\right)_{m \times
+m}^{-1}\left(\begin{array}{c}
+\partial_{1} f\left(\mathbf{x}^{*}\right) \\
+\vdots \\
+\partial_{m} f\left(\mathbf{x}^{*}\right)
+\end{array}\right) \\
+&amp;=\sum_{i, j} g^{i j} \partial_{j} f \mathbf{v}_{i}
+\end{aligned}
+\]</span> 其中 <span class="math inline">\(\left(g^{i j}\right)_{m
+\times m}=\left(\left\langle\mathbf{v}_{i},
+\mathbf{v}_{j}\right\rangle\right)_{m \times m}^{-1}\)</span> 。</p>
+<p>对于<strong>单位正交基</strong> <span
+class="math inline">\(\mathbf{v}_{1}, \ldots, \mathbf{v}_{m}\)</span>,
+度量矩阵 <span class="math inline">\(\left(\left\langle\mathbf{v}_{i},
+\mathbf{v}_{j}\right\rangle\right)_{m \times m}\)</span>
+是单位矩阵，在此坐标下，梯度向量为 <span class="math display">\[
 \nabla f\left(\mathbf{x}^{*}\right)=\left(\mathbf{v}_{1}, \ldots,
 \mathbf{v}_{m}\right)\left(\begin{array}{c}
 \partial_{1} f\left(\mathbf{x}^{*}\right) \\
 \vdots \\
 \partial_{m} f\left(\mathbf{x}^{*}\right)
 \end{array}\right)
-\]</span> 例：求可微函数 <span class="math inline">\(f\)</span>
-在<strong>平面极坐标系</strong> <span class="math inline">\((r,
-\theta)\)</span> 下的梯度表示。</p>
+\]</span> ##### 例：<strong>平面极坐标系</strong> <span
+class="math inline">\((r, \theta)\)</span> 下的梯度表示。</p>
 <p>平面极坐标系 <span class="math inline">\((r, \theta)\)</span> 下以
 <span class="math display">\[
 \mathbf{e}_{r}=\left[\begin{array}{c}
@@ -957,7 +1045,52 @@ class="math display">\[
 \partial_{\theta} f
 \end{array}\right)=\partial_{r} f \mathbf{e}_{r}+\frac{1}{r^{2}}
 \partial_{\theta} f \mathbf{e}_{\theta}
-\]</span> （课后练习：导出球坐标的变换规律与梯度）</p>
+\]</span> ##### 课后练习：<strong>球坐标</strong>的变换规律与梯度</p>
+<p>从三维直角坐标向球坐标变换 <span class="math display">\[
+\left(\begin{array}{c}
+r \\
+\theta \\
+\varphi
+\end{array}\right) \mapsto\left(\begin{array}{l}
+x \\ y\\z
+\end{array}\right)=\left(\begin{gathered}
+r \sin\theta\cos\varphi \\
+r \sin \theta\sin\varphi\\
+r\cos\theta
+\end{gathered}\right)
+\]</span> 显然此映射可微，求导可得 <span class="math display">\[
+\left[\begin{gathered}\mathrm{d}x(r,\theta,\varphi)\\\mathrm{d}y(r,\theta,\varphi)\\\mathrm{d}z(r,\theta,\varphi)\end{gathered}\right]=
+\begin{bmatrix}
+\sin\theta\cos\varphi&amp;r\cos\theta\cos\varphi&amp;-r\sin\theta\sin\varphi\\
+\sin\theta\sin\varphi&amp;r\cos\theta\sin\varphi&amp;r\sin\theta\cos\varphi\\
+\cos\theta&amp;-r\sin\theta&amp;0
+\end{bmatrix}\left[\begin{gathered}\mathrm{d}r\\\mathrm{d}\theta\\\mathrm{d}\varphi\end{gathered}\right]
+\]</span> 因此此坐标系的一组基是 <span class="math display">\[
+\mathbf{e}_r=\left[\begin{gathered}\sin\theta\cos\varphi\\ \sin
+\theta\sin\varphi\\
+\cos\theta\end{gathered}\right],
+\mathbf{e}_\theta=\left[\begin{gathered}r\cos\theta\cos\varphi\\ r\cos
+\theta\sin\varphi\\
+-r\sin\theta\end{gathered}\right],
+\mathbf{e}_\varphi=\left[\begin{gathered}-r\sin\theta\sin\varphi\\ r\sin
+\theta\cos\varphi\\
+0\end{gathered}\right]
+\]</span> 有 <span class="math display">\[
+\langle\mathbf{e}_r,\mathbf{e}_r\rangle=1,\langle\mathbf{e}_r,\mathbf{e}_\theta\rangle=0,\langle\mathbf{e}_r,\mathbf{e}_\varphi\rangle=0,\\\langle\mathbf{e}_\theta,\mathbf{e}_\theta\rangle=r^2,\langle\mathbf{e}_\theta,\mathbf{e}_\varphi\rangle=0,\langle\mathbf{e}_\varphi,\mathbf{e}_\varphi\rangle=r^2\sin^2\varphi,
+\]</span> 所以球坐标下的梯度可以表示为 <span class="math display">\[
+\nabla f(r, \theta,\varphi)=\left(\mathbf{e}_{r},
+\mathbf{e}_{\theta},\mathbf{e}_\varphi\right)\left(\begin{array}{ccc}
+1 &amp; 0 &amp;0\\
+0 &amp; r^{2}&amp;0\\
+0&amp;0&amp;r^2\sin^2\varphi
+\end{array}\right)^{-1}\left(\begin{array}{c}
+\partial_{r} f \\
+\partial_{\theta} f\\
+\partial_{\varphi} f
+\end{array}\right)\\=\partial_{r} f \mathbf{e}_{r}+\frac{1}{r^{2}}
+\partial_{\theta} f
+\mathbf{e}_{\theta}+\frac{1}{r^2\sin^2\varphi}f\mathbf{e}_\varphi
+\]</span></p>
 
               
             </div>
