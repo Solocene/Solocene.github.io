@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://solocene.github.io/img/wp(17).jpg">
 <meta property="article:published_time" content="2022-03-07T02:55:41.000Z">
-<meta property="article:modified_time" content="2022-03-09T04:56:15.075Z">
+<meta property="article:modified_time" content="2022-03-09T11:56:49.195Z">
 <meta property="article:author" content="Solocene">
 <meta property="article:tag" content="math">
 <meta property="article:tag" content="calculus">
@@ -214,7 +214,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.9k 字
+          11k 字
         
       </span>
     
@@ -225,7 +225,7 @@
         
         
         
-          75 分钟
+          92 分钟
         
       </span>
     
@@ -583,7 +583,7 @@ class="math display">\[
 &amp;=\partial_{r, r}^{2} f+\frac{1}{r} \partial_{r} f+\frac{1}{r^{2}}
 \partial_{\theta, \theta}^{2} f
 \end{aligned}
-\]</span> （课后练习）</p>
+\]</span> ##### 课后练习</p>
 <p>这种方法稍繁。实际上我们无非是要求 <span
 class="math inline">\(\mathbf{e}_{r} \cdot \partial_{r} \mathbf{e}_{r},\
 \mathbf{e}_{r} \cdot \partial_{r} \mathbf{e}_{\theta}, \
@@ -593,7 +593,8 @@ class="math inline">\(\mathbf{e}_{r} \cdot \partial_{r} \mathbf{e}_{r},\
 j}\right)=\left(\begin{array}{ll}\mathbf{e}_{r} \cdot \mathbf{e}_{r}
 &amp; \mathbf{e}_{r} \cdot \mathbf{e}_{\theta} \\ \mathbf{e}_{\theta}
 \cdot \mathbf{e}_{r} &amp; \mathbf{e}_{\theta} \cdot
-\mathbf{e}_{\theta}\end{array}\right)\)</span> 求导得到：</p>
+\mathbf{e}_{\theta}\end{array}\right)\)</span>
+求导得到。（这是王老师的结论；但我并没有想到如何实现）</p>
 <p>问题：（分离变量法）求 Laplace 方程形如 <span
 class="math inline">\(u(r, \theta)=U(r) V(\theta)\)</span>
 形式的解。</p>
@@ -602,15 +603,53 @@ u=V(\theta)(\partial^2_{r,r}U(r)+\dfrac{1}{r}\partial_r{U(r)})+\dfrac{U(r)}{r^2}
 ，或 <span class="math display">\[
 \frac{1}{U(r)}(r^2\partial^2_{r,r}U(r)+r\partial_r{U(r)})+\frac{1}{V(\theta)}\partial_{\theta,\theta}{V(\theta)}=0
 \]</span> 由于前两项与后一项没有关联，可以设 <span
-class="math inline">\(r^2\partial^2_{r,r}U(r)+r\partial_r{U(r)}=CU(r)\)</span>，
-<span
+class="math inline">\(r^2\partial^2_{r,r}U(r)+r\partial_r{U(r)}=CU(r)\)</span>（这是一个欧拉方程），<span
 class="math inline">\(\partial_{\theta,\theta}{V(\theta)}=-CV(\theta)\)</span>
-，得 <span class="math display">\[
-U(r)=\frac{C\ln^2{r}}{2}+C_1\ln
-r+C_2,V(\theta)=-\frac{C\theta^2}{2}+C_3\theta+C_4
+，解得 <span class="math display">\[
+\begin{gathered}
+\begin{gathered}
+U(r)=k_{1} \cosh (\sqrt{C} \ln r)+ k_{2} \sinh (\sqrt{C} \ln
+r),\\V(\theta)=k_3\cos(\sqrt{C}\theta)+k_4\sin(\sqrt{C}\theta);
+\end{gathered}\quad \text{when~}C&gt;0\\
+\begin{gathered}
+U(r)=k_{1} \cos (\sqrt{C} \ln r)+ k_{2} \sin (\sqrt{C} \ln
+r),\\V(\theta)=k_3\cosh(\sqrt{C}\theta)+k_4\sinh(\sqrt{C}\theta);
+\end{gathered}\quad \text{when~}C&lt;0\\
+U(r)=k_1\ln r+k_2~,~V(\theta)=k_3\theta~;\quad \text{when~}C=0
+\end{gathered}
 \]</span></p>
-<p>问题：试写出在三维柱坐标、球坐标以及任意维数空间中直角坐标系和一般坐标系下Laplace
+<p>因此， <span class="math display">\[
+u(r,\theta)=\left\{\begin{array}{l}(C_1r^C+C_2r^{-C})\cos(C\theta+C_3)\\\cos(C\ln
+r+C_1)(C_2\mathrm{e}^{C\theta}+C_3\mathrm{e}^{-C\theta})\\
+C_1(\ln r+C_2)\theta
+\end{array}\right.
+\]</span>
+问题：试写出在三维柱坐标、球坐标以及任意维数空间中直角坐标系和一般坐标系下Laplace
 算子的坐标形式。</p>
+<p>由上节课的结论可知，球坐标下的梯度算子： <span
+class="math display">\[
+\nabla =\mathbf{e}_{r}\partial_{r}  +\frac{\mathbf{e}_{\theta}}{r^{2}}
+\partial_{\theta}  +\frac{\mathbf{e}_\varphi}{r^{2} \sin ^{2} \varphi}
+\partial_\varphi
+\]</span> 且有 <span class="math display">\[
+\begin{gathered}
+\partial_r\mathbf{e}_r=0,\partial_r\mathbf{e}_\theta=\frac{\mathbf{e}_\theta}{r},\partial_r\mathbf{e}_\varphi=\frac{\mathbf{e}_\varphi}{r}\\
+\partial_\theta\mathbf{e}_r=\frac{\mathbf{e}_\theta}{r},\partial_\theta\mathbf{e}_\theta=-r\mathbf{e}_r,\partial_\theta\mathbf{e}_\varphi=\cot\theta\mathbf{e}_\varphi\\
+\partial_\varphi\mathbf{e}_r=\frac{\mathbf{e}_\varphi}{r},\partial_\varphi\mathbf{e}_\theta=\cot\theta\mathbf{e}_\varphi,\partial_\varphi\mathbf{e}_\varphi=\begin{bmatrix}-r\sin\theta\cos\varphi\\-r\sin\theta\sin\varphi\\
+0\end{bmatrix}
+\end{gathered}
+\]</span> 故对球坐标系 <span class="math display">\[
+\begin{aligned}
+\Delta&amp;=\nabla\cdot\nabla\\
+&amp;=(\mathbf{e}_{r}\partial_{r}  +\frac{\mathbf{e}_{\theta}}{r^{2}}
+\partial_{\theta}  +\frac{\mathbf{e}_\varphi}{r^{2} \sin ^{2} \varphi}
+\partial_\varphi)\cdot(\mathbf{e}_{r}\partial_{r}  +\frac{\mathbf{e}_{\theta}}{r^{2}}
+\partial_{\theta}  +\frac{\mathbf{e}_\varphi}{r^{2} \sin ^{2} \varphi}
+\partial_\varphi)\\
+&amp;=\partial_{r,r}+0+0+\frac{1}{r}\partial_r+\frac{1}{r^2}\partial_{\theta,\theta}+0+\frac{1}{r}\partial_r+\frac{\cot\theta}{r^2}\partial_\theta+\frac{1}{r^2\sin^2\varphi}\partial_{\varphi,\varphi}\\
+&amp;=\partial_{r,r}+\frac{2}{r}\partial_r+\frac{1}{r^2}\partial_{\theta,\theta}+\frac{\cot\theta}{r^2}\partial_\theta+\frac{1}{r^2\sin^2\varphi}\partial_{\varphi,\varphi}
+\end{aligned}
+\]</span></p>
 <h5 id="taylor-展开">3. Taylor 展开</h5>
 <p>设 <span class="math inline">\(f: E \rightarrow \mathbb{R}\)</span>
 是一个 <span class="math inline">\(\mathscr{C}^{k}\)</span> 函数。则
