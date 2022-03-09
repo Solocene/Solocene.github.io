@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://solocene.github.io/img/wp(21).jpg">
 <meta property="article:published_time" content="2022-02-28T03:58:07.000Z">
-<meta property="article:modified_time" content="2022-03-08T14:34:12.996Z">
+<meta property="article:modified_time" content="2022-03-09T00:50:50.047Z">
 <meta property="article:author" content="Solocene">
 <meta property="article:tag" content="math">
 <meta property="article:tag" content="calculus">
@@ -214,7 +214,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          21k 字
+          22k 字
         
       </span>
     
@@ -225,7 +225,7 @@
         
         
         
-          179 分钟
+          180 分钟
         
       </span>
     
@@ -1023,9 +1023,15 @@ class="math inline">\((r, \theta)\)</span> 下的梯度表示。</p>
 <p>平面极坐标系 <span class="math inline">\((r, \theta)\)</span> 下以
 <span class="math display">\[
 \mathbf{e}_{r}=\left[\begin{array}{c}
+\partial_r{x} \\
+\partial_r{y}
+\end{array}\right]=\left[\begin{array}{c}
 \cos \theta \\
 \sin \theta
 \end{array}\right], \quad \mathbf{e}_{\theta}=\left[\begin{array}{c}
+\partial_\theta{x} \\
+\partial_\theta{y}
+\end{array}\right]=\left[\begin{array}{c}
 -r \sin \theta \\
 r \cos \theta
 \end{array}\right]
@@ -1076,9 +1082,9 @@ r\cos\theta
 \theta\cos\varphi\\
 0\end{gathered}\right]
 \]</span> 有 <span class="math display">\[
-\langle\mathbf{e}_r,\mathbf{e}_r\rangle=1,\langle\mathbf{e}_r,\mathbf{e}_\theta\rangle=0,\langle\mathbf{e}_r,\mathbf{e}_\varphi\rangle=0,\\\langle\mathbf{e}_\theta,\mathbf{e}_\theta\rangle=r^2,\langle\mathbf{e}_\theta,\mathbf{e}_\varphi\rangle=0,\langle\mathbf{e}_\varphi,\mathbf{e}_\varphi\rangle=r^2\sin^2\varphi,
+\begin{gathered}\langle\mathbf{e}_r,\mathbf{e}_r\rangle=1,\langle\mathbf{e}_r,\mathbf{e}_\theta\rangle=0,\langle\mathbf{e}_r,\mathbf{e}_\varphi\rangle=0,\\\langle\mathbf{e}_\theta,\mathbf{e}_\theta\rangle=r^2,\langle\mathbf{e}_\theta,\mathbf{e}_\varphi\rangle=0,\langle\mathbf{e}_\varphi,\mathbf{e}_\varphi\rangle=r^2\sin^2\varphi\end{gathered}
 \]</span> 所以球坐标下的梯度可以表示为 <span class="math display">\[
-\nabla f(r, \theta,\varphi)=\left(\mathbf{e}_{r},
+\begin{gathered}\nabla f(r, \theta,\varphi)=\left(\mathbf{e}_{r},
 \mathbf{e}_{\theta},\mathbf{e}_\varphi\right)\left(\begin{array}{ccc}
 1 &amp; 0 &amp;0\\
 0 &amp; r^{2}&amp;0\\
@@ -1089,7 +1095,7 @@ r\cos\theta
 \partial_{\varphi} f
 \end{array}\right)\\=\partial_{r} f \mathbf{e}_{r}+\frac{1}{r^{2}}
 \partial_{\theta} f
-\mathbf{e}_{\theta}+\frac{1}{r^2\sin^2\varphi}f\mathbf{e}_\varphi
+\mathbf{e}_{\theta}+\frac{1}{r^2\sin^2\varphi}f\mathbf{e}_\varphi\end{gathered}
 \]</span></p>
 
               
