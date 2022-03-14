@@ -16,25 +16,25 @@
   <meta name="author" content="Solocene">
   <meta name="keywords" content="">
   
-    <meta name="description" content="多元微积分并不是一元微积分的简单推广，而是多了许多独特的性质。这节课向我们充分地展示了这一点。">
+    <meta name="description" content="这一篇还没有完成……">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多元微积分笔记（二）多元函数的极限">
-<meta property="og:url" content="https://solocene.github.io/2022/02/28/wxf02/index.html">
+<meta property="og:title" content="多元微积分笔记（五）极值、临界点与函数凹凸性">
+<meta property="og:url" content="https://solocene.github.io/2022/03/14/wxf05/index.html">
 <meta property="og:site_name" content="意义之树">
-<meta property="og:description" content="多元微积分并不是一元微积分的简单推广，而是多了许多独特的性质。这节课向我们充分地展示了这一点。">
+<meta property="og:description" content="这一篇还没有完成……">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://solocene.github.io/img/wp(25).png">
-<meta property="article:published_time" content="2022-02-28T01:50:00.000Z">
-<meta property="article:modified_time" content="2022-03-13T14:18:18.930Z">
+<meta property="og:image" content="https://solocene.github.io/img/wp(19).jpg">
+<meta property="article:published_time" content="2022-03-14T02:46:47.000Z">
+<meta property="article:modified_time" content="2022-03-14T03:14:59.537Z">
 <meta property="article:author" content="Solocene">
 <meta property="article:tag" content="math">
 <meta property="article:tag" content="calculus">
 <meta property="article:tag" content="note">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://solocene.github.io/img/wp(25).png">
+<meta name="twitter:image" content="https://solocene.github.io/img/wp(19).jpg">
   
   
-  <title>多元微积分笔记（二）多元函数的极限 - 意义之树</title>
+  <title>多元微积分笔记（五）极值、临界点与函数凹凸性 - 意义之树</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -185,12 +185,12 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/wp(25).png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/wp(19).jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
-          <span id="subtitle" title="多元微积分笔记（二）多元函数的极限">
+          <span id="subtitle" title="多元微积分笔记（五）极值、临界点与函数凹凸性">
             
           </span>
         </div>
@@ -202,8 +202,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-02-28 09:50" pubdate>
-          2022年2月28日 上午
+        <time datetime="2022-03-14 10:46" pubdate>
+          2022年3月14日 上午
         </time>
       </span>
     
@@ -214,7 +214,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.2k 字
+          1.9k 字
         
       </span>
     
@@ -225,7 +225,7 @@
         
         
         
-          52 分钟
+          16 分钟
         
       </span>
     
@@ -339,7 +339,7 @@
       
         <a href="/2022/02/28/wxf02/" title="多元微积分笔记（二）多元函数的极限"
            class="list-group-item list-group-item-action
-           active">
+           ">
           <span class="category-post">多元微积分笔记（二）多元函数的极限</span>
         </a>
       
@@ -348,7 +348,7 @@
       
         <a href="/2022/03/14/wxf05/" title="多元微积分笔记（五）极值、临界点与函数凹凸性"
            class="list-group-item list-group-item-action
-           ">
+           active">
           <span class="category-post">多元微积分笔记（五）极值、临界点与函数凹凸性</span>
         </a>
       
@@ -385,270 +385,81 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">多元微积分笔记（二）多元函数的极限</h1>
+            <h1 style="display: none">多元微积分笔记（五）极值、临界点与函数凹凸性</h1>
             
             <div class="markdown-body">
               
-              <h3 id="第二讲-多元函数的极限"><strong>第二讲
-多元函数的极限</strong></h3>
-<h5 id="聚点和极限的定义">1.聚点和极限的定义</h5>
-<p>设 <span class="math inline">\(E \subseteq \mathbb{R}^{m}\)</span>,
-称 <span class="math inline">\(\mathbf{x}^{*} \in
-\mathbb{R}^{m}\)</span> 是 <span class="math inline">\(E\)</span>
-的一个聚点, 如果 <span class="math display">\[
-\forall \delta&gt;0, \exists \mathbf{x} \in E \text { 使得:
-}0&lt;\left\|\mathbf{x}-\mathbf{x}^{*}\right\|&lt;\delta \text {. }
-\]</span> 设 <span class="math inline">\(\mathbf{x}^{*}\)</span> 是
-<span class="math inline">\(E\)</span> 的一个聚点。 对 <span
-class="math inline">\(A \in \mathbb{R}^{p}\)</span> 和映射 <span
-class="math inline">\(f: E \rightarrow \mathbb{R}^{p}\)</span>，<span
-class="math inline">\(\lim\limits _{x \rightarrow x^{*}} f(x)=A\)</span>
-，指: <span class="math inline">\(\forall \varepsilon&gt;0, \exists
-\delta_{\varepsilon}&gt;0\)</span> 使得: <span
-class="math inline">\(\forall \mathbf{x} \in E,
-0&lt;\left\|\mathbf{x}-\mathbf{x}^{*}\right\|&lt;\delta_{\varepsilon}
-\Rightarrow\|f(\mathbf{x})-A\|&lt;\varepsilon\)</span>.</p>
-<p><strong>注意，聚点和极限的定义都是“挖心”的。</strong></p>
-<ul>
-<li><p>在有限维空间中,
-函数存在极限以及极限的值都与范数的选择无关。</p></li>
-<li><p><span class="math inline">\(\mathbf{x}^{*}\)</span> 是 <span
-class="math inline">\(E\)</span> 的一个聚点当且仅当存在 <span
-class="math inline">\(E\)</span> 中点列 <span
-class="math inline">\(\left\{\mathbf{x}_{n}\right\}\)</span> 使得<span
-class="math inline">\(\mathbf{x}_{n} \neq \mathbf{x}^{*}\)</span>, 且
-<span class="math inline">\(\lim\limits _{n \rightarrow+\infty}
-\mathbf{x}_{n}=\mathbf{x}^{*}\)</span></p></li>
-<li><p>设 <span class="math inline">\(\mathbf{x}^{*}\)</span> 是 <span
-class="math inline">\(E\)</span> 的一个聚点, <span
-class="math inline">\(A \in \mathbb{R}^{p}\)</span> 。则 <span
-class="math inline">\(\lim\limits _{\mathbf{x} \rightarrow
-\mathbf{x}^{*}} f(\mathbf{x})=A\)</span> 当且仅当</p></li>
-</ul>
-<p><span class="math display">\[
-\tilde{f}(\mathbf{x})= \begin{cases}f(\mathbf{x}), &amp; \mathbf{x} \in
-E \backslash\left\{\mathbf{x}^{*}\right\} \\ A, &amp;
-\mathbf{x}=\mathbf{x}^{*}\end{cases}
-\]</span> ​ 在 <span class="math inline">\(x^{*}\)</span> 处连续。</p>
-<ul>
-<li><span class="math inline">\(f\)</span> 在 <span
-class="math inline">\(\mathbf{x}^{*}\)</span> 处连续当且仅当 <span
-class="math inline">\(\lim\limits _{\mathbf{x} \rightarrow
-\mathbf{x}^{*}} f(\mathbf{x})=f\left(\mathbf{x}^{*}\right.\)</span>
-。</li>
-<li>称 <span class="math inline">\(\mathbf{x}^{*}\)</span> 为 <span
-class="math inline">\(f\)</span> 的一个<strong>可去间断点</strong>, 如果
-<span class="math inline">\(\lim\limits _{\mathbf{x} \rightarrow
-\mathbf{x}^{*}} f(\mathbf{x})\)</span> 存在, 但 <span
-class="math inline">\(f\)</span> 在 <span
-class="math inline">\(x^{*}\)</span> 处不连续。</li>
-<li>极限 <span class="math inline">\(\lim\limits _{\mathbf{x}
-\rightarrow \mathbf{x}^{*}} f(\mathbf{x})\)</span> 是由 <span
-class="math inline">\(f\)</span> 在 <span
-class="math inline">\(\mathbf{x}^{*}\)</span> 周边其他 <span
-class="math inline">\(\mathbf{x}\)</span> 处的取值决定的, 与 <span
-class="math inline">\(f\)</span> 在 <span
-class="math inline">\(\mathbf{x}^{*}\)</span>
-处的值（甚至是否有定义）无关。</li>
-</ul>
-<h5 id="极限的运算性质">2.极限的运算性质</h5>
-<p><strong>复合极限</strong>：设 <span class="math inline">\(E \subseteq
-\mathbb{R}^{m}, F \subseteq \mathbb{R}^{n}, f: E \rightarrow
-\mathbb{R}^{n}, g: F \rightarrow \mathbb{R}^{p}\)</span> 。设 <span
-class="math inline">\(\mathbf{a}\)</span> 是 <span
-class="math inline">\(E\)</span> 的聚点, <span
-class="math inline">\(\mathbf{b}\)</span> 是 <span
-class="math inline">\(F\)</span> 的聚点, <span
-class="math inline">\(\lim\limits _{\mathbf{x} \rightarrow \mathbf{a}}
-f(\mathbf{x})=\mathbf{b}\)</span> 。若</p>
-<ul>
-<li><p><span class="math inline">\(g\)</span> 在 <span
-class="math inline">\(\mathbf{b}\)</span> 处连续, <span
-class="math inline">\(A=g(\mathbf{b})\)</span>; 或者</p></li>
-<li><p><span class="math inline">\(\lim\limits _{\mathbf{y} \rightarrow
-\mathbf{b}} g(\mathbf{y})=A\)</span>, <font color="red">且 <span
-class="math inline">\(f(\mathbf{x}) \neq \mathbf{b}\)</span> (当 <span
-class="math inline">\(\mathbf{x} \rightarrow \mathbf{a}\)</span>
-时)</font>，则 <span class="math inline">\(\lim\limits _{\mathbf{x}
-\rightarrow \mathbf{a}} g(f(\mathbf{x}))=A\)</span> 。</p></li>
-</ul>
-<p>即极限的传递现在需要额外的条件，本质上是“挖心”引起的。</p>
-<h5 id="应用求多元函数的极限">应用：求多元函数的极限</h5>
-<p>如果发现极限存在，通用做法是将其表示为复合函数，并说明它满足“挖心”条件，然后求其极限。</p>
-<p>如果发现极限不存在，证明沿不同的曲线求出的极限不同即可。</p>
-<p>需要注意，某些在一元微积分中的经验到了多元微积分并不成立。比如求
-<span class="math inline">\(f(x,y)=\dfrac{x^2+y^2}{x+y}\)</span> 在
-<span class="math inline">\((x,y)\to(0,0)\)</span>
-时的极限，我们可能会认为二次项比一次项更快趋于 <span
-class="math inline">\(0\)</span> ，但实际上这个极限并不存在！</p>
-<h5 id="在无穷远处的极限">3.在无穷远处的极限</h5>
-<p>设 <span class="math inline">\(E \subseteq \mathbb{R}^{m}\)</span>
-是无界子集，<span class="math inline">\(\lim\limits _{x \rightarrow
-\infty} f(\mathbf{x})=A\)</span> ，指 <span
-class="math inline">\(\forall \varepsilon&gt;0, \exists
-M_{\varepsilon}&gt;0\)</span> 使得: <span class="math inline">\(\forall
-\mathbf{x} \in E,\|\mathbf{x}\|&gt;M_{\varepsilon}
-\Rightarrow\|f(\mathbf{x})-A\|&lt;\varepsilon\)</span>.</p>
-<p>除了这种范数趋近无穷的方式，还有其他趋于无穷的方法，如<span
-class="math inline">\(\lim\limits _{x \rightarrow a, y
-\rightarrow-\infty} f(x, y)\)</span> 。</p>
-<p>对这种极限，由于 <span class="math inline">\(\lim\limits _{x
-\rightarrow a, y \rightarrow-\infty} f(x, y)=\lim\limits _{x \rightarrow
-a, u \rightarrow 0^-} f(x,g(u))\)</span> ，其中 <span
-class="math inline">\(u=\dfrac{1}{y}\)</span>
-，可以转化为常规的极限问题。（这种处理方式可以推广为“极球”模式）</p>
-<p>为了统一各种极限, 我们可以引入 “邻域” 和 “去心邻域” 的概念, 从而
-<span class="math inline">\(\lim\limits _{\mathbf{x} \rightarrow
-\mathbf{a}} f(\mathbf{x})=A\)</span> 的意义是: 对 <span
-class="math inline">\(A\)</span> 的任何邻域 <span
-class="math inline">\(V\)</span>, 存在 <span
-class="math inline">\(\mathbf{a}\)</span> 的去心邻域 <span
-class="math inline">\(U\)</span> 使得对任意 <span
-class="math inline">\(\mathbf{x} \in U\)</span>, <span
-class="math inline">\(f(\mathbf{x}) \in V\)</span> 。</p>
-<h5 id="2.4">
-4.累次极限
-</h5>
-<p>对多元函数的不同自变量<strong>依次逐个</strong>取极限得到形如 <span
+              <h2 id="第五讲-极值临界点与函数凹凸性">第五讲
+极值、临界点与函数凹凸性</h2>
+<h4
+id="临界点及其分类二阶微分hesse-矩阵">1.临界点及其分类，二阶微分，Hesse
+矩阵</h4>
+<p>对 <span class="math inline">\(\mathscr{C}^{2}\)</span> 函数 <span
+class="math inline">\(f\)</span>, 其二阶微分 <span
 class="math display">\[
-\lim _{x \rightarrow a} \lim _{y \rightarrow b} f(x, y)
-\]</span> 的极限, 叫累次极限。对具有 <span
-class="math inline">\(m\)</span> 个自变量的函数, 不同顺序的累次极限有
-<span class="math inline">\(m !\)</span> 种。
-<strong>累次极限的值是否与取极限的先后顺序有关？</strong>这是一个重要的问题。</p>
-<p>我们发现有 <span
-class="math inline">\(f(x,y)=\dfrac{x^2-y^2}{x^2+y^2}\)</span>
-这类存在累次级限但不存在二重极限的函数，也有<span
-class="math inline">\(E=\{(x, y) \in \mathbb{R}^{2}|\dfrac{|x|}{2} \leq|
-y|\leq 2| x |\}, f: E \rightarrow \mathbb{R},f(x, y)=1\)</span>
-这类不存在累次级限但存在二重极限的函数。事实上，有</p>
-<p><strong>定理：</strong>如果 <span class="math inline">\(\lim\limits
-_{(x, y) \rightarrow(a, b)} f(x, y)\)</span> 和累次极限 <span
-class="math inline">\(\lim\limits _{y \rightarrow b} \lim\limits _{x
-\rightarrow a} f(x, y)\)</span> 都存在, 则二者的值相等。</p>
-<p><a href="#p1">证明</a></p>
-<p>推论：如果 <span class="math inline">\(\lim\limits _{(x, y)
-\rightarrow(a, b)} f(x, y)\)</span> 和累次极限 <span
-class="math inline">\(\lim\limits _{y \rightarrow b} \lim\limits _{x
-\rightarrow a} f(x, y)\)</span> 和 <span
-class="math inline">\(\lim\limits _{x \rightarrow a} \lim\limits _{y
-\rightarrow b} f(x, y)\)</span> 都存在，则三者的值相等，从而 <span
+\mathrm{d}^{2} f\left(\mathbf{x}_{0}\right)(\mathbf{v},
+\mathbf{w})=\sum_{1 \leq i, j \leq m} \partial_{i, j}^{2}
+f\left(\mathbf{x}_{0}\right) v^{i} w^{j}=\mathbf{v}^{T}
+H_{f}\left(\mathbf{x}_{0}\right) \mathbf{w}
+\]</span> 是一个对称双线性型, 矩阵 <span
+class="math inline">\(H_{f}\left(\mathbf{x}_{0}\right)=\left(\partial_{i,
+j}^{2} f\left(\mathbf{x}_{0}\right)\right)_{m \times m}\)</span>
+是一个对称 的 <span class="math inline">\(m\)</span> 阶方阵，称为 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(\mathbf{x}_{0}\)</span> 处的 <strong>Hesse
+矩阵</strong>。 于是二阶 Taylor 展开可以写成 <span
 class="math display">\[
-\lim _{y \rightarrow b} \lim _{x \rightarrow a} f(x, y)=\lim _{x
-\rightarrow a} \lim _{y \rightarrow b} f(x, y)
-\]</span></p>
-<h5 id="2.5">
-5.无穷小函数的阶
-</h5>
-<p>大 <span class="math inline">\(O\)</span> 和小 <span
-class="math inline">\(o\)</span>
-的定义几乎与一元微积分相同，同样是用范数定义的。这里重写一遍：</p>
-<p>称当 <span class="math inline">\(\mathbf{x} \rightarrow
-\mathbf{a}\)</span> 时, <span class="math inline">\(f=O(g)\)</span>,
-如果存在 <span class="math inline">\(\mathbf{a}\)</span> 的去心邻域
-<span class="math inline">\(U\)</span> 和常数 <span
-class="math inline">\(M&gt;0\)</span>, 使得对任意 <span
-class="math inline">\(\mathrm{x} \in U\)</span>, 都有 <span
-class="math inline">\(\|f(\mathrm{x})\| \leq M\|g(\mathrm{x})\|\)</span>
-。</p>
-<p>称当 <span class="math inline">\(\mathbf{x} \rightarrow
-\mathbf{a}\)</span> 时, <span class="math inline">\(f=o(g)\)</span>,
-如果对任意 <span class="math inline">\(\varepsilon&gt;0\)</span>, 存在
-<span class="math inline">\(\mathbf{a}\)</span> 的去心邻域 <span
-class="math inline">\(U_{\varepsilon}\)</span>, 使得对任意 <span
-class="math inline">\(\mathbf{x} \in U_{\varepsilon}\)</span>, 都有
-<span class="math inline">\(\|f(\mathbf{x})\| \leq
-\varepsilon\|g(\mathbf{x})\|\)</span> 。</p>
-<p>称当 <span class="math inline">\(\mathbf{x} \rightarrow
-\mathbf{a}\)</span> 时, <span class="math inline">\(f, g\)</span>
-是同阶的, 如果 <span class="math inline">\(f=O(g)\)</span> 且 <span
-class="math inline">\(g=O(f)\)</span> 。</p>
-<p>称当 <span class="math inline">\(\mathbf{x} \rightarrow
-\mathbf{a}\)</span> 时, <span class="math inline">\(f, g\)</span>
-是等价的, 如果 <span class="math inline">\(g=f+o(f)\)</span> 。</p>
-<p>同样的，这里的定义与范数选取无关。事实上，根据范数的性质，<span
-class="math inline">\(\mathbb R^m\)</span> 上所有范数都是同阶的。</p>
-<p>尽管定义看上去差不多，多维空间中阶的概念远比一维情况要复杂。比如，不难证明:
-当 <span class="math inline">\((x, y) \rightarrow(0,0)\)</span>
-时，<span class="math inline">\(a x+b y\)</span> 与 <span
-class="math inline">\(c x+d y\)</span> 是同阶无穷小，当且仅当 <span
-class="math inline">\(a=b=c=d=0\)</span> 或者 <span
-class="math inline">\((a, b)\)</span> 与 <span class="math inline">\((c,
-d)\)</span> 是两个线性相关的非零向量。</p>
-<p>可以看到，即使是最简单的多项式，它们作为无穷小量的阶数也不能简单地由其次数决定。</p>
-<p>例：对于对称矩阵 <span class="math inline">\(A\)</span>, 二次型 <span
-class="math inline">\(\mathbf{x}^{T} A \mathbf{x}\)</span> 与 <span
-class="math inline">\(\|\mathbf{x}\|^{2}\)</span> 同阶, 当且仅当 <span
-class="math inline">\(A\)</span> 是正定矩阵或者负定矩阵。<a
-href="#p2">证明</a></p>
-<p>另外，在多维情况下，同阶无穷小的比值极限不一定存在了。比如，当 <span
-class="math inline">\((x, y) \rightarrow(0,0)\)</span> 时, <span
-class="math inline">\(\sqrt{2 x^{2}+y^{2}}\)</span> 和 <span
-class="math inline">\(\sqrt{x^{2}+y^{2}}\)</span> 是同阶无穷小: <span
-class="math display">\[
-\sqrt{x^{2}+y^{2}} \leq \sqrt{2 x^{2}+y^{2}} \leq \sqrt{2}
-\sqrt{x^{2}+y^{2}} .
-\]</span> 但极限 <span class="math display">\[
-\lim _{(x, y) \rightarrow(0,0)} \frac{\sqrt{2
-x^{2}+y^{2}}}{\sqrt{x^{2}+y^{2}}}
-\]</span> 不存在。</p>
-<h4 id="证明区">证明区</h4>
-<h6 id="p1">
-证明2.4
-</h6>
-<p>该命题可以表述成：极限 <span class="math inline">\(H(y)=\lim\limits
-_{x \rightarrow a} f(x, y)\)</span> 对任意 <span class="math inline">\(y
-\neq b\)</span> 存在； 极限 <span class="math inline">\(G(x)=\lim\limits
-_{y \rightarrow b} f(x, y)\)</span> 对任意 <span
-class="math inline">\(x\)</span> 存在，且存在 <span
-class="math inline">\(\delta_{0}&gt;0\)</span> 使得：对任意 <span
-class="math inline">\(\varepsilon&gt;0\)</span>，存在 <span
-class="math inline">\(\delta_{2}(\varepsilon)&gt;0\)</span> 使得对任意
-<span
-class="math inline">\(0&lt;|y-b|&lt;\delta_{2}(\varepsilon)\)</span>
-以及任意 <span class="math inline">\(0&lt;|x-a|&lt;\delta_{0}\)</span>
-都有 <span class="math inline">\(|f(x,
-y)-G(x)|&lt;\varepsilon\)</span>；</p>
-<p>则<span class="math inline">\(\lim\limits _{x \rightarrow a, y
-\rightarrow b} f(x, y)=\lim\limits _{y \rightarrow b} \lim\limits _{x
-\rightarrow a} f(x, y)=\lim\limits _{x \rightarrow a} \lim \limits_{y
-\rightarrow b} f(x, y)\)</span> （这些极限都存在）</p>
-<p>证明：设 <span class="math inline">\(\lim\limits _{x \rightarrow a, y
-\rightarrow b} f(x, y)=A\)</span> ，<span
-class="math inline">\(\lim\limits _{x \rightarrow a} \lim \limits_{y
-\rightarrow b} f(x, y)=B\)</span> 。根据条件有：</p>
-<p>存在 <span
-class="math inline">\(\delta=\min\{\delta_0,\delta_2(\varepsilon)\}&gt;0\)</span>
-使得对任意 <span class="math inline">\(\varepsilon&gt;0\)</span> ，任意
-<span class="math inline">\(0&lt;||(x,y)-(a,b)||&lt;\delta\)</span> 都有
-<span class="math inline">\(|f(x,y)-B|&lt;\varepsilon\)</span>
-。同时存在 <span class="math inline">\(\delta^{&#39;}&gt;0\)</span>
-使得对任意 <span class="math inline">\(\varepsilon&gt;0\)</span> ，任意
-<span
-class="math inline">\(0&lt;||(x,y)-(a,b)||&lt;\delta^{&#39;}\)</span>
-都有 <span class="math inline">\(|f(x,y)-A|&lt;\varepsilon\)</span>
-。</p>
-<p>若 <span class="math inline">\(A\neq B\)</span> ，令 <span
-class="math inline">\(\varepsilon&lt;\dfrac{|A-B|}{2}\)</span>
-就会使两个式子出现矛盾，因此只能 <span
-class="math inline">\(A=B\)</span> 。</p>
-<p>同理，对称性使得这三个极限都相等。<a href="#2.4">返回</a></p>
-<h6 id="p2">
-证明2.5
-</h6>
-<p>对对称正定矩阵 <span class="math inline">\(A, \mathbf{x}^{T} A
-\mathbf{y}\)</span>
-是一个内积（对称：对称矩阵；正定：正定的定义之一；双线性：显然满足），从而
-<span class="math inline">\(\sqrt{\mathbf{x}^{T} A \mathbf{x}}\)</span>
-是相应的范数，从而与 <span class="math inline">\(\|\mathbf{x}\|\)</span>
-同阶。所以 <span class="math inline">\(\mathbf{x}^{T} A
-\mathbf{x}\)</span> 与 <span
-class="math inline">\(\|\mathbf{x}\|^{2}\)</span> 同阶。</p>
-<p>对于负定矩阵，同理有 <span class="math inline">\(-\mathbf{x}^{T} A
-\mathbf{y}\)</span> 是一个内积，从而也能说明 <span
-class="math inline">\(\mathbf{x}^{T} A \mathbf{x}\)</span> 与 <span
-class="math inline">\(\|\mathbf{x}\|^{2}\)</span> 同阶。<a
-href="#2.5">返回</a></p>
+f(\mathbf{x})=f\left(\mathbf{x}_{0}\right)+d
+f\left(\mathbf{x}_{0}\right)\left(\mathbf{x}-\mathbf{x}_{0}\right)+\frac{1}{2}\left(\mathbf{x}-\mathbf{x}_{0}\right)^{T}
+H_{f}\left(\mathbf{x}_{0}+\xi\left(\mathbf{x}-\mathbf{x}_{0}\right)\right)\left(\mathbf{x}-\mathbf{x}_{0}\right)
+.
+\]</span> 称 <span class="math inline">\(\mathbf{x}_{0}\)</span> 是
+<span class="math inline">\(f\)</span> 的一个<strong>临界点</strong>,
+如果 <span class="math inline">\(\mathrm{d}
+f\left(\mathbf{x}_{0}\right)=0\)</span> 。 称 <span
+class="math inline">\(\mathscr{C}^{2}\)</span> 函数 <span
+class="math inline">\(f\)</span> 的临界点 <span
+class="math inline">\(\mathrm{x}_{0}\)</span>
+是<strong>非退化的</strong>, 如果 Hesse 矩阵 <span
+class="math inline">\(H_{f}\left(\mathrm{x}_{0}\right)\)</span> 可逆。
+称 <span class="math inline">\(f\)</span> 的临界点 <span
+class="math inline">\(x_{0}\)</span> 是<strong>鞍形的</strong>, 如果
+<span class="math inline">\(x_{0}\)</span> 是非退化临界点, 并且 Hesse
+矩阵 <span
+class="math inline">\(H_{f}\left(\mathbf{x}_{0}\right)\)</span>
+既有正特征值又有负特征值。</p>
+<p>定理：设 <span class="math inline">\(\mathrm{x}_{0}\)</span> 是 <span
+class="math inline">\(\mathscr{C}^{2}\)</span> 函数 <span
+class="math inline">\(f\)</span> 的一个非退化临界点。则 1. 若 Hesse 矩阵
+<span class="math inline">\(H_{f}\left(\mathbf{x}_{0}\right)\)</span>
+正定, 则 <span class="math inline">\(\mathbf{x}_{0}\)</span>
+是一个<strong>极小值点</strong>； 2. 若 Hesse 矩阵 <span
+class="math inline">\(H_{f}\left(\mathbf{x}_{0}\right)\)</span> 负定, 则
+<span class="math inline">\(\mathbf{x}_{0}\)</span>
+是一个<strong>极大值点</strong>； 3. 若 Hesse 矩阵 <span
+class="math inline">\(H_{f}\left(\mathbf{x}_{0}\right)\)</span>
+既不是正定又不是负定, 则 <span
+class="math inline">\(\mathbf{x}_{0}\)</span>
+是鞍形临界点，鞍形临界点不是极值点。它在某些方向为极小，在另外一些方向为极大。</p>
+<ol type="1">
+<li>设 <span
+class="math inline">\(H_{f}\left(\mathbf{x}_{0}\right)\)</span> 正定。则
+<span class="math inline">\(H_{f}\left(\mathbf{x}_{0}\right)\)</span>
+的所有顺序主子式都为正。由 <span class="math inline">\(f \in
+\mathscr{C}^{2}\)</span> 以及行列式的连续性，在 <span
+class="math inline">\(\mathbf{x}_{0}\)</span> 附近，<span
+class="math inline">\(H_{f}(\mathbf{x})\)</span>
+的所有顺序主子式也都是正的，所以 <span
+class="math inline">\(H_{f}(\mathbf{x})\)</span> 正定的，从而由 Taylor
+公式知 <span
+class="math inline">\(f(\mathbf{x})-f\left(\mathbf{x}_{0}\right)=\dfrac{1}{2}\left(\mathbf{x}-\mathbf{x}_{0}\right)^{T}
+H_{f}\left(\mathbf{x}_{0}+\xi\left(\mathbf{x}-\mathbf{x}_{0}\right)\right)\left(\mathbf{x}-\mathbf{x}_{0}\right)&gt;0,
+\quad \forall \mathbf{x} \neq \mathbf{x}_{0}\)</span> 所以 <span
+class="math inline">\(x_{0}\)</span> 是严格极小值点。</li>
+<li>类似可证当 <span
+class="math inline">\(H_{f}\left(x_{0}\right)\)</span> 负定时，<span
+class="math inline">\(x_{0}\)</span> 是严格极大值点。</li>
+</ol>
 
               
             </div>
@@ -706,18 +517,12 @@ href="#2.5">返回</a></p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/02/28/wxf03/" title="多元微积分笔记（三）多元函数的导数与微分">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">多元微积分笔记（三）多元函数的导数与微分</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/02/22/work_in_home/" title="王晓峰老师的多元微积分作业">
-                        <span class="hidden-mobile">王晓峰老师的多元微积分作业</span>
+                      <a href="/2022/03/13/wxfwork2/" title="多元微积分作业（二）">
+                        <span class="hidden-mobile">多元微积分作业（二）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

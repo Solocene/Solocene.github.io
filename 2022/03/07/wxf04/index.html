@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://solocene.github.io/img/wp(17).jpg">
 <meta property="article:published_time" content="2022-03-07T02:55:41.000Z">
-<meta property="article:modified_time" content="2022-03-09T12:05:05.853Z">
+<meta property="article:modified_time" content="2022-03-14T02:46:26.021Z">
 <meta property="article:author" content="Solocene">
 <meta property="article:tag" content="math">
 <meta property="article:tag" content="calculus">
@@ -214,7 +214,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          11k 字
+          13k 字
         
       </span>
     
@@ -225,7 +225,7 @@
         
         
         
-          92 分钟
+          110 分钟
         
       </span>
     
@@ -276,7 +276,7 @@
         aria-expanded="true"
       >
         Math
-        <span class="list-group-count">(4)</span>
+        <span class="list-group-count">(5)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -305,7 +305,7 @@
         aria-expanded="true"
       >
         Calculus
-        <span class="list-group-count">(4)</span>
+        <span class="list-group-count">(5)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -341,6 +341,15 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">多元微积分笔记（二）多元函数的极限</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/03/14/wxf05/" title="多元微积分笔记（五）极值、临界点与函数凹凸性"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">多元微积分笔记（五）极值、临界点与函数凹凸性</span>
         </a>
       
     
@@ -675,7 +684,7 @@ f\left(\mathbf{x}_{0}+t
 \partial_{i_{r}, \ldots, i_{1}}^{r} f\left(\mathbf{x}_{0}\right)
 v^{i_{1}} \cdots v^{i_{r}}+o\left(t^{k}\right)
 \]</span> 对 <span class="math inline">\(\mathrm{x}\)</span>, 取 <span
-class="math inline">\(v=\frac{\mathrm{x}-\mathrm{x}_{0}}{\left\|\mathrm{x}-\mathrm{x}_{0}\right\|},
+class="math inline">\(v=\dfrac{\mathrm{x}-\mathrm{x}_{0}}{\left\|\mathrm{x}-\mathrm{x}_{0}\right\|},
 t=\left\|\mathrm{x}-\mathrm{x}_{0}\right\|\)</span>, 则 <span
 class="math display">\[
 \begin{aligned}
@@ -687,7 +696,72 @@ f\left(\mathbf{x}_{0}\right)\left(x^{i_{1}}-x_{0}^{i_{1}}\right)
 &amp;+o\left(\left\|\mathbf{x}-\mathbf{x}_{0}\right\|^{k}\right), \quad
 \mathbf{x} \rightarrow \mathbf{x}_{0}
 \end{aligned}
-\]</span></p>
+\]</span> 实际上，这里代换的严谨性不能保证，<span
+class="math inline">\(o\left(\left\|\mathbf{x}-\mathbf{x}_{0}\right\|^{k}\right)\)</span>
+的意义也不明确。因此考虑采用 Lagrange 余项的 Taylor 展开：</p>
+<p>如果 <span class="math inline">\(E\)</span> 是以 <span
+class="math inline">\(x_{0}\)</span> 为中心的星形开集, 即对任意 <span
+class="math inline">\(x \in E\)</span> 以及任意 <span
+class="math inline">\(0 \leq t \leq 1,(1-t) \mathbf{x}_{0}+t \mathbf{x}
+\in E\)</span>, 则对 <span class="math inline">\(g(t)=f\left((1-t)
+\mathbf{x}_{0}+t \mathbf{x}\right)\)</span>, 存在 <span
+class="math inline">\(0 \leq \xi \leq 1\)</span> 使得 <span
+class="math display">\[
+g(1)=g(0)+g^{\prime}(0)+\cdots+\frac{g^{(k-1)}(0)}{(k-1)
+!}+\frac{g^{(k)}(\xi)}{k !} .
+\]</span> 于是 <span class="math display">\[
+\begin{aligned}
+f(\mathbf{x})=&amp; f\left(\mathbf{x}_{0}\right)+\sum_{r=1}^{k-1}
+\frac{1}{r !} \sum_{1 \leq i_{1}, \ldots, i_{r} \leq m} \partial_{i_{r},
+\ldots, i_{1}}^{r} f\left(\mathbf{x}_{0}\right) v^{i_{1}} \cdots
+v_{r}^{i_{r}} \\
+&amp;+\frac{1}{k !} \sum_{1 \leq i_{1}, \ldots, i_{k} \leq m}
+\partial_{i_{k}, \ldots, i_{1}}^{k}
+f\left(\mathbf{x}_{0}+\xi\left(\mathbf{x}-\mathbf{x}_{0}\right)\right)
+v^{i_{1}} \cdots \cdot v^{i_{k}}
+\end{aligned}
+\]</span> 其中 <span
+class="math inline">\(\mathbf{v}=\mathbf{x}-\mathbf{x}_{0}\)</span>
+。因此 <span class="math display">\[
+\begin{aligned}
+f(\mathbf{x})=&amp; f\left(\mathbf{x}_{0}\right)+\sum_{r=1}^{k}
+\frac{1}{r !} \sum_{1 \leq i_{1}, \ldots, i_{r} \leq m} \partial_{i_{r},
+\ldots, i_{1}}^{r} f\left(\mathbf{x}_{0}\right) v^{i_{1}} \cdots
+v^{i_{r}} \\
+&amp;+\frac{1}{k !} \sum_{1 \leq i_{1}, \ldots, i_{k} \leq m}
+\partial_{i_{k}, \ldots, i_{1}}^{k} f|_{\mathbf{x}_{0}}
+^{\mathbf{x}_{0}+\xi\left(\mathbf{x}-\mathbf{x}_{0}\right)} v^{i_{1}}
+\cdots v^{i_{k}}
+\end{aligned}
+\]</span> 这个余项 <span class="math display">\[
+\left|\frac{1}{k !} \sum_{1 \leq i_{1}, \ldots, i_{k} \leq m}
+\partial_{i_{k}, \ldots,
+i_{1}}^{k}f|_{\mathbf{x}_{0}}^{\mathbf{x}_{0}+\xi\left(\mathbf{x}-\mathbf{x}_{0}\right)}
+v^{i_{1}} \cdots v^{i_{k}} \right| \leq
+\varepsilon\left\|\mathbf{x}-\mathbf{x}_{0}\right\|^{k},
+\]</span> 于是得到 Peano 余项 <span
+class="math inline">\(o\left(\left\|\mathbf{x}-\mathbf{x}_{0}\right\|^{k}\right)\)</span>
+的 Taylor 展开。</p>
+<p>Taylor 展开中的多项式可以按自变量求导次数合并计算 <span
+class="math display">\[
+\begin{aligned}
+&amp; \frac{1}{k !} \sum_{1 \leq i_{1}, \ldots, i_{k} \leq m}
+\partial_{i_{k}, \ldots, i_{1}}^{k} f\left(\mathbf{x}_{0}\right)
+v^{i_{1}} \cdots v^{i_{k}} \\
+=&amp; \sum_{\alpha_{1}+\cdots+\alpha_{m}=k} \frac{1}{\alpha_{1} !
+\alpha_{2} ! \cdots \alpha_{m} !} \partial_{\left[\alpha_{1}, \ldots,
+\alpha_{m}\right]}^{k}
+f\left(\mathbf{x}_{0}\right)\left(v^{1}\right)^{\alpha_{1}}
+\cdots\left(v^{m}\right)^{\alpha_{m}}
+\\=&amp;\frac{1}{k!}(\sum_{1\leq k\leq
+m}{\partial_{i_k}})^mf(\mathbf{x}_0)v^{i_1}\cdots v^{i_k}
+\end{aligned}
+\]</span> 其中 <span class="math inline">\(\dfrac{k !}{\alpha_{1} !
+\alpha_{2} ! \cdots \alpha_{m} !}\)</span> 是多重组合数（用 <span
+class="math inline">\(m\)</span> 种颜色对 <span
+class="math inline">\(k\)</span>
+个位置进行染色所得的不同染色结果的数量)。</p>
+<p>一般来说用最后一个等式。</p>
 
               
             </div>
