@@ -1,0 +1,1347 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/forest.png">
+  <link rel="icon" href="/img/zhihu.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Solocene">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="wxf老师的第二次作业。对ε-N语言的训练，有些题比较有技巧性。但功利的训练价值不大。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多元微积分作业（二）">
+<meta property="og:url" content="https://solocene.github.io/2022/03/13/wxfwork2/index.html">
+<meta property="og:site_name" content="意义之树">
+<meta property="og:description" content="wxf老师的第二次作业。对ε-N语言的训练，有些题比较有技巧性。但功利的训练价值不大。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://solocene.github.io/img/wp(9).jpg">
+<meta property="article:published_time" content="2022-03-13T15:21:02.000Z">
+<meta property="article:modified_time" content="2022-03-14T12:46:36.010Z">
+<meta property="article:author" content="Solocene">
+<meta property="article:tag" content="math">
+<meta property="article:tag" content="calculus">
+<meta property="article:tag" content="homework">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://solocene.github.io/img/wp(9).jpg">
+  
+  
+  <title>多元微积分作业（二） - 意义之树</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"solocene.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":80,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"40d396b194275243fc89f8147f2c95fc","google":"G-4Z5ZTXQ6M5","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"venChOS8mKPGIfnCI81N943k-gzGzoHsz","app_key":"KTW7eDYU8aP10TJ7z6Krqmkh","server_url":"https://venchos8.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>意义之树</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/wp(9).jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          <span id="subtitle" title="多元微积分作业（二）">
+            
+          </span>
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-03-13 23:21" pubdate>
+          2022年3月13日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          13k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          106 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Work"
+        id="heading-0f9263536b9fc61ada745644735bfd8f" role="tab" data-toggle="collapse" href="#collapse-0f9263536b9fc61ada745644735bfd8f"
+        aria-expanded="true"
+      >
+        Work
+        <span class="list-group-count">(4)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-0f9263536b9fc61ada745644735bfd8f"
+           role="tabpanel" aria-labelledby="heading-0f9263536b9fc61ada745644735bfd8f">
+        
+        
+          
+          
+  <div class="category-post-list">
+    
+    
+  </div>
+
+          
+          
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Physics Exp."
+        id="heading-97a003684109b70d9aff6ffb8be70357" role="tab" data-toggle="collapse" href="#collapse-97a003684109b70d9aff6ffb8be70357"
+        aria-expanded="false"
+      >
+        Physics Exp.
+        <span class="list-group-count">(1)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-97a003684109b70d9aff6ffb8be70357"
+           role="tabpanel" aria-labelledby="heading-97a003684109b70d9aff6ffb8be70357">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/04/06/%E5%9F%BA%E7%A1%80%E7%89%A9%E7%90%86%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8ALaTeX%E6%A8%A1%E6%9D%BF/" title="基础物理实验报告LaTeX模板"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">基础物理实验报告LaTeX模板</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="math homework"
+        id="heading-21e72c181ed1507d70b1ec3cb620ee36" role="tab" data-toggle="collapse" href="#collapse-21e72c181ed1507d70b1ec3cb620ee36"
+        aria-expanded="true"
+      >
+        math homework
+        <span class="list-group-count">(3)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-21e72c181ed1507d70b1ec3cb620ee36"
+           role="tabpanel" aria-labelledby="heading-21e72c181ed1507d70b1ec3cb620ee36">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/03/04/wxfwork01/" title="多元微积分作业（一）"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">多元微积分作业（一）</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/03/13/wxfwork2/" title="多元微积分作业（二）"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">多元微积分作业（二）</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/02/22/work_in_home/" title="王晓峰老师的多元微积分作业"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">王晓峰老师的多元微积分作业</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">多元微积分作业（二）</h1>
+            
+              <p class="note note-default">
+                
+                  
+                    本文最后更新于：2022年3月14日 晚上
+                  
+                
+              </p>
+            
+            <div class="markdown-body">
+              
+              <h2 id="微积分a2作业二">微积分A2作业（二）</h2>
+<p>未央-能动12 罗诗棋 2021012525 王晓峰老师</p>
+<h4 id="section">1.3.5</h4>
+<p>(连续性与偏连续性) 设 <span class="math inline">\(f:[a, b] \times[c,
+d] \rightarrow \mathbb{R}\)</span> 。 (a) 如果 <span
+class="math inline">\(f\)</span> 是连续函数，那么是否成立：对任意 <span
+class="math inline">\(y \in[c, d], f(\cdot, y)\)</span> : <span
+class="math inline">\([a, b] \rightarrow \mathbb{R}\)</span>
+连续；对任意 <span class="math inline">\(x \in[a, b], \quad f(x,
+\cdot):[c, d] \rightarrow \mathbb{R}\)</span> 连续? (b) 如果对任意 <span
+class="math inline">\(y \in[c, d], \quad f(\cdot, y):[a, b] \rightarrow
+\mathbb{R}\)</span> 连续；对任意 <span class="math inline">\(x \in[a,
+b]\)</span>, <span class="math inline">\(f(x, \cdot):[c, d] \rightarrow
+\mathbb{R}\)</span> 连续，那么 <span class="math inline">\(f\)</span>
+是否为连续函数？考虑 <span class="math display">\[
+f(x, y)= \begin{cases}\dfrac{x y}{x^{2}+y^{2}}, &amp; x y \neq 0 \\ 0,
+&amp; x y=0 .\end{cases}
+\]</span> (c) 设 <span class="math inline">\(x_{0} \in[a, b], y_{0}
+\in[c, d], f\)</span> 满足： <span class="math inline">\(f\left(\cdot,
+y_{0}\right):[a, b] \rightarrow \mathbb{R}\)</span> 连续；并且对任意
+<span class="math inline">\(\varepsilon&gt;0\)</span>, 存在 <span
+class="math inline">\(\delta(\varepsilon)&gt;0\)</span> 使得对任意 <span
+class="math inline">\(x \in[a, b]\)</span> 以及任意 <span
+class="math inline">\(y \in[c, d]\)</span> ，只要 <span
+class="math inline">\(\left|y-y_{0}\right|&lt;\delta(\varepsilon)\)</span>,
+就有 <span class="math inline">\(\left|f(x, y)-f(x,
+y_{0})\right|&lt;\varepsilon\)</span> 。证明 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(\left(x_{0}, y_{0}\right)\)</span> 连续。 (d) 设
+<span class="math inline">\(f(x, y)\)</span> 分别对每个变量 <span
+class="math inline">\(x\)</span> 和 <span
+class="math inline">\(y\)</span> 是连续的，且对 <span
+class="math inline">\(y\)</span> 是单调不减的，证明 <span
+class="math inline">\(f\)</span> 关于 <span class="math inline">\((x,
+y)\)</span> 是连续的。</p>
+<hr />
+<p>解：</p>
+<ol type="a">
+<li>因 <span class="math inline">\(f\)</span> 是连续函数，对 <span
+class="math inline">\((x_0,y_0)\in[a, b] \times[c, d]\)</span> 和 <span
+class="math inline">\(\forall \varepsilon&gt;0\)</span> ，<span
+class="math inline">\(\exists \delta&gt;0\)</span> 使 <span
+class="math inline">\(\forall ||(x,y)-(x_0,y_0)||&lt;\delta\)</span>
+，都有 <span
+class="math inline">\(|f(x,y)-f(x_0,y_0)|&lt;\varepsilon\)</span> 。令
+<span class="math inline">\(|x-x_0|&lt;\delta,y=y_0\)</span> ，有 <span
+class="math inline">\(||(x,y)-(x_0,y_0)||\leq||(x,y)-(x_0,y_0)||_{\infty}&lt;\delta\)</span>
+，因此 <span
+class="math inline">\(|f(x,y_0)-f(x_0,y_0)|&lt;\varepsilon\)</span></li>
+</ol>
+<p>故 $ f(, y):[a, b] $ 在 <span class="math inline">\([a,b]\)</span>
+是连续的。同理 <span class="math inline">\(f(x, \cdot):[c, d]
+\rightarrow \mathbb{R}\)</span> 在 <span
+class="math inline">\([c,d]\)</span> 也是连续的。</p>
+<ol start="2" type="a">
+<li>对示例函数，若 <span class="math inline">\(x=0\)</span> 或 <span
+class="math inline">\(y=0\)</span> ，函数值恒为 <span
+class="math inline">\(0\)</span> ，连续；若 <span
+class="math inline">\(x\neq0\)</span> 或 <span
+class="math inline">\(y\neq0\)</span> ，由于 <span
+class="math inline">\(\lim\limits_{x\to0,y\neq0}{\dfrac{x
+y}{x^{2}+y^{2}}}=\lim\limits_{y\to0,x\neq0}{\dfrac{x
+y}{x^{2}+y^{2}}}=0\)</span> ，也连续。</li>
+</ol>
+<p>但对二元函数 <span class="math inline">\(f\)</span> ，若沿 <span
+class="math inline">\(y=kx\)</span> 直线逼近，则 <span
+class="math inline">\(\lim\limits_{y=x,x\to0}{\dfrac{x
+y}{x^{2}+y^{2}}}=\dfrac{k}{1+k^2}\neq0,k\neq0\)</span> 。因此若 <span
+class="math inline">\((0,0)\in[a, b] \times[c, d]\)</span> ，<span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\((0,0)\)</span>
+处不连续。因此两个命题之间不能推断。</p>
+<ol start="3" type="a">
+<li>因 <span class="math inline">\(f\left(\cdot, y_{0}\right):[a, b]
+\rightarrow \mathbb{R}\)</span> 连续，对 <span
+class="math inline">\((x_0,y_0)\in[a, b] \times[c, d]\)</span> 和 <span
+class="math inline">\(\forall \varepsilon&gt;0\)</span> ，<span
+class="math inline">\(\exists \delta&gt;0\)</span> 使 <span
+class="math inline">\(\forall
+|x-x_0|&lt;\delta-\delta(\dfrac{\varepsilon}{2})\)</span> ，都有 <span
+class="math inline">\(|f(x,y_0)-f(x_0,y_0)|&lt;\dfrac{\varepsilon}{2}\)</span>
+。因此 <span class="math inline">\(\exists\delta&gt;0\)</span> 使 <span
+class="math inline">\(\forall
+||(x,y)-(x_0,y_0)||\leq||(x,y)-(x_0,y_0)||_{\infty}&lt;\delta\)</span>
+，都有 <span class="math inline">\(\left|f(x, y)-f(x_0,
+y_{0})\right|\leq\left|f(x, y)-f(x,
+y_{0})\right|+|f(x,y_0)-f(x_0,y_0)|&lt;\varepsilon\)</span> 。</li>
+</ol>
+<p>故 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(\left(x_{0}, y_{0}\right)\)</span> 连续。</p>
+<ol start="4" type="a">
+<li>对 <span class="math inline">\(\forall (x_0,y_0)\in[a, b] \times[c,
+d]\)</span> 和 <span class="math inline">\(\forall
+\varepsilon&gt;0\)</span> ，由 <span
+class="math inline">\(f(x,y)\)</span> 对 <span
+class="math inline">\(x\)</span> 和 <span
+class="math inline">\(y\)</span> 的连续性可以知道， <span
+class="math display">\[
+\begin{gathered}
+\left|f\left(x, y_{0}\right)-f\left(x_{0},
+y_{0}\right)\right|&lt;\varepsilon / 2\text{ \quad
+for\quad}\left|x-x_{0}\right| \leq\delta\\
+\left|f\left(x_{0}+\delta, y\right)-f\left(x_{0}+\delta,
+y_{0}\right)\right|&lt;\varepsilon / 2\text{ \quad
+for\quad}\left|y-y_{0}\right| \leq \eta_{1}\\
+\left|f\left(x_{0}-\delta, y\right)-f\left(x_{0}-\delta,
+y_{0}\right)\right|&lt;\varepsilon / 2\text{ \quad
+for\quad}\left|y-y_{0}\right| \leq \eta_{2}
+\end{gathered}
+\]</span> 其中 <span
+class="math inline">\(\delta,\eta_1,\eta_2&gt;0\)</span> 。若取 <span
+class="math inline">\(\eta=\min(\eta_1,\eta_2)\)</span> ，则对 <span
+class="math inline">\(\forall(x,y)\in[x_0-\delta,x_0+\delta]\times[y_0-\eta,y_0+\eta]\)</span>
+，均有 <span class="math display">\[
+\begin{aligned}
+&amp;\quad \, \, {\left[f\left(x_{0}-\delta,
+y\right)-f\left(x_{0}-\delta,
+y_{0}\right)\right]+\left[f\left(x_{0}-\delta,
+y_{0}\right)-f\left(x_{0}, y_{0}\right)\right] } \\
+&amp; \leq f(x, y)-f\left(x_{0}, y_{0}\right) \\
+&amp; \leq\left[f\left(x_{0}+\delta, y\right)-f\left(x_{0}+\delta,
+y_{0}\right)\right]+\left[f\left(x_{0}+\delta,
+y_{0}\right)-f\left(x_{0}, y_{0}\right)\right]
+\end{aligned}
+\]</span> 也就是 <span
+class="math inline">\(-\varepsilon&lt;f(x,y)-f(x_0,y_0)&lt;\varepsilon\)</span>
+。因此 <span class="math inline">\(f\)</span> 关于 <span
+class="math inline">\((x,y)\)</span> 连续。</li>
+</ol>
+<h4 id="section-1">1.4.7</h4>
+<p>设 <span class="math inline">\(U \subseteq \mathbb{R}^{2}\)</span>
+是开集， <span class="math inline">\((a, b) \in U, f\)</span> 在 <span
+class="math inline">\(U \backslash\{(a, b)\}\)</span> 上有定义,
+且满足极限 <span class="math display">\[
+A=\lim _{(x, y) \rightarrow(a, b)} f(x, y), \quad B=\lim _{y \rightarrow
+b} \lim _{x \rightarrow a} f(x, y)
+\]</span> 都存在。证明 <span class="math inline">\(A=B\)</span>
+。由此知道, 如果 <span class="math display">\[
+\lim _{y \rightarrow b} \lim _{x \rightarrow a} f(x, y) \neq \lim _{x
+\rightarrow a} \lim _{y \rightarrow b} f(x, y)
+\]</span> 则极限 <span class="math inline">\(\lim\limits _{(x, y)
+\rightarrow(a, b)} f(x, y)\)</span> 不存在。</p>
+<hr />
+<p>证明：极限都存在，因此对 <span class="math inline">\(\forall (x,y)\in
+U \backslash\{(a, b)\},\forall \varepsilon&gt;0,\exists
+\delta&gt;0\)</span> ，使对 <span
+class="math inline">\(\forall0&lt;||(x,y)-(a,b)||&lt;\delta,|f(x,y)-A|&lt;\varepsilon\)</span>
+，以及 <span class="math inline">\(\exists \eta_2&gt;0\)</span> 使对
+<span class="math inline">\(\forall\varepsilon&gt;0,\exists
+\eta_1&gt;0\)</span> <span class="math inline">\(\forall
+0&lt;|x-a|&lt;\eta_1,\forall0&lt;|y-b|&lt;\eta_2,|f(x,y)-B|&lt;\varepsilon\)</span>
+。</p>
+<p>那么对 <span class="math inline">\(\forall
+0&lt;||(x,y)-(a,b)||&lt;\min(\delta,\eta_1,\eta_2)\)</span> ，则同时有
+<span
+class="math inline">\(|f(x,y)-A|&lt;\varepsilon,|f(x,y)-B|&lt;\varepsilon\)</span>
+。若 <span class="math inline">\(A\neq B\)</span>，只要 <span
+class="math inline">\(\varepsilon&lt;\dfrac{|A-B|}{2}\)</span>
+就会矛盾。因此 <span class="math inline">\(A=B\)</span> 。</p>
+<h4 id="section-2">1.4.8</h4>
+<p>设 (a) 极限 <span class="math inline">\(H(y)=\lim\limits _{x
+\rightarrow a} f(x, y)\)</span> 对任意 <span class="math inline">\(y
+\neq b\)</span> 存在；(b) 极限 <span
+class="math inline">\(G(x)=\lim\limits _{y \rightarrow b} f(x,
+y)\)</span> 对任意 <span class="math inline">\(x\)</span> 存在, 且存在
+<span class="math inline">\(\delta_{0}&gt;0\)</span> 使得：对任意 <span
+class="math inline">\(\varepsilon&gt;0\)</span>, 存在 <span
+class="math inline">\(\delta_{2}(\varepsilon)&gt;0\)</span> 使得对任意
+<span
+class="math inline">\(0&lt;|y-b|&lt;\delta_{2}(\varepsilon)\)</span>
+以及任意 <span class="math inline">\(0&lt;|x-a|&lt;\delta_{0}\)</span>
+都有 <span class="math inline">\(|f(x, y)-G(x)|&lt;\varepsilon\)</span>
+; 则极限 <span class="math inline">\(\lim\limits _{x \rightarrow a}
+\lim\limits _{y \rightarrow b} f(x, y), \lim\limits _{y \rightarrow b}
+\lim\limits _{x \rightarrow a} f(x, y)\)</span> 和 <span
+class="math inline">\(\lim\limits _{x \rightarrow a, y \rightarrow b}
+f(x, y)\)</span> 都存在, 且 <span class="math display">\[
+\lim _{x \rightarrow a, y \rightarrow b} f(x, y)=\lim _{y \rightarrow b}
+\lim _{x \rightarrow a} f(x, y)=\lim _{x \rightarrow a} \lim _{y
+\rightarrow b} f(x, y) .
+\]</span></p>
+<hr />
+<p>证明：(1) 证明三个极限存在。</p>
+<p>因极限 <span class="math inline">\(H(y)=\lim\limits _{x \rightarrow
+a} f(x, y)\)</span> 对任意 <span class="math inline">\(y \neq b\)</span>
+存在，因此对任意 <span class="math inline">\(y \neq b\)</span> 和任意
+<span class="math inline">\(\varepsilon&gt;0\)</span>, 存在 <span
+class="math inline">\(\delta_{1}(\dfrac{\varepsilon}{4})&gt;0\)</span>
+使得对任意 <span
+class="math inline">\(0&lt;|x-a|&lt;\delta_{1}(\dfrac{\varepsilon}{4})\)</span>
+都有 <span class="math inline">\(|f(x,
+y)-H(y)|&lt;\dfrac{\varepsilon}{4}\)</span> 。因此，对任意 <span
+class="math inline">\(0&lt;|x_{1,2}-a|&lt;\min(\delta_{0},\delta_1(\dfrac{\varepsilon}{4}))\)</span>
+以及任意 <span
+class="math inline">\(0&lt;|y-b|&lt;\delta_{2}(\dfrac{\varepsilon}{4})\)</span>
+均有 <span class="math inline">\(|f(x_1,y)-f(x_2,y)|&lt;|f(x_1,
+y)-H(y)|+|f(x_2, y)-H(y)|&lt;\dfrac{\varepsilon}{2}\)</span> 。</p>
+<p>由题意知，存在 <span class="math inline">\(\delta_{0}&gt;0\)</span>
+使得：对任意 <span class="math inline">\(\varepsilon&gt;0\)</span>, 存在
+<span class="math inline">\(\delta_{2}(\varepsilon)&gt;0\)</span>
+使得对任意 <span
+class="math inline">\(0&lt;|y-b|&lt;\delta_{2}(\dfrac{\varepsilon}{4})\)</span>
+以及任意 <span
+class="math inline">\(0&lt;|x_{1,2}-a|&lt;\delta_{0}\)</span> ，有 <span
+class="math inline">\(|G(x_1)-G(x_2)|\leq|f(x_1, y)-G(x_1)|+|f(x_2,
+y)-G(x_2)|+|f(x_1,y)-f(x_2,y)|&lt;\varepsilon\)</span> ，由 Cauchy
+收敛定则，<span class="math inline">\(G(x)\)</span>
+在此处一定收敛于一个值 <span class="math inline">\(A\)</span> ，因此
+<span class="math inline">\(\lim\limits _{x \rightarrow a} \lim\limits
+_{y \rightarrow b} f(x, y)=A\)</span> 。</p>
+<p>同理，对任意 <span
+class="math inline">\(\varepsilon&gt;0\)</span>，任意 <span
+class="math inline">\(0&lt;|x-a|&lt;\min(\delta_{0},\delta_1(\dfrac{\varepsilon}{4}))\)</span>
+以及任意 <span
+class="math inline">\(0&lt;|y-b|&lt;\delta_{2}(\dfrac{\varepsilon}{4})\)</span>
+，<span class="math inline">\(|f(x,y_1)-f(x,y_2)|&lt;|f(x,
+y_2)-G(x)|+|f(x, y_1)-G(x)|&lt;\dfrac{\varepsilon}{2}\)</span> ，有
+<span
+class="math inline">\(|H(y_1)-H(y_2)|\leq|f(x,y_1)-H(y_1)|+|f(x,y_2)-H(y_2)|+|f(x,y_1)-f(x,y_2)|&lt;\varepsilon\)</span>
+，由 Cauchy 收敛定则，<span class="math inline">\(H(y)\)</span>
+在此处一定收敛于一个值 <span class="math inline">\(B\)</span> ，因此
+<span class="math inline">\(\lim\limits _{y \rightarrow b} \lim\limits
+_{x \rightarrow a} f(x, y)=B\)</span> 。</p>
+<p>对任意 <span class="math inline">\(\varepsilon&gt;0\)</span>，任意
+<span
+class="math inline">\(0&lt;|x-a|&lt;\min(\delta_{0},\delta_1(\dfrac{\varepsilon}{4}))\)</span>
+以及任意 <span
+class="math inline">\(0&lt;|y-b|&lt;\delta_{2}(\dfrac{\varepsilon}{4})\)</span>
+，即 <span
+class="math inline">\(||(x,y)-(a.b)||&lt;\min[\delta_{0},\delta_1(\dfrac{\varepsilon}{4}),\delta_{2}(\dfrac{\varepsilon}{4})]\)</span>
+，有<span
+class="math inline">\(|f(x_1,y_1)-f(x_2,y_2)|\leq|f(x_1,y_1)-f(x_1,y_2)|+|f(x_1,y_2)-f(x_2,y_2)|&lt;\varepsilon\)</span>
+，由 Cauchy 收敛定则，<span class="math inline">\(f(x, y)\)</span>
+在此处一定收敛于一个值 <span class="math inline">\(C\)</span> ，因此
+<span class="math inline">\(\lim\limits _{x \rightarrow a, y \rightarrow
+b} f(x, y)=C\)</span> 。</p>
+<ol start="2" type="1">
+<li>证明它们相等。</li>
+</ol>
+<p>1.4.7中已有证明加上对称性即可证明三者相等。</p>
+<h4 id="section-3">1.4.9</h4>
+<p>设 <span class="math display">\[
+f(x, y)= \begin{cases}x \sin \frac{1}{y}, &amp; y \neq 0 \\ 0, &amp;
+y=0\end{cases}
+\]</span> 讨论极限 <span class="math inline">\(\lim\limits _{(x, y)
+\rightarrow(0,0)} f(x, y), \quad \lim\limits _{y \rightarrow 0}
+\lim\limits _{x \rightarrow 0} f(x, y)\)</span> 以及 <span
+class="math inline">\(\lim\limits _{x \rightarrow 0} \lim \limits_{y
+\rightarrow 0} f(x, y)\)</span> 。</p>
+<hr />
+<p>解：有 <span class="math display">\[
+\lim_{y\to0}f(x,y)\left\{\begin{array}{cc}
+&amp;不存在&amp;,x\neq0\\
+&amp;=0&amp;,x=0
+\end{array}\right.
+\quad ,\lim_{x\to0}f(x,y)=0
+\]</span> 因此 <span class="math inline">\(\lim\limits _{y \rightarrow
+0} \lim\limits _{x \rightarrow 0} f(x, y)=0\)</span> ，<span
+class="math inline">\(\lim\limits _{x \rightarrow 0} \lim \limits_{y
+\rightarrow 0} f(x, y)\)</span> 不存在。</p>
+<p>对 <span class="math inline">\(\forall \varepsilon&gt;0\)</span>
+，只要 <span
+class="math inline">\(||(x,y)||&lt;\delta(\varepsilon)=\varepsilon\)</span>
+，就有 <span
+class="math inline">\(|f(x,y)|\leq|x|\leq||(x,y)||&lt;\varepsilon\)</span>
+，因此 <span class="math inline">\(\lim\limits _{(x, y)
+\rightarrow(0,0)} f(x, y)=0\)</span> 。</p>
+<h4 id="section-4">1.5.1</h4>
+<p>判断以下极限的存在性；若存在，求出极限值。</p>
+<p>解：（1） <span class="math display">\[
+\lim _{(x, y) \rightarrow(0,0)} \frac{\arcsin
+\left(x^{2}+y^{2}\right)}{x^{2}+y^{2}}
+\]</span> 设 <span class="math inline">\(r=x^2+y^2\)</span> ，显然 <span
+class="math inline">\(\lim\limits_{(x,y)\to(0,0)}{x^2+y^2}=0\)</span>
+。又因当 <span class="math inline">\((x,y)\to(0,0)\)</span> 时 <span
+class="math inline">\(x^2+y^2\neq0\)</span> ，且 <span
+class="math inline">\(\lim \limits_{r\to0} \dfrac{\arcsin
+\left(r\right)}{r}=1\)</span> ，故 <span
+class="math inline">\(\lim\limits _{(x, y) \rightarrow(0,0)}
+\dfrac{\arcsin \left(x^{2}+y^{2}\right)}{x^{2}+y^{2}}=1\)</span></p>
+<p>（2） <span class="math display">\[
+\lim _{(x, y) \rightarrow(0,0)}\left(x^{2}+y^{2}\right) \mathrm{e}^{x-y}
+\]</span> 因 <span class="math inline">\(\left(x^{2}+y^{2}\right)
+\mathrm{e}^{x-y}\)</span> 在 <span class="math inline">\((0,0)\)</span>
+处是连续的，<span class="math inline">\(\lim\limits _{(x, y)
+\rightarrow(0,0)}\left(x^{2}+y^{2}\right) \mathrm{e}^{x-y}=0\)</span>
+。</p>
+<p>（3） <span class="math display">\[
+\lim _{(x, y) \rightarrow(0,0)} \frac{x+y}{|x|+|y|}
+\]</span> 沿射线 <span class="math inline">\(y=x,x&gt;0\)</span>
+逼近，<span
+class="math inline">\(\lim\limits_{x\to0^+,y=x}{\dfrac{x+y}{|x|+|y|}}=1\)</span>
+。沿射线 <span class="math inline">\(y=-x,x&gt;0\)</span> 逼近，<span
+class="math inline">\(\lim\limits_{x\to0^+,y=-x}{\dfrac{x+y}{|x|+|y|}}=0\neq1\)</span>
+。因此极限不存在。</p>
+<p>（4） <span class="math display">\[
+\lim _{(x, y) \rightarrow \infty} \frac{x+y}{x^{2}+x y+y^{2}}
+\]</span> <span class="math inline">\((x,y)\to+\infty\)</span> 意味着
+<span class="math inline">\(\forall N&gt;0\)</span> 都有 <span
+class="math inline">\(r:=x^2+y^2&gt;N\)</span> 。有 <span
+class="math inline">\(|x+y|\leq|x|+|y|\leq2\sqrt{r}\)</span> ，<span
+class="math inline">\(|xy|\leq|x||y|=\dfrac{1}{2}\sqrt{(|x|+|y|)^2-r}\leq\dfrac{\sqrt{3}}{2}r\)</span>
+，故 <span class="math display">\[
+|\frac{x+y}{x^{2}+x y+y^{2}}|=\frac{|x+y|}{|x^{2}+x
+y+y^{2}|}\leq\frac{2\sqrt{r}}{|x^2+y^2|-|xy|}\leq(8+4\sqrt{3})\frac{1}{\sqrt{N}}
+\]</span> 令 <span class="math inline">\(N\to\infty\)</span> ，即可得
+<span class="math inline">\(\lim\limits _{(x, y) \rightarrow \infty}
+\dfrac{x+y}{x^{2}+x y+y^{2}}=0\)</span></p>
+<p>（5） <span class="math display">\[
+\lim _{(x, y) \rightarrow \infty}\left(\frac{|x y|}{x^{2}+x
+y+y^{2}}\right)^{x^{2}}
+\]</span></p>
+<p>沿曲线 <span
+class="math inline">\(y=x\mathrm{e}^{\frac{k}{x^2}},x\to0^+\)</span>
+逼近（其中 <span class="math inline">\(k&gt;0\)</span> ），有 <span
+class="math inline">\(\dfrac{x}{y}=\mathrm{e}^{-\frac{k}{x^2}}&lt;1\)</span>
+，因此 <span class="math display">\[
+\lim\limits_{x\to0^+}\left(\frac{|x y|}{x^{2}+x
+y+y^{2}}\right)^{x^{2}}=\lim\limits_{x\to0^+}\left(\frac{\mathrm{e}^{-\frac{k}{x^2}}}{1+\mathrm{e}^{-\frac{k}{x^2}}+\mathrm{e}^{-\frac{2k}{x^2}}}\right)^{x^2}=\mathrm{e}^{-k}
+\]</span></p>
+<p><span class="math inline">\(k\)</span>
+取不同的值时函数趋近值不同，因此极限不存在。</p>
+<h4 id="section-5">1.5.5</h4>
+<p>设 <span class="math inline">\(\Omega \subseteq
+\mathbb{R}^{m}\)</span> 是一个非空集合。 (a) 证明函数 <span
+class="math inline">\(f: \mathbb{R}^{m} \rightarrow \mathbb{R},
+f(\mathbf{x})=\inf \limits_{\mathbf{y} \in
+\Omega}\|\mathbf{y}-\mathbf{x}\|\)</span>，是一个连续函数。 (b) 若 <span
+class="math inline">\(\Omega\)</span> 是闭集，证明对任意 <span
+class="math inline">\(\mathbf{x}\)</span>，存在 <span
+class="math inline">\(\mathbf{y}^{*} \in \Omega\)</span> 使得 <span
+class="math inline">\(f(\mathbf{x})=\left\|\mathbf{y}^{*}-\mathbf{x}\right\|\)</span>
+，并且 <span class="math inline">\(\mathbf{y}^{*} \in \partial
+\Omega\)</span> （即 <span class="math inline">\(\mathbf{y}^{*}\)</span>
+的任意邻域中都有不属于 <span class="math inline">\(\Omega\)</span>
+的点）。 (c) 若 <span class="math inline">\(\Omega_{1},
+\Omega_{2}\)</span> 是闭集且其中至少一个有界，证明存在 <span
+class="math inline">\(\mathbf{x}_{k}^{*} \in \Omega_{k}\)</span> 使得
+<span class="math display">\[
+\left\|\mathbf{x}_{1}^{*}-\mathbf{x}_{2}^{*}\right\|=\inf
+_{\mathbf{x}_{1} \in \Omega_{1}, \mathbf{x}_{2} \in
+\Omega_{2}}\left\|\mathbf{x}_{1}-\mathbf{x}_{2}\right\|
+\]</span> (d) 举例说明上述 “闭”、“有界”的条件是不能或缺的。</p>
+<p>（ <span class="math inline">\(\inf\)</span> 是下确界函数）</p>
+<hr />
+<p>解：（1）取 <span class="math inline">\(\forall
+\mathbf{x},\mathbf{y}\in\mathbb{R}^m,\forall \mathbf{p}\in
+\Omega\)</span> ，由范数的三角形不等式：<span
+class="math inline">\(||\mathbf{y}-\mathbf{x}||\geq||\mathbf{x}-\mathbf{p}||-||\mathbf{y}-\mathbf{p}||\)</span>
+，可知 <span class="math inline">\(f(\mathbf{x})=\inf
+\limits_{\mathbf{p} \in
+\Omega}\|\mathbf{p}-\mathbf{x}\|\leq||\mathbf{y}-\mathbf{x}||+||\mathbf{y}-\mathbf{p}||\)</span>
+，进而 <span class="math inline">\(||\mathbf{y}-\mathbf{p}||\geq
+f(\mathbf{x})-||\mathbf{y}-\mathbf{x}||\)</span> 对 <span
+class="math inline">\(\forall \mathbf p\in\Omega\)</span> 成立，因此
+<span
+class="math inline">\(f(\mathbf{x})-f(\mathbf{y})\leq||\mathbf{y}-\mathbf{x}||\)</span>
+。同理 <span
+class="math inline">\(f(\mathbf{y})-f(\mathbf{x})\leq||\mathbf{y}-\mathbf{x}||\)</span>
+。</p>
+<p>对 <span class="math inline">\(\forall \varepsilon&gt;0\)</span>
+，<span
+class="math inline">\(\forall\mathbf{x}_1,\mathbf{x}_2\in\mathbb{R}^m\)</span>
+，只要 <span
+class="math inline">\(||\mathbf{x}_1-\mathbf{x}_2||&lt;\varepsilon\)</span>
+，则 <span
+class="math inline">\(|f(\mathbf{x}_1)-f(\mathbf{x}_2)|\leq||\mathbf{x}_1-\mathbf{x}_2||&lt;\varepsilon\)</span>
+，因此 <span class="math inline">\(f(\mathbf{x})\)</span> 连续。</p>
+<p>（2）对 <span class="math inline">\(\forall
+r&gt;f(\mathbf{x})\)</span> ，显然有 <span class="math inline">\(\inf
+\limits_{\mathbf{y} \in \Omega}\|\mathbf{y}-\mathbf{x}\|=\inf
+\limits_{\mathbf{y} \in \Omega\cap
+B(\mathbf{x},r)}\|\mathbf{y}-\mathbf{x}\|\)</span> ，其中 <span
+class="math inline">\(B(0,r)=\{\mathbf{z}\in\mathbb{R}^m|||\mathbf{z}-\mathbf{x}||\leq
+r\}\)</span> ，显然也是闭集（这是第一次作业第一题），因此 <span
+class="math inline">\(\Omega\cap B(0,r)\)</span> 是有界闭集。又因 <span
+class="math inline">\(g(\mathbf{y})=||\mathbf{y}-\mathbf{x}||\)</span>
+连续，则 <span
+class="math inline">\(g(\mathbf{y}),\mathbf{y}\in\Omega\cap
+B(0,r)\)</span> 也是一个有界闭集，因此有最小值 <span
+class="math inline">\(||\mathbf{y}_0-\mathbf{x}||\)</span>
+。由下确界定义，此最小值就是 <span class="math inline">\(\inf
+\limits_{\mathbf{y} \in \Omega\cap
+B(\mathbf{x},r)}\|\mathbf{y}-\mathbf{x}\|=\inf \limits_{\mathbf{y} \in
+\Omega}\|\mathbf{y}-\mathbf{x}\|\)</span> 。因此 <span
+class="math display">\[
+\inf \limits_{\mathbf{y} \in
+\Omega}\|\mathbf{y}-\mathbf{x}\|=||\mathbf{y}_0-\mathbf{x}||,\quad
+\mathbf{y}_0\in\Omega\cap B(0,r)
+\]</span> 对 <span
+class="math inline">\(\forall\varepsilon&gt;0\)</span> ，有 <span
+class="math inline">\(\mathbf{z}=\mathbf{y}_0-\dfrac{\varepsilon}{2}\dfrac{\mathbf{y}_0-\mathbf{x}}{||\mathbf{y}_0-\mathbf{x}||}\)</span>
+， <span
+class="math inline">\(||\mathbf{y}_0-\mathbf{z}||=\dfrac{\varepsilon}{2}&lt;\varepsilon\)</span>
+，但 <span
+class="math inline">\(||\mathbf{z}-\mathbf{x}||=f(\mathbf{x})(1-\dfrac{\varepsilon}{2})&lt;f(\mathbf{x})\)</span>
+，因此 <span class="math inline">\(\mathbf{z}\notin\Omega\)</span>
+。所以 <span
+class="math inline">\(\mathbf{y}_0\in\partial\Omega\)</span> 。</p>
+<p>（3）不妨设 <span class="math inline">\(\Omega_1\)</span>
+是有界闭集。对 <span class="math inline">\(\forall\mathbf{x}\in\Omega_2
+\ ,\ \exists\mathbf{y}_0\in\Omega_1\ ,\
+f(\mathbf{x}):=\inf\limits_{\mathbf{y}\in\Omega_1}{||\mathbf{y}-\mathbf{x}||}=||\mathbf{y}_0-\mathbf{x}||\)</span>
+。对 <span class="math inline">\(\forall n\in\Z^+\)</span> 存在 <span
+class="math inline">\(\mathbf{x}_n\in\Omega_2\)</span>
+，使其中存在收敛子列 <span
+class="math inline">\(\{\mathbf{x}_{n_k}\}\)</span> 使 <span
+class="math inline">\(\lim\limits_{k\to+\infty}{||f(\mathbf{x}_{n_k})||}=\inf\limits_{\mathbf{x}\in\Omega_2}{f(\mathbf{x})}\)</span>
+，因 <span class="math inline">\(f\)</span> 为连续映射且 <span
+class="math inline">\(\Omega_2\)</span> 是闭集，存在 <span
+class="math inline">\(\mathbf{x}_0\in\Omega_2\)</span> 使 <span
+class="math inline">\(f(\mathbf{x}_0)=\inf\limits_{\mathbf{x}\in\Omega_2}{f(\mathbf{x})}\)</span>​
+。因此存在 <span class="math inline">\(\mathbf{x}_{k}^{*} \in
+\Omega_{k}\)</span> 使得 <span class="math display">\[
+\left\|\mathbf{x}_{1}^{*}-\mathbf{x}_{2}^{*}\right\|=\inf
+_{\mathbf{x}_{1} \in \Omega_{1}, \mathbf{x}_{2} \in
+\Omega_{2}}\left\|\mathbf{x}_{1}-\mathbf{x}_{2}\right\|
+\]</span> （4）没有“闭”限制：</p>
+<p><span class="math inline">\(\Omega_1=(-1,0),\Omega_2=(0,1)\)</span>
+，显然不存在 <span
+class="math inline">\(x_k\in\Omega_k,|x_1-x_2|=\inf\limits_{x_1\in\Omega_1,x_2\in\Omega_2}{|x_1-x_2|}=0\)</span>
+。</p>
+<p>没有“有界”限制：</p>
+<p><span
+class="math inline">\(\Omega_1=\{(x,y)\in\R^2|y\geq\dfrac{1}{x},x&gt;0\},\Omega_2=\{(x,y)\in\R^2|y\leq-\dfrac{1}{x},x&gt;0\}\)</span>
+。显然不存在 <span
+class="math inline">\((x_k,y_k)\in\Omega_k,||(x_1,y_1)-(x_2,y_2)||=\inf\limits_{x_1\in\Omega_1,x_2\in\Omega_2}{||(x_1,y_1)-(x_2,y_2)||}=0\)</span>
+。</p>
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Work/" class="category-chain-item">Work</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Work/math-homework/" class="category-chain-item">math homework</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/math/">#math</a>
+      
+        <a href="/tags/calculus/">#calculus</a>
+      
+        <a href="/tags/homework/">#homework</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/03/14/wxf05/" title="多元微积分笔记（五）极值、临界点与函数凹凸性">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">多元微积分笔记（五）极值、临界点与函数凹凸性</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/03/12/figure/" title="souls passed by">
+                        <span class="hidden-mobile">souls passed by</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Support: Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Theme: Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var title = subtitle.title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?40d396b194275243fc89f8147f2c95fc";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'G-4Z5ZTXQ6M5', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        MathJax = {
+          tex    : {
+            inlineMath: { '[+]': [['$', '$']] }
+          },
+          loader : {
+            load: ['ui/lazy']
+          },
+          options: {
+            renderActions: {
+              findScript    : [10, doc => {
+                document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                  const display = !!node.type.match(/; *mode=display/);
+                  const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                  const text = document.createTextNode('');
+                  node.parentNode.replaceChild(text, node);
+                  math.start = { node: text, delim: '', n: 0 };
+                  math.end = { node: text, delim: '', n: 0 };
+                  doc.math.push(math);
+                });
+              }, '', false],
+              insertedScript: [200, () => {
+                document.querySelectorAll('mjx-container').forEach(node => {
+                  let target = node.parentNode;
+                  if (target.nodeName.toLowerCase() === 'li') {
+                    target.parentNode.classList.add('has-jax');
+                  }
+                });
+              }, '', false]
+            }
+          }
+        };
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.0/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

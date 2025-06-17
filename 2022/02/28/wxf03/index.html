@@ -1,0 +1,1636 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/forest.png">
+  <link rel="icon" href="/img/zhihu.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Solocene">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="这一节开始需要熟练地理解和运用线性代数语言，但难度还尚可接受。王老师用了很多严谨但可能比较晦涩的公式写法，为了方便看进行了一些修改。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多元微积分笔记（三）多元函数的导数与微分">
+<meta property="og:url" content="https://solocene.github.io/2022/02/28/wxf03/index.html">
+<meta property="og:site_name" content="意义之树">
+<meta property="og:description" content="这一节开始需要熟练地理解和运用线性代数语言，但难度还尚可接受。王老师用了很多严谨但可能比较晦涩的公式写法，为了方便看进行了一些修改。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://solocene.github.io/img/wp(21).jpg">
+<meta property="article:published_time" content="2022-02-28T03:58:07.000Z">
+<meta property="article:modified_time" content="2022-04-30T04:57:47.733Z">
+<meta property="article:author" content="Solocene">
+<meta property="article:tag" content="math">
+<meta property="article:tag" content="calculus">
+<meta property="article:tag" content="note">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://solocene.github.io/img/wp(21).jpg">
+  
+  
+  <title>多元微积分笔记（三）多元函数的导数与微分 - 意义之树</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"solocene.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":80,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"40d396b194275243fc89f8147f2c95fc","google":"G-4Z5ZTXQ6M5","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"venChOS8mKPGIfnCI81N943k-gzGzoHsz","app_key":"KTW7eDYU8aP10TJ7z6Krqmkh","server_url":"https://venchos8.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>意义之树</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/wp(21).jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          <span id="subtitle" title="多元微积分笔记（三）多元函数的导数与微分">
+            
+          </span>
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-02-28 11:58" pubdate>
+          2022年2月28日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          22k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          181 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Math"
+        id="heading-a49950aa047c2292e989e368a97a3aae" role="tab" data-toggle="collapse" href="#collapse-a49950aa047c2292e989e368a97a3aae"
+        aria-expanded="true"
+      >
+        Math
+        <span class="list-group-count">(7)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-a49950aa047c2292e989e368a97a3aae"
+           role="tabpanel" aria-labelledby="heading-a49950aa047c2292e989e368a97a3aae">
+        
+        
+          
+          
+  <div class="category-post-list">
+    
+    
+  </div>
+
+          
+          
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Calculus"
+        id="heading-0349a55a6a70f89e604c28892ce24d82" role="tab" data-toggle="collapse" href="#collapse-0349a55a6a70f89e604c28892ce24d82"
+        aria-expanded="true"
+      >
+        Calculus
+        <span class="list-group-count">(7)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-0349a55a6a70f89e604c28892ce24d82"
+           role="tabpanel" aria-labelledby="heading-0349a55a6a70f89e604c28892ce24d82">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/02/22/wxf01/" title="多元微积分笔记（一）多元函数的连续性"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">多元微积分笔记（一）多元函数的连续性</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/04/18/wxf11/" title="多元微积分笔记（七）重积分"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">多元微积分笔记（七）重积分</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/02/28/wxf03/" title="多元微积分笔记（三）多元函数的导数与微分"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">多元微积分笔记（三）多元函数的导数与微分</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/02/28/wxf02/" title="多元微积分笔记（二）多元函数的极限"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">多元微积分笔记（二）多元函数的极限</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/03/14/wxf05/" title="多元微积分笔记（五）极值、临界点与函数凹凸性"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">多元微积分笔记（五）极值、临界点与函数凹凸性</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/03/21/wxf06/" title="多元微积分笔记（六） 隐函数与逆映射"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">多元微积分笔记（六） 隐函数与逆映射</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/03/07/wxf04/" title="多元微积分笔记（四）高阶导数与 Taylor 公式"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">多元微积分笔记（四）高阶导数与 Taylor 公式</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">多元微积分笔记（三）多元函数的导数与微分</h1>
+            
+              <p class="note note-default">
+                
+                  
+                    本文最后更新于：2022年4月30日 下午
+                  
+                
+              </p>
+            
+            <div class="markdown-body">
+              
+              <h3 id="第三讲-多元函数的导数与微分"><strong>第三讲
+多元函数的导数与微分</strong></h3>
+<p>求导数的目的是为了找到一个非线性的函数/映射在一点附近的局部线性近似。</p>
+<p>由于维数升高，原有的导数定义需要修改，有两种解决方法：</p>
+<ul>
+<li><p>沿向量求导, 方向导数:（包括偏导数） <span class="math display">\[
+\lim _{t \rightarrow 0} \frac{f\left(\mathbf{x}_{0}+t
+\mathbf{v}\right)-f\left(\mathbf{x}_{0}\right)}{t}
+\]</span></p></li>
+<li><p>微分 <span class="math display">\[
+\begin{gathered}
+类比\lim _{x \rightarrow x_{0}}
+\frac{f(x)-f\left(x_{0}\right)-f^{\prime}\left(x_{0}\right)\left(x-x_{0}\right)}{x-x_{0}}=0:\\
+f(\mathbf{x})-f\left(\mathbf{x}_{0}\right)-L\left(\mathbf{x}-\mathbf{x}_{0}\right)=o\left(\mathbf{x}-\mathbf{x}_{0}\right),
+\quad \mathbf{x} \rightarrow \mathbf{x}_{0} .
+\end{gathered}
+\]</span> <span class="math inline">\(L\)</span> 是线性映射。</p></li>
+</ul>
+<h5 id="方向导数">1.方向导数</h5>
+<p>先看函数/映射沿向量的导数：设 <span
+class="math inline">\(\mathbf{x}^{*}\)</span> 是 <span
+class="math inline">\(E\)</span> 的一个内点, <span
+class="math inline">\(\mathbf{v} \in \mathbf{R}^{m}\)</span> 。记 <span
+class="math display">\[
+\partial_{\mathbf{v}}
+f\left(\mathbf{x}^{*}\right)=\left.\frac{\mathrm{d}
+f\left(\mathbf{x}^{*}+t \mathbf{v}\right)}{\mathrm{d}
+t}\right|_{t=0}=\lim _{t \rightarrow 0} \frac{f\left(\mathbf{x}^{*}+t
+\mathbf{v}\right)-f\left(\mathbf{x}^{*}\right)}{t}
+\]</span> 称为映射 <span class="math inline">\(f: E \rightarrow
+\mathbb{R}^{p}\)</span> 在 <span
+class="math inline">\(\mathbf{x}^{*}\)</span> 处沿向量 <span
+class="math inline">\(\mathbf{v}\)</span> 的导数。</p>
+<p><strong>内点</strong>：设 <span class="math inline">\(E \subseteq
+\mathbb{R}^{m}\)</span>, 称 <span class="math inline">\(\mathbf{x}^{*}
+\in \mathbb{R}^{m}\)</span> 是 <span class="math inline">\(E\)</span>
+的一个内点, 如果 <span class="math inline">\(\exists
+\delta&gt;0\)</span> 使得 <span class="math inline">\(\forall \mathbf{x}
+\in \mathbb{R}^{m},\left\|\mathbf{x}-\mathbf{x}^{*}\right\|&lt;\delta
+\Rightarrow \mathbf{x} \in E\)</span>.</p>
+<ol type="1">
+<li>对映射 <span
+class="math inline">\(f(\mathbf{x})=\left(f^{1}(\mathbf{x}), \ldots,
+f^{p}(\mathbf{x})\right)^{T}, \quad \partial_{\mathbf{v}}
+f\left(\mathbf{x}^{*}\right) \in \mathbb{R}^{p}\)</span>, 且 <span
+class="math display">\[
+\partial_{\mathbf{v}}
+f\left(\mathbf{x}^{*}\right)=\left(\partial_{\mathbf{v}}
+f^{1}\left(\mathbf{x}^{*}\right), \ldots, \partial_{\mathbf{v}}
+f^{p}\left(\mathbf{x}^{*}\right)\right)^{T}
+\]</span></li>
+<li><span class="math inline">\(\partial_{\mathbf{v}}
+f\left(\mathbf{x}^{*}\right)\)</span> 并不依赖于原像空间 <span
+class="math inline">\(\mathbb{R}^{m}\)</span> 中的任何范数。</li>
+<li><span class="math inline">\(f\left(\mathbf{x}^{*}+t
+\mathbf{v}\right)\)</span> 把多元函数 <span
+class="math inline">\(f\)</span> 变成关于 <span
+class="math inline">\(t\)</span> 的一元函数,
+这是用一元微积分方法研究多元函数的一个常用方式。</li>
+<li>对任何实数 <span class="math inline">\(\lambda, \partial_{\lambda
+\mathbf{v}} f\left(\mathbf{x}^{*}\right)=\lambda \partial_{\mathbf{v}}
+f\left(\mathbf{x}^{*}\right)\)</span> 。</li>
+</ol>
+<p>由此可以定义<strong>方向导数</strong>：映射 <span
+class="math inline">\(f: E \rightarrow \mathbb{R}^{p}\)</span> 在 <span
+class="math inline">\(\mathbf{x}^{*}\)</span> 处沿向量 <span
+class="math inline">\(\mathbf{v}\)</span> 的导数，且 <span
+class="math inline">\(\mathbf v\)</span> 为单位向量。</p>
+<p>在一元函数中，某点沿x轴正向的方向导数为该点函数的右导数；该点沿x轴负向的方向导数为该点左导数的<font color="red">相反数</font>。但更多地，方向导数更强调函数在某一方向、某一固定点的性质，与一般导数不太相同。</p>
+<h5 id="偏导数">2.偏导数</h5>
+<p>设 <span class="math inline">\(E \subseteq \mathbb{R}^{m},
+\mathbf{x}^{*}\)</span> 是 <span class="math inline">\(E\)</span>
+的一个内点。 设 <span class="math inline">\(\mathbf{v}_{1}, \ldots,
+\mathbf{v}_{m} \in \mathbf{R}^{m}\)</span> 是一组基底向量, <span
+class="math inline">\(\left(x^{1}, \ldots, x^{m}\right)\)</span>
+是相应的坐标, 即 <span class="math display">\[
+\mathbf{x}-\mathbf{x}^{*}=x^{1} \mathbf{v}_{1}+\cdots+x^{m}
+\mathbf{v}_{m}
+\]</span> 此时记 <span class="math display">\[
+\partial_{k} f\left(\mathbf{x}^{*}\right)=\frac{\partial f}{\partial
+x^{k}}\left(\mathbf{x}^{*}\right)=\partial_{\mathbf{v}_{k}}
+f\left(\mathbf{x}^{*}\right)=\lim _{t \rightarrow 0}
+\frac{f\left(\mathbf{x}^{*}+t
+\mathbf{v}_{k}\right)-f\left(\mathbf{x}^{*}\right)}{t}
+\]</span> 称为映射 <span class="math inline">\(f: E \rightarrow
+\mathbb{R}^{p}\)</span> 在 <span
+class="math inline">\(\mathrm{x}^{*}\)</span> 处对坐标 <span
+class="math inline">\(x^{k}\)</span> 的偏导数。</p>
+<h5 id="映射的可微性和微分">3.映射的可微性和微分</h5>
+<p>设 <span class="math inline">\(E \subseteq \mathbb{R}^{m},
+\mathbf{x}^{*}\)</span> 是 <span class="math inline">\(E\)</span>
+的一个内点。 称 <span class="math inline">\(f: E \rightarrow
+\mathbb{R}^{p}\)</span> 在 <span
+class="math inline">\(\mathrm{x}^{*}\)</span> 处可微,
+如果存在<font color="red">线性映射</font> <span class="math inline">\(L:
+\mathbb{R}^{m} \rightarrow \mathbb{R}^{p}\)</span> (称为 <span
+class="math inline">\(f: E \rightarrow \mathbb{R}^{p}\)</span> 在 <span
+class="math inline">\(\mathbf{x}^{*}\)</span> 处的导数或微分,
+记为<font color="red"> <span class="math inline">\(\mathrm{D}
+f\left(\mathbf{x}^{*}\right)\)</span> </font>) 使得 <span
+class="math display">\[
+f\left(\mathbf{x}^{*}+\mathbf{v}\right)=f\left(\mathbf{x}^{*}\right)+L\mathbf{v}+o(\|\mathbf{v}\|),
+\quad \mathbf{v} \rightarrow \mathbf{0} .
+\]</span> （ <span class="math inline">\(p=1\)</span> 时更常称为微分,
+记为 <span class="math inline">\(\mathrm{d}
+f\left(\mathbf{x}^{*}\right)\)</span> ）</p>
+<p>例：对仿射映射 <span class="math inline">\(f(\mathbf{x})=\mathbf{a}+A
+\mathbf{x}\)</span>, 它在任何点处都可微, 且 <span
+class="math display">\[
+\operatorname{D}f(\mathbf{x})=A
+\]</span> 例 (<strong>乘法</strong>的可微性和<strong>Leibniz
+公式</strong>)： 求 <span
+class="math inline">\(h(\mathbf{x})=L_{2}(f(\mathbf{x}),
+g(\mathbf{x}))\)</span> 的微分, 其中 <span
+class="math inline">\(L_{2}\)</span> 是双线性型, <span
+class="math inline">\(f, g\)</span> 可微。</p>
+<p>解： <span class="math display">\[
+\begin{aligned}
+h(\mathbf{x}+\mathbf{v}) &amp;=L_{2}(f(\mathbf{x}+\mathbf{v}),
+g(\mathbf{x}+\mathbf{v})) \\
+&amp;=L_{2}(f(\mathbf{x})+\operatorname{D} f(\mathbf{x})
+\mathbf{v}+o(\mathbf{v}), g(\mathbf{x})+\operatorname{Dg}(\mathbf{x})
+\mathbf{v}+o(\mathbf{v})) \\
+&amp;=h(\mathbf{x})+L_{2}(\operatorname{D} f(\mathbf{x}) \mathbf{v},
+g(\mathbf{x}))+L_{2}(f(\mathbf{x}), \operatorname{Dg}(\mathbf{x})
+\mathbf{v})+o(\mathbf{v}), \quad \mathbf{v} \rightarrow 0
+\end{aligned}
+\]</span> 所以 <span class="math inline">\(h\)</span> 可微, 且 <span
+class="math display">\[
+\mathrm{D} h(\mathbf{x}) \mathbf{v}=L_{2}(\mathrm{D} f(\mathbf{x})
+\mathbf{v}, g(\mathbf{x}))+L_{2}(f(\mathbf{x}), \mathrm{D} g(\mathbf{x})
+\mathbf{v})
+\]</span> 例 <span class="math inline">\(F, G\)</span> 是可微向量场,
+<span class="math inline">\(\langle,\rangle\)</span>
+是<strong>内积</strong>, 求 <span
+class="math inline">\(h(\mathbf{x})=\langle F(\mathbf{x}),
+G(\mathbf{x})\rangle\)</span> 的微分。</p>
+<p>解：由上例知 <span class="math inline">\(h\)</span> 可微, 且 <span
+class="math display">\[
+\begin{aligned}
+\mathrm{d} h(\mathbf{x}) \mathbf{v} &amp;=\langle\mathrm{D}
+F(\mathbf{x}) \mathbf{v}, G(\mathbf{x})\rangle+\langle F(\mathbf{x}),
+\mathrm{D} G(\mathbf{x}) \mathbf{v}\rangle \\
+&amp;=\left\langle\mathbf{v},(\mathrm{D} F(\mathbf{x}))^{T}
+G(\mathbf{x})\right\rangle+\left\langle(\mathrm{D} G(\mathbf{x}))^{T}
+F(\mathbf{x}), \mathbf{v}\right\rangle \\
+&amp;=\left\langle\mathbf{v},(\mathrm{D} F(\mathbf{x}))^{T}
+G(\mathbf{x})+(\mathrm{D} G(\mathbf{x}))^{T} F(\mathbf{x})\right\rangle
+\end{aligned}
+\]</span> （线性代数知识）设 <span class="math inline">\(A:
+\mathbb{R}^{m} \rightarrow \mathbb{R}^{n}\)</span> 是一个线性映射, <span
+class="math inline">\(\langle,\rangle_{m}\)</span> 和 <span
+class="math inline">\(\langle,\rangle_{n}\)</span> 分别是 <span
+class="math inline">\(\mathbb{R}^{m}\)</span> 和 <span
+class="math inline">\(\mathbb{R}^{n}\)</span> 上的内积。定义 <span
+class="math inline">\(A^{T}: \mathbb{R}^{n} \rightarrow
+\mathbb{R}^{m}\)</span> 是线性映射, 满足对任意 <span
+class="math inline">\(\mathbf{x} \in \mathbb{R}^{m}, \mathbf{y} \in
+\mathbb{R}^{n}\)</span> 都有 <span class="math inline">\(\langle A
+\mathbf{x}, \mathbf{y}\rangle_{n}=\left\langle\mathbf{x}, A^{T}
+\mathbf{y}\right\rangle_{n}\)</span> 。</p>
+<p>例 <strong><span class="math inline">\(k\)</span>-重线性型</strong>
+<span class="math inline">\(L_{k}\left(\mathbf{v}_{1}, \ldots,
+\mathbf{v}_{\mathbf{k}}\right)\)</span> 关于 <span
+class="math inline">\(\left(\mathbf{v}_{1}, \ldots,
+\mathbf{v}_{k}\right)\)</span> 是可微函数, 求 <span
+class="math inline">\(L_{k}\)</span> 的微分。 解： <span
+class="math display">\[
+\begin{aligned}
+&amp; L_{k}\left(\mathbf{v}_{1}+\mathbf{w}_{1}, \ldots,
+\mathbf{v}_{k}+\mathbf{w}_{k}\right) \\
+=&amp; L_{k}\left(\mathbf{v}_{1}, \mathbf{v}_{2}, \ldots,
+\mathbf{v}_{k}\right) \\
+&amp;+L_{k}\left(\mathbf{w}_{1}, \mathbf{v}_{2}, \ldots,
+\mathbf{v}_{k}\right)+L_{k}\left(\mathbf{v}_{1}, \mathbf{w}_{2}, \ldots,
+\mathbf{v}_{k}\right)+\cdots+L_{k}\left(\mathbf{v}_{1}, \mathbf{v}_{2},
+\ldots, \mathbf{w}_{k}\right) \\
+&amp;+o(\|\mathbf{w}\|), \quad\|\mathbf{w}\| \rightarrow 0 .
+\end{aligned}
+\]</span> 所以 <span class="math display">\[
+\begin{aligned}
+&amp; \mathrm{D} L_{k}\left(\mathbf{v}_{1}, \ldots,
+\mathbf{v}_{k}\right)\left(\mathbf{w}_{1}, \ldots, \mathbf{w}_{k}\right)
+\\
+=&amp; L_{k}\left(\mathbf{w}_{1}, \mathbf{v}_{2}, \ldots,
+\mathbf{v}_{k}\right)+L_{k}\left(\mathbf{v}_{1}, \mathbf{w}_{2}, \ldots,
+\mathbf{v}_{k}\right)+\cdots+L_{k}\left(\mathbf{v}_{1}, \mathbf{v}_{2},
+\ldots, \mathbf{w}_{k}\right)
+\end{aligned}
+\]</span> 例：<strong>除法（逆）</strong>的可微性。考虑 <span
+class="math inline">\(\operatorname{inv}\)</span> : <span
+class="math inline">\(\mathcal{G L}(m) \rightarrow \mathcal{G L}(m),
+\operatorname{inv}(A)=A^{-1}\)</span> 。证明 <span
+class="math inline">\(\operatorname{inv}\)</span> 是可微映射,
+并求它的微分。</p>
+<p>解：我们已经知道当 <span class="math inline">\(\|B\|&lt;1\)</span>
+时, <span class="math inline">\(I-B\)</span> 可逆, <span
+class="math inline">\((I-B)^{-1}=I+C\)</span>, 且 <span
+class="math inline">\(\|C\| \leq \frac{\|B\|}{1-\|B\|}\)</span> 。由
+<span class="math inline">\((I+C)(I-B)=I\)</span> 得 <span
+class="math inline">\(C=B+C B\)</span> 。于是 <span
+class="math display">\[
+\operatorname{inv}(I-B)=I+C=I+B+C B,
+\]</span> 其中 <span class="math inline">\(\|C B\| \leq\|C\|\|B\| \leq
+\frac{\|B\|^{2}}{1-\|B\|}\)</span>, 所以 <span class="math inline">\(C
+B=o(B) \quad(B \rightarrow 0)\)</span> 。对 <span
+class="math inline">\(A_{0} \in \mathcal{G} \mathcal{L}(m)\)</span>,
+以及 <span class="math inline">\(B \in \mathcal{L}(m)\)</span>, 当 <span
+class="math inline">\(\|B\|&lt;\frac{1}{\left\|A_{0}^{-1}\right\|}\)</span>
+时, <span class="math display">\[
+\begin{aligned}
+\operatorname{inv}\left(A_{0}+B\right)
+&amp;=\left(A_{0}\left(I+A_{0}^{-1}
+B\right)\right)^{-1}=\left(I-A_{0}^{-1} B+o(B)\right) A_{0}^{-1} \\
+&amp;=\operatorname{inv}\left(A_{0}\right)-A_{0}^{-1} B A_{0}^{-1}+o(B)
+.
+\end{aligned}
+\]</span> 因此 <span class="math inline">\(\operatorname{inv}\)</span>
+可微, 且 <span
+class="math inline">\(\operatorname{Dinv}\left(A_{0}\right)(B)=-A_{0}^{-1}
+B A_{0}^{-1}\)</span> 。</p>
+<h5 id="链索法则">4.链索法则</h5>
+<p>定理内容：设 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(\mathbf{x}\)</span> 处可微, <span
+class="math inline">\(g\)</span> 在 <span
+class="math inline">\(\mathbf{y}=f(\mathbf{x})\)</span> 处可微, 则 <span
+class="math inline">\(g \circ f\)</span> 在 <span
+class="math inline">\(\mathbf{x}\)</span> 处可微, 且 <span
+class="math display">\[
+\mathrm{D}(g \circ f)(\mathbf{x})=\mathrm{D}g(\mathrm{D}f(\mathbf{x})) .
+\]</span> 证明： <span class="math display">\[
+\begin{aligned}
+g(\mathbf{y}+\mathbf{w})
+&amp;=g(\mathbf{y})+\operatorname{Dg}(\mathbf{y})
+\mathbf{w}+o(\mathbf{w}) \\
+f(\mathbf{x}+\mathbf{v}) &amp;=f(\mathbf{x})+\operatorname{D}
+f(\mathbf{x}) \mathbf{v}+o(\mathbf{v})
+\end{aligned}
+\]</span> 因此 <span class="math display">\[
+\begin{aligned}
+g(f(\mathbf{x}+\mathbf{v}))
+&amp;=g(\mathbf{y})+\mathrm{Dg}(\mathbf{y})(f(\mathbf{x}+\mathbf{v})-f(\mathbf{x}))+o(f(\mathbf{x}+\mathbf{v})-f(\mathbf{x}))
+\\
+&amp;=g(\mathbf{y})+\mathrm{Dg}(\mathbf{y})(\mathrm{D} f(\mathbf{x})
+\mathbf{v}+o(\mathbf{v}))+o(\mathrm{D} f(\mathbf{x})
+\mathbf{v}+o(\mathbf{v})) \\
+&amp;=g(\mathbf{y})+\mathrm{Dg}(\mathbf{y}) \mathrm{D} f(\mathbf{x})
+\mathbf{v}+o(\mathbf{v})
+\end{aligned}
+\]</span> 例：证明<strong>行列式函数</strong> <span
+class="math inline">\(\operatorname{det}(A)\)</span> 是关于 <span
+class="math inline">\(A\)</span> 的可微函数, 并求它的微分。</p>
+<p>证明：记 <span
+class="math inline">\(\operatorname{col}_{j}(A)\)</span> 为矩阵 <span
+class="math inline">\(A\)</span> 的第 <span
+class="math inline">\(j\)</span> 列, 则 <span
+class="math inline">\(\operatorname{col}_{j}: \mathcal{L}(m) \rightarrow
+\mathbb{R}^m\)</span> 是线性映射, 从而可微。 <span
+class="math inline">\(\operatorname{det}(A)\)</span> 是关于 <span
+class="math inline">\(\left(\operatorname{col}_{1}(A), \ldots,
+\operatorname{col}_{m}(A)\right)\)</span> 的 <span
+class="math inline">\(m\)</span> 重线性型, 所以 <span
+class="math inline">\(\det\)</span> : <span
+class="math inline">\(\mathcal{L}(m) \rightarrow \mathbb{R}\)</span>
+是可微函数。由链索法则, <span class="math display">\[
+\begin{aligned}
+\operatorname{Ddet}(A) B=&amp;
+\operatorname{det}\left(\operatorname{col}_{1}(B),
+\operatorname{col}_{2}(A), \ldots, \operatorname{col}_{m}(A)\right) \\
+&amp;+\operatorname{det}\left(\operatorname{col}_{1}(A),
+\operatorname{col}_{2}(B), \ldots, \operatorname{col}_{m}(A)\right) \\
+&amp;+\cdots+\operatorname{det}\left(\operatorname{col}_{1}(A),
+\operatorname{col}_{2}(A), \ldots, \operatorname{col}_{m}(B)\right) \\
+=&amp; \sum_{i=1}^{m} \sum_{j=1}^{m}
+B_{i}^{j}\left(A^{*}\right)_{i}^{j}=\sum_{i=1}^{m}
+\sum_{j=1}^{m}\left(A^{* T}\right)_{j}^{i}
+B_{i}^{j}=\sum_{i=1}^{m}\left(A^{* T} B\right)_{i}^{i} \\
+=&amp; \operatorname{tr}\left(A^{* T} B\right)
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(A^{*T}\)</span> 代表 <span
+class="math inline">\(A\)</span> 的伴随矩阵，<span
+class="math inline">\(A^*\)</span> 每个元素是 <span
+class="math inline">\(A\)</span> 中对应元素的代数余子式。</p>
+<h5 id="微分与方向导数">5.微分与方向导数</h5>
+<p>设 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(\mathbf{x}^{*}\)</span> 可微, <span
+class="math inline">\(\mathbf{x}:(-\delta, \delta) \rightarrow
+\mathbb{R}^{m}\)</span> 是可微映射, 满足 <span
+class="math inline">\(\mathbf{x}(0)=\mathbf{x}^{*},
+\mathbf{x}^{\prime}(0)=\mathbf{v}\)</span> 。则 <span
+class="math inline">\(f\)</span> 沿曲线 <span
+class="math inline">\(\mathbf{x}(t)\)</span> 的导数 <span
+class="math display">\[
+\begin{aligned}
+\lim _{t \rightarrow 0}
+\frac{f(\mathbf{x}(t))-f\left(\mathbf{x}^{*}\right)}{t}
+&amp;=\left.\frac{\mathrm{d} f(\mathbf{x}(t))}{\mathrm{d}
+t}\right|_{t=0} \\
+&amp;=\mathrm{D}(f \circ \mathbf{x})(0) 1=\mathrm{D}
+f\left(\mathbf{x}^{*}\right) \mathrm{D} \mathbf{x}(0) 1 \\
+&amp;=\mathrm{D} f\left(\mathbf{x}^{*}\right)
+\mathbf{x}^{\prime}(0)=\mathrm{D} f\left(\mathbf{x}^{*}\right)
+\mathbf{v}
+\end{aligned}
+\]</span> 因此若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(\mathbf{x}^{*}\)</span> 可微，则 <span
+class="math inline">\(\forall \mathbf{v} \in \mathbb{R}^{m}\)</span>,
+方向导数 <span class="math inline">\(\partial_{\mathbf{v}}
+f\left(\mathbf{x}^{*}\right)=\operatorname{D}
+f\left(\mathbf{x}^{*}\right) \mathbf{v}\)</span> 。 也就是说, <span
+class="math inline">\(\quad \partial_{\lambda \mathbf{u}+\mu \mathbf{v}}
+f\left(\mathbf{x}^{*}\right)=\lambda \partial_{\mathbf{u}}
+f\left(\mathbf{x}^{*}\right)+\mu \partial_{\mathbf{v}}
+f\left(\mathbf{x}^{*}\right)\)</span> 。 <span
+class="math inline">\(f\)</span>
+的微分使沿不同向量的导数之间建立了联系，为沿任意方向的方向导数表示为固定方向的几个方向导数提供了可能。</p>
+<p>另，即使函数 <span class="math inline">\(f(\mathbf {x_0})\)</span> 在
+<span class="math inline">\(A\)</span>
+点沿每个方向都有方向导数，也可能不可微。重点在于沿 <span
+class="math inline">\(\mathbf x-\mathbf{x_0}\)</span> 的方向导数是否关于
+<span class="math inline">\(\mathbf x-\mathbf{x_0}\)</span>
+是线性的。</p>
+<h5 id="微分和偏导数">6.微分和偏导数</h5>
+<p>如果 <span class="math inline">\(\mathbf{v}_{1}, \ldots,
+\mathbf{v}_{m}\)</span> 是 <span
+class="math inline">\(\mathbb{R}^{m}\)</span> 的一组基, 则在 <span
+class="math inline">\(\mathbf {x^*}\)</span> 附近可以引入局部坐标 <span
+class="math display">\[
+\mathbf{x}=\mathbf{x}^{*}+x^{1} \mathbf{v}_{1}+\cdots+x^{m}
+\mathbf{v}_{m}
+\]</span> 取 <span class="math inline">\(\mathbf{v}^{* 1}, \ldots,
+\mathbf{v}^{* m}\)</span> 是 <span class="math inline">\(\mathbf{v}_{1},
+\ldots, \mathbf{v}_{m}\)</span> 的<strong>对偶基</strong>, 即 <span
+class="math display">\[
+\mathbf{v}^{* k}: \mathbb{R}^{m} \rightarrow \mathbb{R}
+\]</span> 是线性函数，使得 <span class="math display">\[
+\mathbf{v}^{* k}\left(\mathbf{v}_{j}\right)= \begin{cases}1, &amp; k=j
+\\ 0, &amp; k \neq j\end{cases}\\x^{k}=\mathbf{v}^{*
+k}\left(\mathbf{x}-\mathbf{x}^{*}\right)=x^{k}(\mathbf{x})
+\]</span> 这里面 <span
+class="math inline">\(x^k,\mathbf{v}^{*k}\)</span> 都可以看作函数。</p>
+<p>所以对可微函数 <span class="math inline">\(f\)</span>， <span
+class="math display">\[
+\mathrm{d} f\left(\mathbf{x}^{*}\right) \mathbf{v}=\sum_{k=1}^{m} x^{k}
+\mathrm{~d} f\left(\mathbf{x}^{*}\right) \mathbf{v}_{k}=\sum_{k=1}^{m}
+x^{k} \partial_{k} f\left(\mathbf{x}^{*}\right)=\sum_{k=1}^{m}
+\partial_{k} f\left(\mathbf{x}^{*}\right) \mathrm{d} x^{k}(\mathbf v)
+\]</span> 所以 <span class="math display">\[
+\mathrm{d} f\left(\mathbf{x}^{*}\right)=\sum_{k=1}^{m} \partial_{k}
+f\left(\mathbf{x}^{*}\right) \mathrm{d} x^{k}=\left(\begin{array}{lll}
+\partial_{1} f &amp; \cdots &amp; \partial_{m} f
+\end{array}\right)\left(\begin{array}{c}
+\mathrm{d} x^{1} \\
+\vdots \\
+\mathrm{d} x^{m}
+\end{array}\right)
+\]</span> <strong>例：<span class="math inline">\(\det\)</span>
+函数的导数</strong></p>
+<p>我们已经知道 <span class="math inline">\(\displaystyle D
+\operatorname{det}(A) E_{i, j}=\lim _{t \rightarrow 0}
+\frac{\operatorname{det}\left(A+t E_{i,
+j}\right)-\operatorname{det}(A)}{t}=\left(A^{*}\right)_{j}^{i}\)</span>
+，因此 <span class="math display">\[
+\operatorname{D} \operatorname{det}(A) B=\sum_{i, j}
+B_{j}^{i}\left(A^{*}\right)_{j}^{i}=\sum_{j=1}^{m}
+\sum_{i=1}^{m}\left(A^{* T}\right)_{i}^{j}
+B_{j}^{i}=\operatorname{tr}\left(A^{* T} B\right)
+\]</span> 由此式可以得到 <span
+class="math inline">\(\det(A+B)\approx\det(A)+\tr(A^{*T}B),B\to0\)</span>
+，特别地， <span class="math display">\[
+\det(I+B)\approx1+\tr(B),B\to0
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\det(e^{tA})&amp;=\det(I+tA+o(t))=1+t\tr(A)-o(t),t\to 0\\
+\frac{\rm{d}\det(\it e^{tA})}{\rm d \it t} &amp;=
+\lim_{s\to 0}\frac{\det{e^{(t+s)A}}-\det{e^{tA}}}{s}\\
+&amp;= \ \lim _{s \rightarrow 0} \frac{\operatorname{det}\left(e^{t
+A}\right) \operatorname{det}\left(e^{s
+A}\right)-\operatorname{det}\left(e^{t A}\right)}{s}\\
+&amp;= \ \left.\operatorname{det}\left(e^{t A}\right) \frac{d
+\operatorname{det}\left(e^{s A}\right)}{d
+s}\right|_{s=0}=\operatorname{tr}(A) \operatorname{det}\left(e^{t
+A}\right)
+\end{aligned}
+\]</span></p>
+<p>这是一个一元微分方程，解之得 <span
+class="math inline">\(\det(\rm{e}^{\it tA})=\rm{e}^{\it
+t\tr(A)}\)</span> 。因此 <font color="red"><span
+class="math inline">\(\det(\rm{e}^{\it A})=\rm{e}^{\it
+\tr(A)}\)</span></font> 。</p>
+<h5 id="链锁法则的坐标形式">7.链锁法则的坐标形式</h5>
+<p>由上一小节的结论可以推出，对可微映射 <span class="math display">\[
+\begin{gathered}
+f\left(x^{1}, \ldots, x^{m}\right)=\left(f^{1}\left(x^{1}, \ldots,
+x^{m}\right), \ldots, f^{n}\left(x^{1}, \ldots, x^{m}\right)\right)^{T}
+\\
+D f\left(\mathbf x^{*}\right)\rm{d}\mathbf x=\left(\begin{array}{ccc}
+\partial_{1} f^{1}\left(x^{*}\right) &amp; \cdots &amp; \partial_{m}
+f^{1}\left(x^{*}\right) \\
+\vdots &amp; \ddots &amp; \vdots \\
+\partial_{1} f^{n}\left(x^{*}\right) &amp; \cdots &amp; \partial_{m}
+f^{n}\left(x^{*}\right)
+\end{array}\right)\left(\begin{array}{c}
+\mathrm{d} x^{1} \\
+\vdots \\
+\mathrm{d} x^{m}
+\end{array}\right)
+\end{gathered}
+\]</span> 等式中的大矩阵 <span class="math inline">\(\partial_{j}
+f^{i}\left(\mathbf{x}^{*}\right)\)</span> 称为 <span
+class="math inline">\(f\)</span> 在点 <span
+class="math inline">\(x^{*}\)</span> 处的 <strong>Jacobi
+矩阵</strong>。</p>
+<p>用 Jacobi 矩阵表示链锁法则： <span class="math display">\[
+\partial_{j}(g \circ
+f)^{i}\left(\mathbf{x}^{*}\right)=\partial_{j}\left(g^{i} \circ
+f\right)\left(\mathbf{x}^{*}\right)=\sum_{k=1}^{n} \partial_{k}
+g^{i}\left(f\left(\mathbf{x}^{*}\right)\right) \partial_{j}
+f^{k}\left(\mathbf{x}^{*}\right)
+\]</span></p>
+<blockquote>
+<p>坐标系的引入使得抽象的数学概念可以被更方便地计算, 但同时也带来困扰:
+同一对象在不同坐标系下具有不同的形式,
+使得数学对象的本质属性被淹没在形式的外表之下。</p>
+</blockquote>
+<h5 id="极坐标变换">8.极坐标变换</h5>
+<p>从平面极坐标到直角坐标的变换 <span class="math display">\[
+\left(\begin{array}{l}
+\rho \\
+\theta
+\end{array}\right) \mapsto\left(\begin{array}{l}
+x \\
+y
+\end{array}\right)=\left(\begin{array}{l}
+\rho \cos \theta \\
+\rho \sin \theta
+\end{array}\right)=\rho\left(\begin{array}{c}
+\cos \theta \\
+\sin \theta
+\end{array}\right)
+\]</span> 是以下可微映射的复合 <span class="math display">\[
+(\rho, \theta) \mapsto \rho, \quad(\rho, \theta) \mapsto \theta, \quad
+\theta \mapsto(\cos \theta, \sin \theta)^{T}, \quad(\rho, \mathbf{x})
+\mapsto \rho \mathbf{x},
+\]</span> 所以极坐标变换是可微映射。对此映射求导： <span
+class="math display">\[
+\left(\begin{array}{l}
+\mathrm{d} x(\rho, \theta)\\
+\mathrm{d} y(\rho, \theta)
+\end{array}\right)=\left(\begin{array}{cc}
+\cos \theta &amp; -\rho \sin \theta \\
+\sin \theta &amp; \rho \cos \theta
+\end{array}\right)\left(\begin{array}{l}
+d\rho \\
+d\theta
+\end{array}\right)
+\]</span> 其中若 <span class="math inline">\((r,
+\varphi)^{T}=(1,0)^{T}\)</span> 是 <span class="math inline">\((\rho,
+\theta)\)</span> 平面中的沿 <span class="math inline">\(\rho\)</span>
+方向的单位向量，它对应于 <span class="math inline">\((x, y)\)</span>
+坐标平面中点 <span class="math inline">\((x, y)\)</span>
+处沿<strong>径向</strong>的单位向量 <span class="math inline">\((\cos
+\theta, \sin \theta)^{T}=(\dfrac{x}{\sqrt{x^{2}+y^{2}}},
+\dfrac{y}{\sqrt{x^{2}+y^{2}}})^{T}\)</span>；若 <span
+class="math inline">\((r, \varphi)^{T}=(0,1)^{T}\)</span> 是 <span
+class="math inline">\((\rho, \theta)\)</span> 平面中的沿 <span
+class="math inline">\(\theta\)</span> 方向的单位向量，则它对应于 <span
+class="math inline">\((x, y)\)</span> 坐标平面中点 <span
+class="math inline">\((x, y)\)</span> 处沿<strong>切向</strong>的向量
+<span class="math inline">\(\rho(-\sin \theta, \cos \theta)^{T}=(-y,
+x)^{T}\)</span> 。</p>
+<p><strong>从直角坐标到极坐标</strong></p>
+<p>类似的， 在半平面 <span class="math inline">\(\left\{(x, y) \mid
+x_{0} x+y_{0} y&gt;0\right\}\)</span> 中可以定义 <span
+class="math inline">\(r(x, y)=\sqrt{x^{2}+y^{2}}, \quad \theta(x,
+y)=\theta_{0}+\arccos \dfrac{x_{0} x+y_{0} y}{\sqrt{x_{0}^{2}+y_{0}^{2}}
+\sqrt{x^{2}+y^{2}}}\)</span> ，显然两者都是可微的。有 <span
+class="math display">\[
+\left(\begin{array}{l}
+\mathrm{d} r(x, y) \\
+\mathrm{d} \theta(x, y)
+\end{array}\right)=\left(\begin{array}{cc}
+\dfrac{x}{\sqrt{x^{2}+y^{2}}}&amp; \dfrac{y}{\sqrt{x^{2}+y^{2}}} \\
+-\dfrac{y}{y^2-x^2} &amp; \dfrac{x}{y^2-x^2}
+\end{array}\right)\left(\begin{array}{l}
+\mathrm{d}x \\
+\mathrm{d}y
+\end{array}\right)\\
+\]</span> <strong>微分在不同坐标系下的形式</strong></p>
+<p>如果 <span class="math inline">\(f(x, y)\)</span>
+是直角坐标系下的可微函数, 则 <span class="math inline">\(g(\rho,
+\varphi)=f(\rho \cos \theta, \rho \sin \theta)\)</span>
+是极坐标系下的可微函数, 则 <span class="math display">\[
+\begin{gathered}
+\mathrm{d} g(\rho, \theta)\left(\begin{array}{l}
+d\rho \\
+d\theta
+\end{array}\right)=\mathrm{d} f(\rho \cos \theta, \rho \sin
+\theta)\left(\begin{array}{l}
+\mathrm{d} x \\
+\mathrm{d} y
+\end{array}\right) \\
+\left(\begin{array}{ll}
+\partial_{\rho} g &amp; \partial_{\theta} g
+\end{array}\right)=\left(\begin{array}{ll}
+\partial_{x} f &amp; \partial_{y} f
+\end{array}\right)\left(\begin{array}{cc}
+\cos \theta &amp; -\rho \sin \theta \\
+\sin \theta &amp; \rho \cos \theta
+\end{array}\right)
+\end{gathered}
+\]</span> <strong>微分的形式不变性</strong></p>
+<p>设 <span class="math inline">\(g\left(y^{1}, \ldots, y^{n}\right),
+f^{i}\left(x^{1}, \ldots, x^{m}\right) \quad(1 \leq i \leq n)\)</span>
+是可微函数。记 <span class="math inline">\(h\left(x^{1}, \ldots,
+x^{m}\right)=g\left(f^{1}\left(x^{1}, \ldots, x^{m}\right), \ldots,
+f^{n}\left(x^{1}, \ldots, x^{m}\right)\right)\)</span> 一方面，<span
+class="math inline">\(\mathrm{d} h=\sum\limits_{j=1}^{n} \partial_{j} h
+\mathrm{~d} x^{j}\)</span>；另一方面，由链索法则，<span
+class="math inline">\(\mathrm{d}(g \circ f)=\sum\limits_{i=1}^{n}
+\sum\limits_{j=1}^{m} \partial_{y^{i}} g \partial_{x^{j}} f^{i}
+\mathrm{d} x^{j}\)</span></p>
+<p>如果用变量表示函数，比如 <span class="math inline">\(u=g(y),
+y=f(x)\)</span> ，显然有 <span
+class="math inline">\(\mathrm{d}y^i=\partial_{x^{j}} f^{i} \mathrm{d}
+x^{j}\)</span> ，于是： <span class="math display">\[
+\mathrm{d} u=\sum_{j=1}^{m} \partial_{x^{j}} u \mathrm{d}
+x^{j}=\sum_{k=1}^{n} \partial_{y^{k}} u \mathrm{d} y^{k}
+\]</span>
+这叫做可微函数的“<strong>一阶微分的形式不变性</strong>”。（感觉比较显然？）</p>
+<h5 id="微分与梯度">9.微分与梯度</h5>
+<p>设 <span class="math inline">\(L: \mathbb{R}^{m} \rightarrow
+\mathbb{R}\)</span> 是线性函数, $,$ 是 <span
+class="math inline">\(\mathbb{R}^{m}\)</span> 上的内积。则存在唯一的向量
+<span class="math inline">\(\nabla L \in \mathbb{R}^{m}\)</span> 使得
+<span class="math display">\[
+L(\mathbf{v})=\langle\mathbf{v}, \nabla L\rangle, \quad \forall
+\mathbf{v} \in \mathbb{R}^{m} .
+\]</span> 这个唯一的向量 <span class="math inline">\(\nabla L \in
+\mathbb{R}^{m}\)</span> 称为 <span class="math inline">\(L\)</span>
+(在内积 <span class="math inline">\(\langle,\rangle\)</span> 下)
+的<strong>梯度</strong>。</p>
+<p><img
+src="https://pic.imgdb.cn/item/62257c695baa1a80abd19b5f.jpg" srcset="/img/loading.gif" lazyload /></p>
+<p>如图，由于已经规定 <span class="math inline">\(L\)</span>
+是线性映射，其图像必然是 <span class="math inline">\(m+1\)</span>
+维空间中的一个 <span class="math inline">\(m\)</span>
+维“平面”。现取此“平面”与自变量“平面”（同样是 <span
+class="math inline">\(m\)</span> 维空间）的 <span
+class="math inline">\(m-1\)</span>
+“交线”，此“交线”也自然是“直线”。由于此 <span
+class="math inline">\(m-1\)</span> 维”交线“在 <span
+class="math inline">\(m\)</span>
+维自变量空间中，在该空间中必然只有唯一一个方向与其垂直。<span
+class="math inline">\(\nabla L\)</span>
+就在这个方向。由几何学可以知道，图像上任意一点的高度，等于其在自变量空间的投影向量与
+<span class="math inline">\(\nabla L\)</span> 的内积与 <span
+class="math inline">\(\nabla L\)</span> 点对应的高度的乘积。</p>
+<p><strong>可微函数的梯度</strong></p>
+<p>设 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(\mathbf{x}^{*} \in E\)</span> 处可微, 称 <span
+class="math inline">\(\mathrm{d} f\left(\mathbf{x}^{*}\right)\)</span>
+的梯度为 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(\mathbf{x}^{*} \in E\)</span> 处的梯度, 记为 <span
+class="math inline">\(\nabla f\left(\mathbf{x}^{*}\right)\)</span>,
+即对任意向量 <span class="math inline">\(\mathbf{v}\)</span>, <span
+class="math display">\[
+\partial_{\mathbf{v}}
+f\left(\mathbf{x}^{*}\right)=\left\langle\mathbf{v}, \nabla
+f\left(\mathbf{x}^{*}\right)\right\rangle
+\]</span> 对以 <span class="math inline">\(\mathbf{v}_{1}, \ldots,
+\mathbf{v}_{m}\)</span> 为基的内积空间，要想求 <span
+class="math inline">\(\nabla f\left(\mathbf{x}^{*}\right)\)</span>
+在这组基底下的坐标。</p>
+<p>设 <span class="math display">\[
+\nabla f\left(\mathbf{x}^{*}\right)=c^{1} \mathbf{v}_{1}+\cdots+c^{m}
+\mathbf{v}_{m}, \quad \mathbf{v}=\xi^{1} \mathbf{v}_{1}+\cdots+\xi^{m}
+\mathbf{v}_{m}
+\]</span> 这里 <span class="math inline">\(\mathbf v\)</span>
+是任意向量。则有 <span class="math inline">\(\left\langle\mathbf{v},
+\nabla f\left(\mathbf{x}^{*}\right)\right\rangle=\sum_{1 \leq i, j \leq
+m} \xi^{i}\left\langle\mathbf{v}_{i}, \mathbf{v}_{j}\right\rangle
+c^{j}=\left(\xi^{1}, \ldots,
+\xi^{m}\right)\left(\left\langle\mathbf{v}_{i},
+\mathbf{v}_{j}\right\rangle\right)_{m \times
+m}\left(\begin{array}{c}c^{1} \\ \vdots \\
+c^{m}\end{array}\right)\)</span> <span class="math inline">\(\mathrm{d}
+f\left(\mathbf{x}^{*}\right) \mathbf{v}=\partial_{1}
+f\left(\mathbf{x}^{*}\right) \xi^{1}+\cdots+\partial_{m}
+f\left(\mathbf{x}^{*}\right) \xi^{m}=\left(\xi^{1}, \ldots,
+\xi^{m}\right)\left(\begin{array}{c}\partial_{1}
+f\left(\mathbf{x}^{*}\right) \\ \vdots \\ \partial_{m}
+f\left(\mathbf{x}^{*}\right)\end{array}\right)\)</span></p>
+<p>由梯度定义知以上两式应对任意 <span class="math inline">\(\xi^{1},
+\ldots, \xi^{m}\)</span> 恒等, 所以 <span class="math display">\[
+\left(\left\langle\mathbf{v}_{i}, \mathbf{v}_{j}\right\rangle\right)_{m
+\times m}\left(\begin{array}{c}
+c^{1} \\
+\vdots \\
+c^{m}
+\end{array}\right)=\left(\begin{array}{c}
+\partial_{1} f\left(\mathbf{x}^{*}\right) \\
+\vdots \\
+\partial_{m} f\left(\mathbf{x}^{*}\right)
+\end{array}\right)
+\]</span> 因此梯度的表达式： <span class="math display">\[
+\begin{aligned}
+\nabla f\left(\mathbf{x}^{*}\right) &amp;=\left(\mathbf{v}_{1}, \ldots,
+\mathbf{v}_{m}\right)\left(\begin{array}{c}
+c^{1} \\
+\vdots \\
+c^{m}
+\end{array}\right)=\left(\mathbf{v}_{1}, \ldots,
+\mathbf{v}_{m}\right)\left(\left\langle\mathbf{v}_{i},
+\mathbf{v}_{j}\right\rangle\right)_{m \times
+m}^{-1}\left(\begin{array}{c}
+\partial_{1} f\left(\mathbf{x}^{*}\right) \\
+\vdots \\
+\partial_{m} f\left(\mathbf{x}^{*}\right)
+\end{array}\right) \\
+&amp;=\sum_{i, j} g^{i j} \partial_{j} f \mathbf{v}_{i}
+\end{aligned}
+\]</span> 其中 <span class="math inline">\(\left(g^{i j}\right)_{m
+\times m}=\left(\left\langle\mathbf{v}_{i},
+\mathbf{v}_{j}\right\rangle\right)_{m \times m}^{-1}\)</span> 。</p>
+<p>对于<strong>单位正交基</strong> <span
+class="math inline">\(\mathbf{v}_{1}, \ldots, \mathbf{v}_{m}\)</span>,
+度量矩阵 <span class="math inline">\(\left(\left\langle\mathbf{v}_{i},
+\mathbf{v}_{j}\right\rangle\right)_{m \times m}\)</span>
+是单位矩阵，在此坐标下，梯度向量为 <span class="math display">\[
+\nabla f\left(\mathbf{x}^{*}\right)=\left(\mathbf{v}_{1}, \ldots,
+\mathbf{v}_{m}\right)\left(\begin{array}{c}
+\partial_{1} f\left(\mathbf{x}^{*}\right) \\
+\vdots \\
+\partial_{m} f\left(\mathbf{x}^{*}\right)
+\end{array}\right)
+\]</span> ###### 例：<strong>平面极坐标系</strong> <span
+class="math inline">\((r, \theta)\)</span> 下的梯度表示。</p>
+<p>平面极坐标系 <span class="math inline">\((r, \theta)\)</span> 下以
+<span class="math display">\[
+\mathbf{e}_{r}=\left[\begin{array}{c}
+\partial_r{x} \\
+\partial_r{y}
+\end{array}\right]=\left[\begin{array}{c}
+\cos \theta \\
+\sin \theta
+\end{array}\right], \quad \mathbf{e}_{\theta}=\left[\begin{array}{c}
+\partial_\theta{x} \\
+\partial_\theta{y}
+\end{array}\right]=\left[\begin{array}{c}
+-r \sin \theta \\
+r \cos \theta
+\end{array}\right]
+\]</span> 为基底向量。 <span class="math display">\[
+\left\langle\mathbf{e}_{r}, \mathbf{e}_{r}\right\rangle=1,
+\quad\left\langle\mathbf{e}_{r}, \mathbf{e}_{\theta}\right\rangle=0,
+\quad\left\langle\mathbf{e}_{\theta},
+\mathbf{e}_{\theta}\right\rangle=r^{2} .
+\]</span> 所以 <span class="math inline">\(f\)</span> 的梯度为 <span
+class="math display">\[
+\nabla f(r, \theta)=\left(\mathbf{e}_{r},
+\mathbf{e}_{\theta}\right)\left(\begin{array}{cc}
+1 &amp; 0 \\
+0 &amp; r^{2}
+\end{array}\right)^{-1}\left(\begin{array}{c}
+\partial_{r} f \\
+\partial_{\theta} f
+\end{array}\right)=\partial_{r} f \mathbf{e}_{r}+\frac{1}{r^{2}}
+\partial_{\theta} f \mathbf{e}_{\theta}
+\]</span> ###### 课后练习：<strong>球坐标</strong>的变换规律与梯度</p>
+<p>从三维直角坐标向球坐标变换 <span class="math display">\[
+\left(\begin{array}{c}
+r \\
+\theta \\
+\varphi
+\end{array}\right) \mapsto\left(\begin{array}{l}
+x \\ y\\z
+\end{array}\right)=\left(\begin{gathered}
+r \sin\theta\cos\varphi \\
+r \sin \theta\sin\varphi\\
+r\cos\theta
+\end{gathered}\right)
+\]</span> 显然此映射可微，求导可得 <span class="math display">\[
+\left[\begin{gathered}\mathrm{d}x(r,\theta,\varphi)\\\mathrm{d}y(r,\theta,\varphi)\\\mathrm{d}z(r,\theta,\varphi)\end{gathered}\right]=
+\begin{bmatrix}
+\sin\theta\cos\varphi&amp;r\cos\theta\cos\varphi&amp;-r\sin\theta\sin\varphi\\
+\sin\theta\sin\varphi&amp;r\cos\theta\sin\varphi&amp;r\sin\theta\cos\varphi\\
+\cos\theta&amp;-r\sin\theta&amp;0
+\end{bmatrix}\left[\begin{gathered}\mathrm{d}r\\\mathrm{d}\theta\\\mathrm{d}\varphi\end{gathered}\right]
+\]</span> 因此此坐标系的一组基是 <span class="math display">\[
+\mathbf{e}_r=\left[\begin{gathered}\sin\theta\cos\varphi\\ \sin
+\theta\sin\varphi\\
+\cos\theta\end{gathered}\right],
+\mathbf{e}_\theta=\left[\begin{gathered}r\cos\theta\cos\varphi\\ r\cos
+\theta\sin\varphi\\
+-r\sin\theta\end{gathered}\right],
+\mathbf{e}_\varphi=\left[\begin{gathered}-r\sin\theta\sin\varphi\\ r\sin
+\theta\cos\varphi\\
+0\end{gathered}\right]
+\]</span> 有 <span class="math display">\[
+\begin{gathered}\langle\mathbf{e}_r,\mathbf{e}_r\rangle=1,\langle\mathbf{e}_r,\mathbf{e}_\theta\rangle=0,\langle\mathbf{e}_r,\mathbf{e}_\varphi\rangle=0,\\\langle\mathbf{e}_\theta,\mathbf{e}_\theta\rangle=r^2,\langle\mathbf{e}_\theta,\mathbf{e}_\varphi\rangle=0,\langle\mathbf{e}_\varphi,\mathbf{e}_\varphi\rangle=r^2\sin^2\theta\end{gathered}
+\]</span> 所以球坐标下的梯度可以表示为 <span class="math display">\[
+\begin{gathered}\nabla f(r, \theta,\varphi)=\left(\mathbf{e}_{r},
+\mathbf{e}_{\theta},\mathbf{e}_\varphi\right)\left(\begin{array}{ccc}
+1 &amp; 0 &amp;0\\
+0 &amp; r^{2}&amp;0\\
+0&amp;0&amp;r^2\sin^2\theta
+\end{array}\right)^{-1}\left(\begin{array}{c}
+\partial_{r} f \\
+\partial_{\theta} f\\
+\partial_{\varphi} f
+\end{array}\right)\\=\partial_{r} f \mathbf{e}_{r}+\frac{1}{r^{2}}
+\partial_{\theta} f
+\mathbf{e}_{\theta}+\frac{1}{r^2\sin^2\theta}\partial_\varphi
+f\mathbf{e}_\varphi\end{gathered}
+\]</span></p>
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Math/" class="category-chain-item">Math</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Math/Calculus/" class="category-chain-item">Calculus</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/math/">#math</a>
+      
+        <a href="/tags/calculus/">#calculus</a>
+      
+        <a href="/tags/note/">#note</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/03/03/tour%20of%20toil/" title="tour of toil">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">tour of toil</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/02/28/wxf02/" title="多元微积分笔记（二）多元函数的极限">
+                        <span class="hidden-mobile">多元微积分笔记（二）多元函数的极限</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Support: Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Theme: Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var title = subtitle.title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?40d396b194275243fc89f8147f2c95fc";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'G-4Z5ZTXQ6M5', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        MathJax = {
+          tex    : {
+            inlineMath: { '[+]': [['$', '$']] }
+          },
+          loader : {
+            load: ['ui/lazy']
+          },
+          options: {
+            renderActions: {
+              findScript    : [10, doc => {
+                document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                  const display = !!node.type.match(/; *mode=display/);
+                  const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                  const text = document.createTextNode('');
+                  node.parentNode.replaceChild(text, node);
+                  math.start = { node: text, delim: '', n: 0 };
+                  math.end = { node: text, delim: '', n: 0 };
+                  doc.math.push(math);
+                });
+              }, '', false],
+              insertedScript: [200, () => {
+                document.querySelectorAll('mjx-container').forEach(node => {
+                  let target = node.parentNode;
+                  if (target.nodeName.toLowerCase() === 'li') {
+                    target.parentNode.classList.add('has-jax');
+                  }
+                });
+              }, '', false]
+            }
+          }
+        };
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.0/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
